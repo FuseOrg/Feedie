@@ -1,6 +1,6 @@
 <html>
 <head>
-	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 	<title>Feedie | Feed Show</title>
   <link rel="stylesheet" type="text/css" href="../../../../css.css">
 	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
