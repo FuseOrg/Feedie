@@ -62,7 +62,7 @@ CREATE TABLE `hods` (
 --
 
 INSERT INTO `hods` (`hod_username`, `password`, `dept`) VALUES
-('AMBIKADEVI', 'csehod', 'CSE'),('ECEHOD', 'ecehod', 'CSE');
+('AMBIKADEVI', 'csehod', 'CSE'),('ECEHOD', 'ecehod', 'ECE');
 
 -- --------------------------------------------------------
 
