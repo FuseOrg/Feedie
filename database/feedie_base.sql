@@ -159,7 +159,6 @@ CREATE TABLE `teachersinfo` (
   `sub_name` varchar(50) NOT NULL,
   `sub_code` varchar(7) NOT NULL,
   `dept` varchar(5) NOT NULL,
-  `rank` int(5) DEFAULT NULL,
   `overall` int(3) DEFAULT NULL,
   `class_strength` int(3) NOT NULL,
   `feed_applied` int(3) NOT NULL DEFAULT '0'
@@ -169,12 +168,12 @@ CREATE TABLE `teachersinfo` (
 -- Dumping data for table `teachersinfo`
 --
 
-INSERT INTO `teachersinfo` (`info_no`, `te_username`, `class`, `sub_name`, `sub_code`, `dept`, `rank`, `overall`, `class_strength`, `feed_applied`) VALUES
-(1, 'ARUN K', 'CSE-A S6', 'Networking', 'CS306', 'CSE', NULL, NULL, 39, 0),
-(2, 'RESHMI H', 'CSE-A S6', 'Management', 'HS300', 'ECE', NULL, NULL, 39, 0),
-(3, 'SRUTHY M R', 'CSE-A S6', 'Design Algorithm', 'CS302', 'CSE', NULL, NULL, 39, 0),
-(4, 'DEEPTHI', 'CSE-A S6', 'Compiler Design', 'CS304', 'CSE', NULL, NULL, 39, 0),
-(5, 'BIJI K P', 'CSE-A S6', 'Software Engg', 'CS308', 'CSE', NULL, NULL, 39, 0);
+INSERT INTO `teachersinfo` (`info_no`, `te_username`, `class`, `sub_name`, `sub_code`, `dept`, `overall`, `class_strength`, `feed_applied`) VALUES
+(1, 'ARUN K', 'CSE-A S6', 'Networking', 'CS306', 'CSE', NULL, 39, 0),
+(2, 'RESHMI H', 'CSE-A S6', 'Management', 'HS300', 'ECE', NULL, 39, 0),
+(3, 'SRUTHY M R', 'CSE-A S6', 'Design Algorithm', 'CS302', 'CSE', NULL, 39, 0),
+(4, 'DEEPTHI', 'CSE-A S6', 'Compiler Design', 'CS304', 'CSE', NULL, 39, 0),
+(5, 'BIJI K P', 'CSE-A S6', 'Software Engg', 'CS308', 'CSE', NULL, 39, 0);
 
 --
 -- Indexes for dumped tables
