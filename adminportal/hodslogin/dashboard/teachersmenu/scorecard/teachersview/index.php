@@ -56,7 +56,7 @@
 	      &#9733 &#9733 &#9733 &#9733 &#9733 = Excellent";
 		?>
 		</div>
-  <div class="row">1.The teacher covers the entire syllabus</div>
+  <div class="row">1. The teacher covers the entire syllabus</div>
   <div class="row">
    <div class="side">
     <div>5 stars</div>
@@ -248,17 +248,7 @@
   </div>
  </div>
 
-
-
-
-
-
-
-
-
-
-
-<div class="row">2.The teacher discusses topics in detail.</div>
+<div class="row">2. The teacher discusses topics in detail.</div>
   <div class="row">
    <div class="side">
     <div>5 stars</div>
@@ -450,18 +440,7 @@
   </div>
  </div>
 
-
-
-
-
-
-
-
-
-
-
- 
-<div class="row">3.The teacher possesses deep knowledge of the subject taught</div>
+<div class="row">3. The teacher possesses deep knowledge of the subject taught</div>
   <div class="row">
    <div class="side">
     <div>5 stars</div>
@@ -653,15 +632,7 @@
   </div>
  </div>
 
-
-
-
-
-
-
-
-
-<div class="row">4.The teacher communicate clearly</div>
+<div class="row">4. The teacher communicate clearly</div>
   <div class="row">
    <div class="side">
     <div>5 stars</div>
@@ -853,13 +824,7 @@
   </div>
  </div>
 
-
-
-
-
-
-
-<div class="row">5.The teacher inspires me by his/her knowledge in the subject</div>
+<div class="row">5. The teacher inspires me by his/her knowledge in the subject</div>
   <div class="row">
    <div class="side">
     <div>5 stars</div>
@@ -1051,18 +1016,7 @@
   </div>
  </div>
 
-
-
-
-
-
-
-
-
-
-
-
-<div class="row">6.The teacher is punctual to the class</div>
+<div class="row">6. The teacher is punctual to the class</div>
   <div class="row">
    <div class="side">
     <div>5 stars</div>
@@ -1254,20 +1208,7 @@
   </div>
  </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="row">7.The teacher engages the class for the full duration and completes the course in time</div>
+<div class="row">7. The teacher engages the class for the full duration and completes the course in time</div>
   <div class="row">
    <div class="side">
     <div>5 stars</div>
@@ -1459,19 +1400,7 @@
   </div>
  </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="row">8.The teacher comes fully prepared for the class</div>
+<div class="row">8. The teacher comes fully prepared for the class</div>
   <div class="row">
    <div class="side">
     <div>5 stars</div>
@@ -1663,12 +1592,7 @@
   </div>
  </div>
 
-
-
-
-
-
- <div class="row">9.The teacher provide guidance counseling in academic and non-academic matters in/out side the class</div>
+ <div class="row">9. The teacher provide guidance counseling in academic and non-academic matters in/out side the class</div>
   <div class="row">
    <div class="side">
     <div>5 stars</div>
@@ -1860,16 +1784,7 @@
   </div>
  </div>
 
-
-
-
-
-
-
-
-
-
- <div class="row">10.The teacher was available to answer questions in office hours</div>
+ <div class="row">10. The teacher was available to answer questions in office hours</div>
   <div class="row">
    <div class="side">
     <div>5 stars</div>
