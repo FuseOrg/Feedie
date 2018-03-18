@@ -16,9 +16,9 @@
 		<div class="heading">Student Login</div>
 		<center><img src="images/student.svg" class="avatar"/></center>
     <form class="myform" action="" method="post">
-    <input type="text" class="inputvalue" name="rollno" placeholder="Roll number"/>
+    <input type="text" class="inputvalue" name="rollno" placeholder="Register number"/>
 		<input type="password" class="inputvalue" name="password" placeholder="Password"/>
-    <div class="phpr">
+    <div class="phpr" style="color:red">
     <label>
     <?php   
 
@@ -46,7 +46,7 @@
           // output data of each row
           $row = $result->fetch_assoc();
           if( $_POST["password"] == $row["password"] ){
-            echo "Logging you in...";    
+            echo "Logging you in..";    
             session_start();
             $_SESSION["rollno"] = $_POST["rollno"];
             $_SESSION["st_username"] = $row["st_username"];
@@ -55,10 +55,10 @@
             header("Location: dashboard/");  // lines
           }
           else
-            echo "Password incorrect";
+            echo "Password incorrect!";
           } 
         else {
-            echo "Unknown rollno.";
+            echo "Unknown Register number!";
         }
         $conn->close();
       }
