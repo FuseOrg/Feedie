@@ -10,8 +10,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
-> Database server such as myPHPadmin
-> Server such as Apache
+* Database server such as myPHPadmin
+* Server such as Apache
+* Web browser such as Chrome
 
 ### Installing
 
