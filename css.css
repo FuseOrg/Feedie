@@ -133,7 +133,7 @@ box-shadow: 0 3px 4px rgba(0,0,0,.4);
 color: #00aaff;
 margin: 8px 0;
 padding: 0 16px;
-border-radius: 5px;
+border-left: 3px solid;
 }
 .changepw{
 float: right; 
@@ -160,11 +160,13 @@ color: #fff;
 }
 .details {
 margin-top: 64px;
-box-shadow: 0 2px 3px rgba(0,0,0,.3);
+box-shadow: 0 2px 3px rgba(0,0,0,.2);
 background-color: #00aaff;
 width: calc(100% - 32px);
 padding: 16px;
 color: white;
+height: 30vh;
+margin-bottom: -25vh;
 }
 .result
 {
@@ -219,48 +221,46 @@ width: 100%;
 }
 .rating {
 border: none;
-border-bottom: 1px solid #ddd;
 padding: 16px 0;
-line-height: 3;
-margin: 0 auto;
+line-height:3;
+}
+.rating:nth-child(n+1) {
+border-top: 1px solid #eee;
 }
 .rating input {
 visibility: hidden;
 }
-.rating:not(:checked) > input {
-	position:absolute;
-	top:-9999px;
-	clip:rect(0, 0, 0, 0);
+.rating :not(:checked) > input {
+position:absolute;
+top:-9999px;
+clip:rect(0, 0, 0, 0);
 }
 .rating:not(:checked) > label {
-	float:right;
-	width:1em;
-	overflow:hidden;
-	white-space:nowrap;
-	cursor:pointer;
-	font-size:200%;
-	line-height:1.5;
-	color:#aaa;
+width:1em;
+cursor:pointer;
+float: right;
+font-size:200%;
+line-height:1.5;
+color:#aaa;
 }
 .rating:not(:checked) > label:before {
-	content: &#9733;
+content: &#9733;
 }
 .rating > input:checked ~ label {
-	color: #ff7700;
+color: #ff7700;
 }
 .rating:not(:checked) > label:hover, .rating:not(:checked) > label:hover ~ label {
-	color: gold;
+color: gold;
 }
 .rating> input:checked + label:hover, .rating> input:checked + label:hover ~ label, .rating> input:checked ~ label:hover, .rating> input:checked ~ label:hover ~ label, .rating> label:hover ~ input:checked ~ label {
-	color: #ea0;
+color: #ea0;
 }
 .rating > label:hover {
-	transform: scale(1.2);
+transform: scale(1.2);
 }
 .rating > label:active {
-	transform: scale(.8);
+transform: scale(.9);
 }
-
 .side {
 float: left;
 width: 15%;

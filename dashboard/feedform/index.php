@@ -44,7 +44,7 @@
 	</div>
   <div class="page">
 <div class="container">
-<div class="phpr">
+<div class="phpr" style="color:red">
 <?php
     
     $servername = "127.0.0.1";
@@ -112,7 +112,7 @@
 	</div>
 <form action="<?php  $_PHP_SELF ?>" method="post">
 <fieldset class="rating">
-   1.The teacher covers the entire syllabus
+   1. The teacher covers the entire syllabus
     <input type="radio" id="star5-1" name="cover" value="5" /><label for="star5-1" title="Rocks!"><span>&#9733</span></label>
     <input type="radio" id="star4-1" name="cover" value="4" /><label for="star4-1" title="Pretty good"><span>&#9733</span></label>
     <input type="radio" id="star3-1" name="cover" value="3" /><label for="star3-1" title="Meh"><span>&#9733</span></label>
@@ -120,7 +120,7 @@
     <input type="radio" id="star1-1" name="cover" value="1" /><label for="star1-1" title="Sucks big time"><span>&#9733</span></label>
 </fieldset>
 <fieldset class="rating">
-   2.The teacher discusses topics in detail
+   2. The teacher discusses topics in detail
     <input type="radio" id="star5-2" name="discuss" value="5" /><label for="star5-2" title="Rocks!"><span>&#9733</span></label>
     <input type="radio" id="star4-2" name="discuss" value="4" /><label for="star4-2" title="Pretty good"><span>&#9733</span></label>
     <input type="radio" id="star3-2" name="discuss" value="3" /><label for="star3-2" title="Meh"><span>&#9733</span></label>
@@ -128,7 +128,7 @@
     <input type="radio" id="star1-2" name="discuss" value="1" /><label for="star1-2" title="Sucks big time"><span>&#9733</span></label>
 </fieldset>
 <fieldset class="rating">
-   3.The teacher possesses deep knowledge of the subject taught
+   3. The teacher possesses deep knowledge of the subject taught
     <input type="radio" id="star5-3" name="knowledge" value="5" /><label for="star5-3" title="Rocks!"><span>&#9733</span></label>
     <input type="radio" id="star4-3" name="knowledge" value="4" /><label for="star4-3" title="Pretty good"><span>&#9733</span></label>
     <input type="radio" id="star3-3" name="knowledge" value="3" /><label for="star3-3" title="Meh"><span>&#9733</span></label>
@@ -136,7 +136,7 @@
     <input type="radio" id="star1-3" name="knowledge" value="1" /><label for="star1-3" title="Sucks big time"><span>&#9733</span></label>
 </fieldset>
 <fieldset class="rating">
-   4.The teacher communicate clearly
+   4. The teacher communicate clearly
     <input type="radio" id="star5-4" name="communicate" value="5" /><label for="star5-4" title="Rocks!"><span>&#9733</span></label>
     <input type="radio" id="star4-4" name="communicate" value="4" /><label for="star4-4" title="Pretty good"><span>&#9733</span></label>
     <input type="radio" id="star3-4" name="communicate" value="3" /><label for="star3-4" title="Meh"><span>&#9733</span></label>
@@ -144,7 +144,7 @@
     <input type="radio" id="star1-4" name="communicate" value="1" /><label for="star1-4" title="Sucks big time"><span>&#9733</span></label>
 </fieldset>
 <fieldset class="rating">
-   5.The teacher inspires me by his/her knowledge in the subject
+   5. The teacher inspires me by his/her knowledge in the subject
     <input type="radio" id="star5-5" name="inspire" value="5" /><label for="star5-5" title="Rocks!"><span>&#9733</span></label>
     <input type="radio" id="star4-5" name="inspire" value="4" /><label for="star4-5" title="Pretty good"><span>&#9733</span></label>
     <input type="radio" id="star3-5" name="inspire" value="3" /><label for="star3-5" title="Meh"><span>&#9733</span></label>
@@ -152,7 +152,7 @@
     <input type="radio" id="star1-5" name="inspire" value="1" /><label for="star1-5" title="Sucks big time"><span>&#9733</span></label>
 </fieldset>
 <fieldset class="rating">
-   6.The teacher is punctual to the class
+   6. The teacher is punctual to the class
     <input type="radio" id="star5-6" name="punctual" value="5" /><label for="star5-6" title="Rocks!"><span>&#9733</span></label>
     <input type="radio" id="star4-6" name="punctual" value="4" /><label for="star4-6" title="Pretty good"><span>&#9733</span></label>
     <input type="radio" id="star3-6" name="punctual" value="3" /><label for="star3-6" title="Meh"><span>&#9733</span></label>
@@ -160,7 +160,7 @@
     <input type="radio" id="star1-6" name="punctual" value="1" /><label for="star1-6" title="Sucks big time"><span>&#9733</span></label>
 </fieldset>
 <fieldset class="rating">
-   7.The teacher engages the class for the full duration and completes the course in time
+   7. The teacher engages the class for the full duration and completes the course in time
     <input type="radio" id="star5-7" name="engage" value="5" /><label for="star5-7" title="Rocks!"><span>&#9733</span></label>
     <input type="radio" id="star4-7" name="engage" value="4" /><label for="star4-7" title="Pretty good"><span>&#9733</span></label>
     <input type="radio" id="star3-7" name="engage" value="3" /><label for="star3-7" title="Meh"><span>&#9733</span></label>
@@ -168,7 +168,7 @@
     <input type="radio" id="star1-7" name="engage" value="1" /><label for="star1-7" title="Sucks big time"><span>&#9733</span></label>
 </fieldset>
 <fieldset class="rating">
-   8.The teacher comes fully prepared for the class
+   8. The teacher comes fully prepared for the class
     <input type="radio" id="star5-8" name="prepare" value="5" /><label for="star5-8" title="Rocks!"><span>&#9733</span></label>
     <input type="radio" id="star4-8" name="prepare" value="4" /><label for="star4-8" title="Pretty good"><span>&#9733</span></label>
     <input type="radio" id="star3-8" name="prepare" value="3" /><label for="star3-8" title="Meh"><span>&#9733</span></label>
@@ -176,7 +176,7 @@
     <input type="radio" id="star1-8" name="prepare" value="1" /><label for="star1-8" title="Sucks big time"><span>&#9733</span></label>
 </fieldset>
 <fieldset class="rating">
-   9.The teacher provide guidance outside/inside the class
+   9. The teacher provide guidance outside/inside the class
     <input type="radio" id="star5-9" name="guidance" value="5" /><label for="star5-9" title="Rocks!"><span>&#9733</span></label>
     <input type="radio" id="star4-9" name="guidance" value="4" /><label for="star4-9" title="Pretty good"><span>&#9733</span></label>
     <input type="radio" id="star3-9" name="guidance" value="3" /><label for="star3-9" title="Meh"><span>&#9733</span></label>
@@ -184,7 +184,7 @@
     <input type="radio" id="star1-9" name="guidance" value="1" /><label for="star1-9" title="Sucks big time"><span>&#9733</span></label>
 </fieldset>
 <fieldset class="rating">
-   10.The teacher was available to answer questions in office hours
+   10. The teacher was available to answer questions in office hours
     <input type="radio" id="star5-10" name="available" value="5" /><label for="star5-10" title="Rocks!"><span>&#9733</span></label>
     <input type="radio" id="star4-10" name="available" value="4" /><label for="star4-10" title="Pretty good"><span>&#9733</span></label>
     <input type="radio" id="star3-10" name="available" value="3" /><label for="star3-10" title="Meh"><span>&#9733</span></label>
@@ -197,19 +197,6 @@
 </form>
 </div>
 </div>
-<!--
-<div id="snackbar">
-</div>
--->
   <footer>&copy;<a href="https://fuse-org.firebaseapp.com" class="link" target="_blank">Fuse Org</a></footer>
 </body>
-<!--
-<script>
-  function myFunction() {
-    var x = document.getElementById("snackbar")
-    x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-}
-</script>
--->
 </html>

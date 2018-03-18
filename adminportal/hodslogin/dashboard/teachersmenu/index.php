@@ -31,9 +31,9 @@
   	  ?>    
 
     </div>
-  <div class="wrapper">
+  <div class="page">
 	<div class="container">
-   <div class="heading">Select the class of this teacher :</div>
+   <div class="heading">Select class</div>
 	<?php
         include('../../../../db_config.php');
         
