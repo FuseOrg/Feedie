@@ -53,7 +53,7 @@
               echo "Password changed!";
             }
             else{
-              echo "Try again";
+              echo "Try again!";
             }
            }
           }

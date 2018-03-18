@@ -19,7 +19,7 @@
      <form class="myform" action="" method="post">
        <input type="text" class="inputvalue" name="username" placeholder="Username"/>
        <input type="password" class="inputvalue" name="password" placeholder="Password"/>
-       <div class="phpr">
+       <div class="phpr" style="color:red">
        <label>
        <?php   
 
