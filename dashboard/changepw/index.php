@@ -8,8 +8,10 @@
  </head>
  <body>
   <div class="header">
+		<div><a href="../"><img src="../../images/back.svg" class="home"></a></div>
 		<img src="../../images/logo.png" class="logo"/>
 		<div class="title">Feedie</div>
+    <a href="../../?logout=1"><div class="logout">Logout</div></a>
   </div>
   <div class="wrapper">
   <div class="container">
@@ -19,7 +21,7 @@
 		<input type="password" class="inputvalue" name="currentpassword" placeholder="Current Password"/>
 		<input type="password" class="inputvalue" name="newpassword" placeholder="New Password"/>
 		<input type="password" class="inputvalue" name="renewpassword" placeholder="Retype New Password"/>
-    <div class="phpr">
+    <div class="phpr" style="color:red">
     <label>
     <?php   
       
@@ -41,14 +43,14 @@
           $row = $result->fetch_assoc();
           if( $_POST["currentpassword"] == $row["password"] ){
             if($_POST["newpassword"] != $_POST["renewpassword"]){
-              echo "Retype new password";
+              echo "Password didn't match, Retype new password!";
             }
             else{
             $newpassword = $_POST["newpassword"];
             $sql1 = "UPDATE students SET password = '".$newpassword."' WHERE rollno = '".$_SESSION["rollno"]."' AND class = '".$_SESSION["class"]."'";
             $result1 = $conn->query($sql1);
             if($result1){
-              echo "Password changed !!!";
+              echo "Password changed!";
             }
             else{
               echo "Try again";
@@ -56,7 +58,7 @@
            }
           }
           else
-            echo "Current password incorrect";
+            echo "Current password incorrect!";
         } 
         $conn->close();
       }
