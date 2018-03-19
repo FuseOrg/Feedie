@@ -33,7 +33,7 @@
   </div>
   <div class="page">
   <div class="container">
-		<div class="heading">Subject</div>
+		<div class="heading">Subjects</div>
 	<?php
      include('../db_config.php');
 
