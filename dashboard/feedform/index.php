@@ -43,8 +43,94 @@
     ?>
 	</div>
   <div class="page">
+<div id="snackbar">Some text some message..</div>
 <div class="container">
+<div class="phpr" style="color:red">
+<?php
+    
+    $servername = "127.0.0.1";
+    $username = "root";
+    $password = "";
+    $dbname = "feedie_base";
 
+    if ($_SESSION["st_username"] AND $_SESSION["te_username"] AND isset($_POST["cover"]) AND isset($_POST["discuss"]) AND isset($_POST["knowledge"]) AND isset($_POST["communicate"]) AND isset($_POST["inspire"]) AND isset($_POST["punctual"]) AND isset($_POST["engage"]) AND isset($_POST["prepare"]) AND isset($_POST["guidance"]) AND isset($_POST["available"])){
+            // Create connection
+              $conn = new mysqli($servername, $username, $password, $dbname);
+
+              $cover = $_POST["cover"];
+              $discuss = $_POST["discuss"];
+              $knowledge = $_POST["knowledge"];
+              $communicate = $_POST["communicate"];
+              $inspire = $_POST["inspire"];
+              $punctual = $_POST["punctual"];
+              $engage = $_POST["engage"];
+              $prepare = $_POST["prepare"];
+              $guidance = $_POST["guidance"];
+              $available = $_POST["available"];
+              //For checking whether user have already submit a feed on this teacher
+              $sql_check = "SELECT st_username FROM feeds WHERE st_username = '".$_SESSION["st_username"]."' AND te_username = '".$_SESSION["te_username"]."'";
+              $result_check = $conn->query($sql_check);
+              if($result_check->num_rows > 0){
+                $sql = "UPDATE feeds SET cover='".$cover."', discuss='".$discuss."', knowledge='".$knowledge."', communicate='".$communicate."', inspire='".$inspire."', punctual='".$punctual."', engage='".$engage."', prepare='".$prepare."', guidance='".$guidance."', available='".$available."' WHERE st_username='".$_SESSION["st_username"]."' AND te_username='".$_SESSION["te_username"]."'";
+                $result = $conn->query($sql);
+                if($result){
+                  //echo "Successful. ";
+                  include('overall.php');
+                }
+                echo "Response updated";
+                echo 
+                '<script type="text/javascript">
+                 function showsnackbar() {
+                  var x = document.getElementById("snackbar");
+                  x.innerHTML = "Response updated";
+                  x.className = "show";
+                  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
+                  }
+                 showsnackbar()
+                 </script>';
+              }
+              else{
+                $sql1 = "UPDATE teachersinfo SET feed_applied = feed_applied + 1 WHERE te_username = '".$_SESSION["te_username"]."' AND class = '".$_SESSION["class"]."' AND sub_code = '".$_SESSION["sub_code"]."'";
+                $result1 = $conn->query($sql1);
+                
+                /*
+                if($result1){
+                  echo "Updated";
+                }
+                */
+
+                $sql = "INSERT INTO feeds (st_username, te_username, sub_code, sub_name, class, cover, discuss, knowledge, communicate, inspire,  punctual, engage, prepare, guidance, available) VALUES('".$_SESSION["st_username"]."','".$_SESSION["te_username"]."','".$_SESSION["sub_code"]."','".$_SESSION["sub_name"]."','".$_SESSION["class"]."','".$cover."','".$discuss."','".$knowledge."','".$communicate."','".$inspire."','".$punctual."','".$engage."','".$prepare."','".$guidance."','".$available."')";
+                $result = $conn->query($sql);
+                if($result){
+                  //echo "Successful. ";
+                  include('overall.php');
+                }
+                echo "First time response ";
+                echo 
+                '<script type="text/javascript">
+                 function showsnackbar() {
+                  var x = document.getElementById("snackbar");
+                  x.innerHTML = "Response added";
+                  x.className = "show";
+                  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
+                  }
+                 showsnackbar()
+                 </script>';
+              }
+            
+              $conn->close();
+            }
+            else{
+              echo "Please complete the feedback<br><br>
+	      Guidlines:<br>
+	      &#9733 = Poor<br>
+	      &#9733 &#9733 = Need improvements<br>
+	      &#9733 &#9733 &#9733 = Average<br>
+	      &#9733 &#9733 &#9733 &#9733        = Good<br>
+	      &#9733 &#9733 &#9733 &#9733 &#9733 = Excellent";
+            }
+   ?>
+	</div>
 <form action="<?php  $_PHP_SELF ?>" method="post">
 <fieldset class="rating">
    1. The teacher covers the entire syllabus
@@ -210,4 +296,5 @@
 </div>
   <footer>&copy;<a href="https://fuse-org.firebaseapp.com" class="link" target="_blank">Fuse Org</a></footer>
 </body>
+
 </html>
