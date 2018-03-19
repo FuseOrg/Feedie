@@ -43,6 +43,7 @@
     ?>
 	</div>
   <div class="page">
+<div id="snackbar">Some text some message..</div>
 <div class="container">
 <div class="phpr" style="color:red">
 <?php
@@ -77,6 +78,16 @@
                   include('overall.php');
                 }
                 echo "Response updated";
+                echo 
+                '<script type="text/javascript">
+                 function showsnackbar() {
+                  var x = document.getElementById("snackbar");
+                  x.innerHTML = "Response updated";
+                  x.className = "show";
+                  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
+                  }
+                 showsnackbar()
+                 </script>';
               }
               else{
                 $sql1 = "UPDATE teachersinfo SET feed_applied = feed_applied + 1 WHERE te_username = '".$_SESSION["te_username"]."' AND class = '".$_SESSION["class"]."' AND sub_code = '".$_SESSION["sub_code"]."'";
@@ -95,6 +106,16 @@
                   include('overall.php');
                 }
                 echo "First time response ";
+                echo 
+                '<script type="text/javascript">
+                 function showsnackbar() {
+                  var x = document.getElementById("snackbar");
+                  x.innerHTML = "Response added";
+                  x.className = "show";
+                  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
+                  }
+                 showsnackbar()
+                 </script>';
               }
             
               $conn->close();
@@ -199,4 +220,5 @@
 </div>
   <footer>&copy;<a href="https://fuse-org.firebaseapp.com" class="link" target="_blank">Fuse Org</a></footer>
 </body>
+
 </html>
