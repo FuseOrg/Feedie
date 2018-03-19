@@ -28,7 +28,7 @@
        echo $_SESSION["class"];
   	  ?>
       <div class="changepw">
-        <a href="changepw">Change password</a>
+        <a href="changepw" style="link">Change password</a>
       </div>
   </div>
   <div class="page">
