@@ -32,13 +32,11 @@
     include('../../db_config.php');
     $sql1 = "SELECT sub_code, te_username FROM teachersinfo WHERE  sub_name='".$_GET["sub_name"]."' AND class='".$_SESSION["class"]."'";
     $result1 = $conn->query($sql1);
-
     if($result1->num_rows > 0){
       $row = $result1->fetch_assoc();
       $_SESSION["te_username"] = $row["te_username"];
       $_SESSION["sub_code"] = $row["sub_code"];
     }
-
     echo $_SESSION["te_username"];
     ?>
 	</div>
@@ -52,11 +50,9 @@
     $username = "root";
     $password = "";
     $dbname = "feedie_base";
-
     if ($_SESSION["st_username"] AND $_SESSION["te_username"] AND isset($_POST["cover"]) AND isset($_POST["discuss"]) AND isset($_POST["knowledge"]) AND isset($_POST["communicate"]) AND isset($_POST["inspire"]) AND isset($_POST["punctual"]) AND isset($_POST["engage"]) AND isset($_POST["prepare"]) AND isset($_POST["guidance"]) AND isset($_POST["available"])){
             // Create connection
               $conn = new mysqli($servername, $username, $password, $dbname);
-
               $cover = $_POST["cover"];
               $discuss = $_POST["discuss"];
               $knowledge = $_POST["knowledge"];
@@ -98,7 +94,6 @@
                   echo "Updated";
                 }
                 */
-
                 $sql = "INSERT INTO feeds (st_username, te_username, sub_code, sub_name, class, cover, discuss, knowledge, communicate, inspire,  punctual, engage, prepare, guidance, available) VALUES('".$_SESSION["st_username"]."','".$_SESSION["te_username"]."','".$_SESSION["sub_code"]."','".$_SESSION["sub_name"]."','".$_SESSION["class"]."','".$cover."','".$discuss."','".$knowledge."','".$communicate."','".$inspire."','".$punctual."','".$engage."','".$prepare."','".$guidance."','".$available."')";
                 $result = $conn->query($sql);
                 if($result){
@@ -220,5 +215,4 @@
 </div>
   <footer>&copy;<a href="https://fuse-org.firebaseapp.com" class="link" target="_blank">Fuse Org</a></footer>
 </body>
-
 </html>
