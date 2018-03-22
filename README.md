@@ -19,9 +19,9 @@ What things you need to install the software and how to install them
 A step by step series of examples that tell you have to get a development env running
 
 1. Download the whole zip/clone the repo
-2. Start DB and Server
-3. Copy files to server hosting location
-4. Host project to any localhost
+2. Copy files to server hosting location
+3. Start Web server(Apache) and Database server(phpMyadmin)
+4. Host copied project to any localhost
 
 And repeat
 
