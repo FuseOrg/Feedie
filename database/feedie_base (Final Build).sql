@@ -361,7 +361,7 @@ INSERT INTO `teachersinfo` (`info_no`, `te_username`, `class`, `sub_name`, `sub_
 (3, 'SRUTHY M R', 'CSE-A S6', 'Design and Analysis of Algorithms', 'CS302', 'CSE', NULL, 39, 0),
 (4, 'DEEPTHI', 'CSE-A S6', 'Compiler Design', 'CS304', 'CSE', NULL, 39, 0),
 (5, 'BIJI K P', 'CSE-A S6', 'Software Engineering', 'CS308', 'CSE', NULL, 39, 0),
-(6, 'ARUN K', 'CSE-A S6', 'Web Technologies', 'CS306', 'CSE', NULL, 39, 0),
+(6, 'ARUN K', 'CSE-A S6', 'Web Technologies', 'CS368', 'CSE', NULL, 39, 0),
 /* S6 CSE-B (TOTAL: 6) */
 (7, 'S6 CSE-B TEACHER 1', 'CSE-B S6', 'Design and Analysis of Algorithms', 'CS302', 'CSE', NULL, 39, 0),
 (8, 'S6 CSE-B TEACHER 2', 'CSE-B S6', 'Principles of Management', 'HS300', 'ECE', NULL, 39, 0),
