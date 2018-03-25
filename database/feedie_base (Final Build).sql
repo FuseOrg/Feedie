@@ -304,15 +304,33 @@ CREATE TABLE `teachers` (
 --
 
 INSERT INTO `teachers` (`te_username`, `password`, `dept`) VALUES
-('ALGORITHM TEACHER', 'algorithm', 'CSE'),
+/* S6 CSE-A (TOTAL: 5) */
 ('ARUN K', 'arun', 'CSE'),
-('BIJI K P', 'biji', 'CSE'),
-('BUSINESS TEACHER', 'business', 'ECE'),
-('COMPILER TEACHER', 'compiler', 'CSE'),
-('DEEPTHI', 'deepthi', 'CSE'),
 ('RESHMI H', 'reshmi', 'ECE'),
-('SOFTWARE ENGG TEACHER', 'software', 'CSE'),
-('SRUTHY M R', 'sruthy', 'CSE');
+('SRUTHY M R', 'sruthy', 'CSE'),
+('DEEPTHI', 'deepthi', 'CSE'),
+('BIJI K P', 'biji', 'CSE'),
+/* S6 CSE-B (TOTAL: 6) */
+('S6 CSE-B TEACHER 1', 'TEACHER1', 'CSE'),
+('S6 CSE-B TEACHER 2', 'TEACHER2', 'CSE'),
+('S6 CSE-B TEACHER 3', 'TEACHER3', 'CSE'),
+('S6 CSE-B TEACHER 4', 'TEACHER4', 'CSE'),
+('S6 CSE-B TEACHER 5', 'TEACHER5', 'CSE'),
+('S6 CSE-B TEACHER 6', 'TEACHER6', 'CSE'),
+/* S4 CSE-A (TOTAL: 6) */
+('S4 CSE-A TEACHER 1', 'TEACHER1', 'CSE'),
+('S4 CSE-A TEACHER 2', 'TEACHER2', 'CSE'),
+('S4 CSE-A TEACHER 3', 'TEACHER3', 'CSE'),
+('S4 CSE-A TEACHER 4', 'TEACHER4', 'CSE'),
+('S4 CSE-A TEACHER 5', 'TEACHER5', 'CSE'),
+('S4 CSE-A TEACHER 6', 'TEACHER6', 'CSE'),
+/* S4 CSE-B (TOTAL: 6) */
+('S4 CSE-B TEACHER 1', 'TEACHER1', 'CSE'),
+('S4 CSE-B TEACHER 2', 'TEACHER2', 'CSE'),
+('S4 CSE-B TEACHER 3', 'TEACHER3', 'CSE'),
+('S4 CSE-B TEACHER 4', 'TEACHER4', 'CSE'),
+('S4 CSE-B TEACHER 5', 'TEACHER5', 'CSE'),
+('S4 CSE-B TEACHER 6', 'TEACHER6', 'CSE');
 
 -- --------------------------------------------------------
 
@@ -343,14 +361,14 @@ INSERT INTO `teachersinfo` (`info_no`, `te_username`, `class`, `sub_name`, `sub_
 (3, 'SRUTHY M R', 'CSE-A S6', 'Design and Analysis of Algorithms', 'CS302', 'CSE', NULL, 39, 0),
 (4, 'DEEPTHI', 'CSE-A S6', 'Compiler Design', 'CS304', 'CSE', NULL, 39, 0),
 (5, 'BIJI K P', 'CSE-A S6', 'Software Engineering', 'CS308', 'CSE', NULL, 39, 0),
-(6, 'ARUN K', 'CSE-B S6', 'Computer Networking', 'CS306', 'CSE', NULL, 40, 0),
+(6, 'ARUN K', 'CSE-A S6', 'Web Technologies', 'CS306', 'CSE', NULL, 39, 0),
 /* S6 CSE-B (TOTAL: 6) */
-(7, 'S5 CSE-B TEACHER 1', 'CSE-B S6', 'Design and Analysis of Algorithms', 'CS302', 'CSE', NULL, 39, 0),
-(8, 'S5 CSE-B TEACHER 2', 'CSE-B S6', 'Principles of Management', 'HS300', 'ECE', NULL, 39, 0),
-(9, 'S5 CSE-B TEACHER 3', 'CSE-B S6', 'Compiler Design', 'CS304', 'CSE', NULL, 39, 0),
-(10, 'S5 CSE-B TEACHER 4', 'CSE-B S6', 'Software Engineering', 'CS308', 'CSE', NULL, 39, 0),
-(11, 'S5 CSE-B TEACHER 5', 'CSE-B S6', 'Computer Networking', 'CS306', 'CSE', NULL, 39, 0),
-(12, 'S5 CSE-B TEACHER 6', 'CSE-B S6', 'Principles of Management', 'HS300', 'ECE', NULL, 39, 0),
+(7, 'S6 CSE-B TEACHER 1', 'CSE-B S6', 'Design and Analysis of Algorithms', 'CS302', 'CSE', NULL, 39, 0),
+(8, 'S6 CSE-B TEACHER 2', 'CSE-B S6', 'Principles of Management', 'HS300', 'ECE', NULL, 39, 0),
+(9, 'S6 CSE-B TEACHER 3', 'CSE-B S6', 'Compiler Design', 'CS304', 'CSE', NULL, 39, 0),
+(10, 'S6 CSE-B TEACHER 4', 'CSE-B S6', 'Software Engineering', 'CS308', 'CSE', NULL, 39, 0),
+(11, 'S6 CSE-B TEACHER 5', 'CSE-B S6', 'Computer Networking', 'CS306', 'CSE', NULL, 39, 0),
+(12, 'S6 CSE-B TEACHER 6', 'CSE-B S6', 'Principles of Management', 'HS300', 'ECE', NULL, 39, 0),
 /* S4 CSE-A (TOTAL: 6) */
 (13, 'S4 CSE-A TEACHER 1', 'CSE-A S4', 'SUBJECT 1', 'CS101', 'CSE', NULL, 58, 0),
 (14, 'S4 CSE-A TEACHER 2', 'CSE-A S4', 'SUBJECT 2', 'CS102', 'CSE', NULL, 58, 0),
