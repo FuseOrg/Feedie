@@ -123,7 +123,7 @@ border: none;
 cursor: pointer;
 }
 .button:hover {
-background-color: #00bbff;
+background-color: #000;
 box-shadow: 0 3px 4px rgba(0,0,0,.4);
 }
 .phpr {
@@ -136,7 +136,7 @@ float: right;
 }
 .logout {
 position: fixed;
-right: 32px;
+right: 16px;
 background-color: white;
 top: 8px;
 text-align: center;
@@ -152,7 +152,7 @@ color: #fff;
 }
 .details {
 margin-top: 64px;
-box-shadow: 0 2px 3px rgba(0,0,0,.2);
+box-shadow: 0 2px 3px rgba(0,0,0,.1);
 background-color: #00aaff;
 width: calc(100% - 32px);
 padding: 16px;
@@ -192,10 +192,11 @@ padding: 8px;
 border-radius: 5px;
 background-color: rgba(0,0,0,.2);
 color: #fff;
+box-shadow: 0 2px 3px rgba(0,0,0,.1);
 }
 a.link:hover {
 background-color: rgba(0,0,0,1);
-box-shadow: 3px 5px 0px #00acee;
+box-shadow: 0 3px 4px rgba(0,0,0,.4);
 }
 @media (max-width: 620px) {
 .container {
