@@ -35,7 +35,7 @@
 	<?php
         include('../../../db_config.php');
 
-        $sql = "SELECT te_username, sub_name, sub_code FROM teachersinfo WHERE dept = '".$_SESSION["dept"]."'";
+        $sql = "SELECT te_username FROM teachers WHERE dept = '".$_SESSION["dept"]."'";
         $result = $conn->query($sql);
 
         if($result->num_rows > 0) {

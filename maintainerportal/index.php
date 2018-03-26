@@ -4,7 +4,7 @@
   <link rel="stylesheet" type="text/css" href="../css.css">
 	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
   <link rel="icon" type="image/png" href="../images/logo.png">
-  <title>Feedie | Admin Login</title>
+  <title>Feedie | Maintainer Login</title>
  </head>
  <body>
   <div class="header">
@@ -13,10 +13,10 @@
   </div>
   <div class="wrapper">
   <div class="container">
-		<div class="heading">Admin Login</div>
+		<div class="heading">Maintainer Login</div>
 		<center><img src="../images/student.svg" class="avatar"/></center>
     <form class="myform" action="" method="post">
-    <input type="text" class="inputvalue" name="rollno" placeholder="User name"/>
+    <input type="text" class="inputvalue" name="username" placeholder="User name"/>
 		<input type="password" class="inputvalue" name="password" placeholder="Password"/>
     <div class="phpr" style="color:red">
     <label>
@@ -40,7 +40,7 @@
       $password = "";
       $dbname = "feedie_base";
             
-      if (isset($_POST["rollno"]) AND isset($_POST["password"])){
+      if (isset($_POST["username"]) AND isset($_POST["password"])){
       // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
 
