@@ -21,7 +21,7 @@
   
   
   <div class="details">
-  Hi  
+  Hi, 
   	  <?php
   	   session_start();
 
