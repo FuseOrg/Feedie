@@ -63,7 +63,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/FuseOrg/Feedie/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
@@ -71,8 +71,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Liyas Thomas** - *Initial work* - [liyasthomas](https://github.com/liyasthomas)
-* **Jovial** - *Initial work* - [Jovial248](https://github.com/Jovial248)
+* **Liyas Thomas** - *Front end* - [liyasthomas](https://github.com/liyasthomas)
+* **Jovial** - *Back end* - [Jovial248](https://github.com/Jovial248)
 
 See also the list of [contributors](https://github.com/FuseOrg/Feedie/graphs/contributorss) who participated in this project.
 
