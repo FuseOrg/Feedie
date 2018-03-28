@@ -21,18 +21,16 @@
   
   
   <div class="details">
-  Hi  
+  Hi, 
   	  <?php
   	   session_start();
 
-       if (!isset($_SESSION["st_username"])){
+       if (!isset($_SESSION["ma_username"])){
          sleep(1);
          header('Location: ../');
        }
 
-  	   echo $_SESSION["st_username"];
-       echo ", ";
-       echo $_SESSION["class"];
+  	   echo $_SESSION["ma_username"];
   	  ?>
 <!--
      
@@ -45,7 +43,7 @@
   <div class="page">
   <div class="container">
 		<div class="heading">Admin Dashboard</div>
-		<a href="changeqs/index.php" class="button">Change qusetions</a>
+		<a href="changeqs" class="button">Change qusetions</a>
   </div>
   </div>
   <footer><a href="https://fuse-org.firebaseapp.com" class="link" target="_blank">Fuse Org</a></footer>

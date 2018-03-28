@@ -127,6 +127,8 @@
    ?>
 	</div>
 <form action="<?php  $_PHP_SELF ?>" method="post">
+<?php
+?>
 <fieldset class="rating">
    1. The teacher covers the entire syllabus
     <input type="radio" id="star5-1" name="cover" value="5" /><label for="star5-1" title="Rocks!"><span>&#9733</span></label>

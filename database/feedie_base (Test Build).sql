@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2018 at 06:08 PM
+-- Generation Time: Mar 27, 2018 at 05:43 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -96,25 +96,24 @@ INSERT INTO `maintainers` (`ma_username`, `password`) VALUES
 
 CREATE TABLE `questions` (
   `quest_id` int(2) NOT NULL,
-  `quest_title` varchar(20) NOT NULL,
-  `quest_content` varchar(250) NOT NULL
+  `quest_content` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `questions`
 --
 
-INSERT INTO `questions` (`quest_id`, `quest_title`, `quest_content`) VALUES
-(1, '', ''),
-(2, '', ''),
-(3, '', ''),
-(4, '', ''),
-(5, '', ''),
-(6, '', ''),
-(7, '', ''),
-(8, '', ''),
-(9, '', ''),
-(10, '', '');
+INSERT INTO `questions` (`quest_id`, `quest_content`) VALUES
+(1, 'The teacher covers the entire syllabus'),
+(2, 'The teacher discusses topics in detail'),
+(3, 'The teacher possesses deep knowledge of the subject taught'),
+(4, 'The teacher communicate clearly'),
+(5, 'The teacher inspires me by his/her knowledge in the subject'),
+(6, 'The teacher is punctual to the class'),
+(7, 'The teacher engages the class for the full duration and completes the course in time'),
+(8, 'The teacher comes fully prepared for the class'),
+(9, 'The teacher provide guidance outside/inside the class'),
+(10, 'The teacher was available to answer questions in office hours');
 
 -- --------------------------------------------------------
 
@@ -478,7 +477,7 @@ ALTER TABLE `teachersinfo`
 -- AUTO_INCREMENT for table `feeds`
 --
 ALTER TABLE `feeds`
-  MODIFY `feed_no` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `feed_no` int(6) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `teachersinfo`

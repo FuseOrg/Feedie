@@ -44,8 +44,8 @@
       // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        $rollno = $_POST["rollno"];
-        $sql = "SELECT st_username, password, class FROM students WHERE rollno = '".$rollno."'";
+        $ma_username = $_POST["username"];
+        $sql = "SELECT ma_username, password FROM maintainers WHERE ma_username = '".$ma_username."'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -54,9 +54,7 @@
           if( $_POST["password"] == $row["password"] ){
             echo "Logging you in..";    
             session_start();
-            $_SESSION["rollno"] = $_POST["rollno"];
-            $_SESSION["st_username"] = $row["st_username"];
-            $_SESSION["class"] = $row["class"];
+            $_SESSION["ma_username"] = $_POST["username"];
             sleep(1);
             header("Location: dashboard/");  // lines
           }
