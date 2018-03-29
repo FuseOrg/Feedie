@@ -3,13 +3,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" type="text/css" href="../../../../../css.css">
 	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
-  <link rel="icon" type="image/png" href="../../../../../images/logo.png">
+  <link rel="icon" type="image/png" href="../../../../../images/logo.svg">
   <title>Feedie | Scorecard</title>
  </head>
 	 <body>
   <div class="header">
 		<div><a href="../../"><img src="../../../../../images/back.svg" class="home"></a></div>
-		<img src="../../../../../images/logo.png" class="logo"/>
+		<img src="../../../../../images/logo.svg" class="logo"/>
 		<div class="title">Feedie</div>
     <a href="../../../../?logout=1"><div class="logout">Logout</div></a>
   </div>
