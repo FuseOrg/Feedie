@@ -43,27 +43,22 @@ vertical-align: middle;
 line-height: 64px;
 }
 .home {
-height: 24px;
 width: auto;
-padding: 20px 0;
-margin: 0 36px 0 5px;
+height: 24px;
+padding: 22px 0;
+margin-right: 16px;
 }
 .logo {
 width: auto;
 height: 32px;
-padding: 16px 0;
-margin: 0 5px;
+padding: 18px 0;
+margin-right: 8px;
 }
 .title {
 font-size: 24px;
 }
 .title::after {
 }
-/*
-.page .container {
-margin-top: 64px;
-}
-*/
 .wrapper {
 min-height: calc(100vh - 152px);
 display: flex;
@@ -87,7 +82,7 @@ margin: 16px 0;
 text-align: center;
 }
 .subheading {
-font-size: 22px;
+font-size: 20px;
 text-transform: capitalize;
 margin: 16px 0;
 }
@@ -165,7 +160,7 @@ color: #fff;
 .details {
 margin-top: 64px;
 box-shadow: 0 2px 3px rgba(0,0,0,.1);
-background-color: #1689fc;
+background-color: #17ace8;
 width: calc(100% - 32px);
 padding: 16px;
 color: white;

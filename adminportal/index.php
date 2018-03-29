@@ -3,7 +3,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" type="text/css" href="../css.css">
 	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
-	<link rel="icon" type="image/png" href="../images/logo.png">
+	<link rel="icon" type="image/png" href="../images/logo.svg">
 	<title>Feedie | Admin portal</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
 
   ?>
   <div class="header">
-		<img src="../images/logo.png" class="logo"/>
+		<img src="../images/logo.svg" class="logo"/>
 		<div class="title">Feedie</div>
   </div>
   <div class="wrapper">
