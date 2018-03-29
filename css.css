@@ -4,8 +4,7 @@ padding: 0;
 font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
 font-size: 16px;
 line-height: 1.5;
-color: #333;
-background-color: #eee;
+color: #555;
 text-rendering: optimizeLegibility;
 -webkit-font-smoothing: antialiased;
 font-smoothing: antialiased;
@@ -30,7 +29,7 @@ font-weight: normal;
 margin: 0;
 }
 .header {
-background-color: #fff; 
+background-color: #415be8; 
 position: fixed;
 display: flex;
 top: 0px;
@@ -39,7 +38,7 @@ width: 100%;
 height: 64px;
 padding: 0 16px;
 box-shadow: 0 2px 5px rgba(0,0,0,.2);
-color: #00aaff;
+color: #fff;
 vertical-align: middle;
 line-height: 64px;
 }
@@ -60,9 +59,11 @@ font-size: 24px;
 }
 .title::after {
 }
+/*
 .page .container {
 margin-top: 64px;
 }
+*/
 .wrapper {
 min-height: calc(100vh - 152px);
 display: flex;
@@ -78,16 +79,20 @@ width: 60%;
 height: auto;
 margin: 0 auto;
 border-radius: 5px;
-box-shadow: 0 2px 3px rgba(0,0,0,.3);
 }
 .heading {
-font-size: 24px;
+font-size: 32px;
 text-transform: capitalize;
 margin: 16px 0;
 text-align: center;
 }
+.subheading {
+font-size: 22px;
+text-transform: capitalize;
+margin: 16px 0;
+}
 .avatar {
-width: 128px;
+width: 132px;
 height: auto;
 margin: 16px 0;
 }
@@ -110,9 +115,12 @@ textarea {
 min-width: 100%;
 font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
 }
+.button::-moz-focus-inner {
+border: 0;
+}
 .button {
 font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
-background-color: #00aaff;
+background-color: #1689fc;
 text-transform: capitalize;
 font-weight: 500;
 box-shadow: 0 2px 3px rgba(0,0,0,.3);
@@ -122,17 +130,17 @@ padding: 14px 18px;
 text-align: center;
 font-size: 18px;
 margin: 8px 0;
-border: none;
+border: 0;
 cursor: pointer;
+outline: 0;
 }
 .button:hover {
-background-color: #000;
+background-color: #415be8;
 box-shadow: 0 3px 4px rgba(0,0,0,.4);
 }
 .phpr {
-color: #00aaff;
-margin: 8px 0;
-padding: 0 16px;
+color: #415be8;
+padding: 16px;
 }
 .changepw {
 float: right;
@@ -140,6 +148,7 @@ float: right;
 .logout {
 position: fixed;
 right: 16px;
+box-shadow: 0 3px 4px rgba(0,0,0,.4);
 background-color: white;
 top: 8px;
 text-align: center;
@@ -156,7 +165,7 @@ color: #fff;
 .details {
 margin-top: 64px;
 box-shadow: 0 2px 3px rgba(0,0,0,.1);
-background-color: #00aaff;
+background-color: #1689fc;
 width: calc(100% - 32px);
 padding: 16px;
 color: white;
@@ -180,7 +189,6 @@ text-align: center;
 .flex {
 display: flex;
 align-items: center;
-width: 100%;
 }
 footer {
 display: block;
@@ -198,7 +206,7 @@ color: #fff;
 box-shadow: 0 2px 3px rgba(0,0,0,.1);
 }
 a.link:hover {
-background-color: rgba(0,0,0,1);
+background-color: rgba(0,0,0,.5);
 box-shadow: 0 3px 4px rgba(0,0,0,.4);
 }
 @media (max-width: 620px) {
@@ -218,20 +226,20 @@ width: 100%;
 .rating {
 border: none;
 padding: 16px 0;
-line-height:3;
 }
 .rating:nth-child(n+1) {
 border-top: 1px solid #eee;
 }
-.rating input {
+.rating div input {
 visibility: hidden;
+display: none;
 }
-.rating :not(:checked) > input {
+.rating div :not(:checked) > input {
 position:absolute;
 top:-9999px;
 clip:rect(0, 0, 0, 0);
 }
-.rating:not(:checked) > label {
+.rating div:not(:checked) > label {
 width:1em;
 cursor:pointer;
 float: right;
@@ -239,22 +247,22 @@ font-size:200%;
 line-height:1.5;
 color:#aaa;
 }
-.rating:not(:checked) > label:before {
+.rating div:not(:checked) > label:before {
 content: &#9733;
 }
-.rating > input:checked ~ label {
+.rating div > input:checked ~ label {
 color: #ff7700;
 }
-.rating:not(:checked) > label:hover, .rating:not(:checked) > label:hover ~ label {
+.rating div:not(:checked) > label:hover, .rating div:not(:checked) > label:hover ~ label {
 color: gold;
 }
-.rating> input:checked + label:hover, .rating> input:checked + label:hover ~ label, .rating> input:checked ~ label:hover, .rating> input:checked ~ label:hover ~ label, .rating> label:hover ~ input:checked ~ label {
+.rating div> input:checked + label:hover, .rating div> input:checked + label:hover ~ label, .rating div> input:checked ~ label:hover, .rating div> input:checked ~ label:hover ~ label, .rating div> label:hover ~ input:checked ~ label {
 color: #ea0;
 }
-.rating > label:hover {
+.rating div > label:hover {
 transform: scale(1.2);
 }
-.rating > label:active {
+.rating div > label:active {
 transform: scale(.9);
 }
 .side {
@@ -272,7 +280,7 @@ text-align: right;
 }
 .row {
 width: 100%;
-padding: 16px 0;
+padding: 32px 0 0;
 }
 .row:after {
 content: "";
@@ -281,7 +289,7 @@ clear: both;
 }
 .row:nth-child(2n+2) {
 border-top: 1px solid #eee;
-margin-top: 32px;
+margin-top: 16px;
 }
 .bar-container {
 width: 100%;
@@ -300,7 +308,7 @@ width: 0px;
 .bar-1 {background-color: red;}
 #snackbar {
 visibility: hidden;
-background-color: #00aaff;
+background-color: #415be8;
 color: #fff;
 text-align: center;
 border-radius: 5px;

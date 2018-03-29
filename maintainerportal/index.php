@@ -16,16 +16,10 @@
 		<div class="heading">Maintainer Login</div>
 		<center><img src="../images/maintainer.svg" class="avatar"/></center>
     <form class="myform" action="" method="post">
-    <input type="text" class="inputvalue" name="username" placeholder="User name"/>
+    <input type="text" class="inputvalue" name="username" placeholder="Username"/>
 		<input type="password" class="inputvalue" name="password" placeholder="Password"/>
     <div class="phpr" style="color:red">
     <label>
-    
-<!--    Below code is from student login.
-   create a table for admin with one entry, ie: principal.
-   link that table with the below code-->
-
-   
     <?php   
 
       if (isset($_GET["logout"])){
