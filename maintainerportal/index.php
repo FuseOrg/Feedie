@@ -14,7 +14,7 @@
   <div class="wrapper">
   <div class="container">
 		<div class="heading">Maintainer Login</div>
-		<center><img src="../images/student.svg" class="avatar"/></center>
+		<center><img src="../images/maintainer.svg" class="avatar"/></center>
     <form class="myform" action="" method="post">
     <input type="text" class="inputvalue" name="username" placeholder="User name"/>
 		<input type="password" class="inputvalue" name="password" placeholder="Password"/>
