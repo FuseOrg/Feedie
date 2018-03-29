@@ -35,7 +35,7 @@
 				while($row = $result->fetch_assoc()){
 	?>
 				 <div class="flex">
-				 <div class="heading flex"><?php echo $row["class"]; ?></div>
+				 <div class="heading flex"><?php echo $row["sub_name"]; ?> (<?php echo $row["class"]; ?>)</div>
 					 <div>
 					 <a href="feedshow/?class=<?php echo $row["class"]; ?>">
 					 <div class="button">Open</div>
