@@ -1,6 +1,9 @@
-# Feedie [![Build Status](https://travis-ci.org/FuseOrg/Feedie.svg?branch=master)](https://travis-ci.org/FuseOrg/Feedie)
+# Feedie
 
-Student-faculty feedback system developed under [Fuse Org](https://fuse-org.firebaseapp.com)
+@fuseorg [![Build Status](https://travis-ci.org/FuseOrg/Feedie.svg?branch=master)](https://travis-ci.org/FuseOrg/Feedie)
+@liyasthomas [![Build Status](https://travis-ci.org/liyasthomas/Feedie.svg?branch=master)](https://travis-ci.org/liyasthomas/Feedie)
+
+Student-faculty feedback system developed under [Fuse Org](https://github.com/fuseorg)
 
 ## Getting Started
 
