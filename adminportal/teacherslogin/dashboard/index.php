@@ -37,7 +37,7 @@
 				 <div class="flex">
 				 <div class="subheading" style="width:100%"><?php echo $row["sub_name"]; ?> (<?php echo $row["class"]; ?>)</div>
 					 <div>
-					 <a href="feedshow/?class=<?php echo $row["class"]; ?>">
+					 <a href="feedshow/?class=<?php echo $row["class"]; ?>&sub_code=<?php echo $row["sub_code"] ?>">
 					 <div class="button">Open</div>
 					 </a>
 					 </div>
