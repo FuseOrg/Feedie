@@ -23,9 +23,10 @@
     }
 
     $_SESSION["class"] = $_GET["class"];
+    $_SESSION["sub_code"] = $_GET["sub_code"];
     echo $_GET["class"];
     include('../../../../db_config.php');
-    $sql1 = "SELECT COUNT(*) FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+    $sql1 = "SELECT COUNT(*) FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
     $result1 = $conn->query($sql1);
 
     if($result1->num_rows > 0) {
@@ -34,7 +35,7 @@
       $feed_no = $row1["COUNT(*)"]; 
     }
 
-    $sql1 = "SELECT class_strength FROM teachersinfo WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+    $sql1 = "SELECT class_strength FROM teachersinfo WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
     $result1 = $conn->query($sql1);
     if($result1->num_rows > 0) {
       $row1 = $result1->fetch_assoc();
@@ -66,7 +67,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT cover FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT cover FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -95,7 +96,7 @@
     <div class="bar-container">
       <div class="bar-4" style="width:
       <?php
-        $sql = "SELECT cover FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT cover FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -124,7 +125,7 @@
     <div class="bar-container">
       <div class="bar-3" style="width:
       <?php
-        $sql = "SELECT cover FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT cover FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -153,7 +154,7 @@
     <div class="bar-container">
       <div class="bar-2" style="width:
       <?php
-        $sql = "SELECT cover FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT cover FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -182,7 +183,7 @@
     <div class="bar-container">
       <div class="bar-1" style="width: 
       <?php
-        $sql = "SELECT cover FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT cover FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -212,7 +213,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT cover FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT cover FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $max =0;
@@ -259,7 +260,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT discuss FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT discuss FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -288,7 +289,7 @@
     <div class="bar-container">
       <div class="bar-4" style="width:
       <?php
-        $sql = "SELECT discuss FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT discuss FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -317,7 +318,7 @@
     <div class="bar-container">
       <div class="bar-3" style="width:
       <?php
-        $sql = "SELECT discuss FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT discuss FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -346,7 +347,7 @@
     <div class="bar-container">
       <div class="bar-2" style="width:
       <?php
-        $sql = "SELECT discuss FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT discuss FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -375,7 +376,7 @@
     <div class="bar-container">
       <div class="bar-1" style="width: 
       <?php
-        $sql = "SELECT discuss FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT discuss FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -405,7 +406,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT discuss FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT discuss FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $max = 0;
@@ -452,7 +453,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -481,7 +482,7 @@
     <div class="bar-container">
       <div class="bar-4" style="width:
       <?php
-        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -510,7 +511,7 @@
     <div class="bar-container">
       <div class="bar-3" style="width:
       <?php
-        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -539,7 +540,7 @@
     <div class="bar-container">
       <div class="bar-2" style="width:
       <?php
-        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -568,7 +569,7 @@
     <div class="bar-container">
       <div class="bar-1" style="width: 
       <?php
-        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -598,7 +599,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $max = 0;
@@ -645,7 +646,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -674,7 +675,7 @@
     <div class="bar-container">
       <div class="bar-4" style="width:
       <?php
-        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -703,7 +704,7 @@
     <div class="bar-container">
       <div class="bar-3" style="width:
       <?php
-        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -732,7 +733,7 @@
     <div class="bar-container">
       <div class="bar-2" style="width:
       <?php
-        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -761,7 +762,7 @@
     <div class="bar-container">
       <div class="bar-1" style="width: 
       <?php
-        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -791,7 +792,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $max = 0;
@@ -838,7 +839,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -867,7 +868,7 @@
     <div class="bar-container">
       <div class="bar-4" style="width:
       <?php
-        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -896,7 +897,7 @@
     <div class="bar-container">
       <div class="bar-3" style="width:
       <?php
-        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -925,7 +926,7 @@
     <div class="bar-container">
       <div class="bar-2" style="width:
       <?php
-        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -954,7 +955,7 @@
     <div class="bar-container">
       <div class="bar-1" style="width: 
       <?php
-        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -984,7 +985,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $max = 0;
@@ -1031,7 +1032,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1060,7 +1061,7 @@
     <div class="bar-container">
       <div class="bar-4" style="width:
       <?php
-        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1089,7 +1090,7 @@
     <div class="bar-container">
       <div class="bar-3" style="width:
       <?php
-        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1118,7 +1119,7 @@
     <div class="bar-container">
       <div class="bar-2" style="width:
       <?php
-        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1147,7 +1148,7 @@
     <div class="bar-container">
       <div class="bar-1" style="width: 
       <?php
-        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1177,7 +1178,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $max = 0;
@@ -1224,7 +1225,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1253,7 +1254,7 @@
     <div class="bar-container">
       <div class="bar-4" style="width:
       <?php
-        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1282,7 +1283,7 @@
     <div class="bar-container">
       <div class="bar-3" style="width:
       <?php
-        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1311,7 +1312,7 @@
     <div class="bar-container">
       <div class="bar-2" style="width:
       <?php
-        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1340,7 +1341,7 @@
     <div class="bar-container">
       <div class="bar-1" style="width: 
       <?php
-        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1370,7 +1371,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $max = 0;
@@ -1417,7 +1418,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1446,7 +1447,7 @@
     <div class="bar-container">
       <div class="bar-4" style="width:
       <?php
-        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1475,7 +1476,7 @@
     <div class="bar-container">
       <div class="bar-3" style="width:
       <?php
-        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1504,7 +1505,7 @@
     <div class="bar-container">
       <div class="bar-2" style="width:
       <?php
-        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1533,7 +1534,7 @@
     <div class="bar-container">
       <div class="bar-1" style="width: 
       <?php
-        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1563,7 +1564,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $max = 0;
@@ -1610,7 +1611,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1639,7 +1640,7 @@
     <div class="bar-container">
       <div class="bar-4" style="width:
       <?php
-        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1668,7 +1669,7 @@
     <div class="bar-container">
       <div class="bar-3" style="width:
       <?php
-        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1697,7 +1698,7 @@
     <div class="bar-container">
       <div class="bar-2" style="width:
       <?php
-        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1726,7 +1727,7 @@
     <div class="bar-container">
       <div class="bar-1" style="width: 
       <?php
-        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1756,7 +1757,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $max = 0;
@@ -1803,7 +1804,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1832,7 +1833,7 @@
     <div class="bar-container">
       <div class="bar-4" style="width:
       <?php
-        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1861,7 +1862,7 @@
     <div class="bar-container">
       <div class="bar-3" style="width:
       <?php
-        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1890,7 +1891,7 @@
     <div class="bar-container">
       <div class="bar-2" style="width:
       <?php
-        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1919,7 +1920,7 @@
     <div class="bar-container">
       <div class="bar-1" style="width: 
       <?php
-        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -1949,7 +1950,7 @@
     <div class="bar-container">
       <div class="bar-5" style="width:
       <?php
-        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
+        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $max = 0;

@@ -64,10 +64,10 @@
               $guidance = $_POST["guidance"];
               $available = $_POST["available"];
               //For checking whether user have already submit a feed on this teacher
-              $sql_check = "SELECT st_username FROM feeds WHERE st_username = '".$_SESSION["st_username"]."' AND te_username = '".$_SESSION["te_username"]."'";
+              $sql_check = "SELECT st_username FROM feeds WHERE st_username = '".$_SESSION["st_username"]."' AND te_username = '".$_SESSION["te_username"]."' AND sub_code='".$_SESSION["sub_code"]."' AND class = '".$_SESSION["class"]."'";
               $result_check = $conn->query($sql_check);
               if($result_check->num_rows > 0){
-                $sql = "UPDATE feeds SET cover='".$cover."', discuss='".$discuss."', knowledge='".$knowledge."', communicate='".$communicate."', inspire='".$inspire."', punctual='".$punctual."', engage='".$engage."', prepare='".$prepare."', guidance='".$guidance."', available='".$available."' WHERE st_username='".$_SESSION["st_username"]."' AND te_username='".$_SESSION["te_username"]."'";
+                $sql = "UPDATE feeds SET cover='".$cover."', discuss='".$discuss."', knowledge='".$knowledge."', communicate='".$communicate."', inspire='".$inspire."', punctual='".$punctual."', engage='".$engage."', prepare='".$prepare."', guidance='".$guidance."', available='".$available."' WHERE st_username='".$_SESSION["st_username"]."' AND te_username='".$_SESSION["te_username"]."' AND sub_code='".$_SESSION["sub_code"]."' AND class = '".$_SESSION["class"]."'";
                 $result = $conn->query($sql);
                 if($result){
                   //echo "Successful. ";
