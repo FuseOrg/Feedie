@@ -1,4 +1,4 @@
-# Feedie
+# Feedie [![Build Status](https://travis-ci.org/FuseOrg/Feedie.svg?branch=master)](https://travis-ci.org/FuseOrg/Feedie)
 
 Student-faculty feedback system developed under [Fuse Org](https://fuse-org.firebaseapp.com)
 
