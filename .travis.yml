@@ -1,33 +1,57 @@
-# Project language
 language: php
 
-# Allows use container-based infrastructure
-sudo: false
+php:
+  - 5.3.3
+  - 5.4
+  - 5.5
+  - 5.6
+  - 7.2
+  - 7.2.0
+  - hhvm
 
-# Start mysql service
-services:
-  - mysql
+env:
+  - TESTER_PHP_BIN="php-cgi"
+  - TESTER_PHP_BIN="hhvm"
 
-# Matrix to test in every php version
 matrix:
-  # Fast finish allows to set the build as "finished" even if the "allow_failures" matrix elements are not finished yet.
-  fast_finish: true
-  include:
-    - php: 5.5
-    - php: 5.6
-    - php: 7.0
-    - php: 7.2
-    - php: hhvm
   allow_failures:
-    - php: 7.0
-    - php: 7.2
     - php: hhvm
 
-# Update composer
-before-install:
-  - composer self-update
-  - composer install
+  exclude:
+    - php: 5.3.3
+      env: TESTER_PHP_BIN="hhvm"
 
-# Run script
-script:
-  - phpunit
+    - php: 5.4
+      env: TESTER_PHP_BIN="hhvm"
+
+    - php: 5.5
+      env: TESTER_PHP_BIN="hhvm"
+
+    - php: 5.6
+      env: TESTER_PHP_BIN="hhvm"
+
+    - php: 7.2
+      env: TESTER_PHP_BIN="hhvm"
+
+    - php: 7.2.0
+      env: TESTER_PHP_BIN="hhvm"
+
+    - php: hhvm
+      env: TESTER_PHP_BIN="php-cgi"
+
+services:
+  - redis-server
+
+before_install:
+  - composer self-update
+
+install:
+  - composer install --no-interaction --prefer-source
+
+before_script:
+  - mysql -u root -e 'CREATE DATABASE feedie_base;'
+  - mysql -u root feedie_base < database/feedie_base.sql
+
+after_failure:
+  # Prints *.actual files content
+  - for i in $(find ./database -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done
