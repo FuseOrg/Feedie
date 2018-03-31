@@ -1,7 +1,4 @@
-# Feedie
-
-@fuseorg [![Build Status](https://travis-ci.org/FuseOrg/Feedie.svg?branch=master)](https://travis-ci.org/FuseOrg/Feedie)
-@liyasthomas [![Build Status](https://travis-ci.org/liyasthomas/Feedie.svg?branch=master)](https://travis-ci.org/liyasthomas/Feedie)
+# Feedie [![Build Status](https://travis-ci.org/FuseOrg/Feedie.svg?branch=master)](https://travis-ci.org/FuseOrg/Feedie) [![Build Status](https://travis-ci.org/liyasthomas/Feedie.svg?branch=master)](https://travis-ci.org/liyasthomas/Feedie)
 
 Student-faculty feedback system developed under [Fuse Org](https://github.com/fuseorg)
 
