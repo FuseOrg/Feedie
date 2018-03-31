@@ -1,5 +1,31 @@
+# Travis CI Configuration File
+
+# Tell Travis CI we're using PHP
 language: php
-php:
-  - 5.2
-  - 5.3
-  - 7.2
+
+# Build matrix options
+matrix:
+  include:
+    - php: 7.2
+    - php: 5.5
+      env: WP_TRAVISCI=travis:js
+    - php: 5.2
+      env: WP_TRAVISCI=travis:phpunit
+    - php: 5.3
+      env: WP_TRAVISCI=travis:phpunit
+    - php: 5.4
+      env: WP_TRAVISCI=travis:phpunit
+    - php: 5.5
+      env: WP_TRAVISCI=travis:phpunit
+    - php: 5.6
+      env: WP_TRAVISCI=travis:phpunit
+    - php: hhvm
+      env: WP_TRAVISCI=travis:phpunit
+  allow_failures:
+    - php: 5.6
+    - php: 7.2
+    - php: hhvm
+  fast_finish: true
+
+env:
+  - WP_VERSION=master WP_MULTISITE=1
