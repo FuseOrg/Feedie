@@ -40,7 +40,7 @@ matrix:
       env: TESTER_PHP_BIN="php-cgi"
 
 services:
-  - redis-server
+  - mysql
 
 before_install:
   - composer self-update
