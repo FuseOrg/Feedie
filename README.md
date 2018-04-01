@@ -1,9 +1,7 @@
 <div align="center">
   <a href="https://fuse-org.firebaseapp.com"><img src="https://raw.githubusercontent.com/liyasthomas/fuse-org/master/images/manifest/icon-512x512.png" alt="Fuse Org" width="200"></a>
   <br>
-  <br>
-  <h1 style="background-image:linear-gradient(to right, #9559ff, #33f4dd); color:transparent;-webkit-background-clip: text; background-clip: text;">Fuse Org</h1>
-  <br>
+  <h1>Fuse Org</h1>
 </div>
 
 <div align="center">
