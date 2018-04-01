@@ -1,18 +1,16 @@
-<h1 align="center">
+<div align="center">
+  <a href="https://fuse-org.firebaseapp.com"><img src="https://raw.githubusercontent.com/liyasthomas/fuse-org/master/images/manifest/icon-512x512.png" alt="Fuse Org" width="200"></a>
   <br>
-  <a href="https://fuse-org.firebaseapp.com/"><img src="https://raw.githubusercontent.com/liyasthomas/fuse-org/master/images/manifest/icon-512x512.png" alt="Fuse Org" width="200"></a>
   <br>
-  Fuse Org
+  <h1 style="background-image:linear-gradient(to right, #9559ff, #33f4dd); color:transparent;-webkit-background-clip: text; background-clip: text;">Fuse Org</h1>
   <br>
-</h1>
+</div>
 
 <div align="center">
   <sub>Built with ❤︎ by
   <a href="https://github.com/liyasthomas">liyasthomas</a>,
   <a href="https://github.com/Jovial248">Jovial248</a> and
-  <a href="https://github.com/FuseOrg/Feedie/graphs/contributors">
-    contributors
-  </a>
+  <a href="https://github.com/FuseOrg/Feedie/graphs/contributors">contributors</a>
 	</sub>
 </div>
 
