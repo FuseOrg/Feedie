@@ -12,7 +12,7 @@
 	</sub>
 </div>
 
-# Feedie [![Build Status](https://travis-ci.org/FuseOrg/Feedie.svg?branch=master)](https://travis-ci.org/FuseOrg/Feedie) [![GitHub release](https://img.shields.io/github/release/FuseOrg/Feedie.svg)](https://github.com/FuseOrg/Feedie/releases/latest) [![Github All Releases](https://img.shields.io/github/downloads/FuseOrg/Feedie/total.svg)](https://github.com/FuseOrg/Feedie/archive/master.zip) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/FuseOrg/Feedie/issues) [![Website](https://img.shields.io/website-up-down-ff69b4-ff69b4/https/shields.io.svg?label=Fuse%20Org)](http://fuse-org.firebaseapp.com) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Donate](https://img.shields.io/badge/$-donate-ff69b4.svg)](https://www.paypal.me/liyascthomas)
+# Feedie [![Build Status](https://travis-ci.org/FuseOrg/Feedie.svg?branch=master)](https://travis-ci.org/FuseOrg/Feedie) [![GitHub release](https://img.shields.io/github/release/FuseOrg/Feedie.svg)](https://github.com/FuseOrg/Feedie/releases/latest) [![Github All Releases](https://img.shields.io/github/downloads/FuseOrg/Feedie/total.svg)](https://github.com/FuseOrg/Feedie/archive/master.zip) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/FuseOrg/Feedie/issues) [![Website](https://img.shields.io/website-up-down-ff69b4-ff69b4/https/shields.io.svg?label=Fuse%20Org)](https://fuse-org.firebaseapp.com) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Donate](https://img.shields.io/badge/$-donate-ff69b4.svg)](https://www.paypal.me/liyascthomas)
 
 Student-faculty feedback system developed under [Fuse Org](https://github.com/fuseorg)
 
@@ -71,24 +71,28 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [HTML 5]() - The web framework used
-* [CSS 3]() - Styling Management
-* [PHP]() - Used to generate SQL Feeds
+* HTML - The web framework used
+* CSS - Styling management
+* PHP - Used to generate SQL Feeds
 
 ## Contributing
 
 Please read [CONTRIBUTING](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
+## Continuous Integration
+
+We use [Travis CI](https://travis-ci.com/) for continuous integration. Check out our [Travis CI Status](https://travis-ci.org/FuseOrg/Feedie).
+
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+This project is developed under [Fuse Org](https://github.com/FuseOrg). For the versions available, see the [releases on this repository](https://github.com/FuseOrg/Feedie/releases). 
 
 ## Authors
 
 * **Liyas Thomas** - *Front end* - [liyasthomas](https://github.com/liyasthomas)
 * **Jovial** - *Back end* - [Jovial248](https://github.com/Jovial248)
 
-See also the list of [contributors](https://github.com/FuseOrg/Feedie/graphs/contributorss) who participated in this project.
+See also the list of [contributors](https://github.com/FuseOrg/Feedie/graphs/contributors) who participated in this project.
 
 ## License
 
