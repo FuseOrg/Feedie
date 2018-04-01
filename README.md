@@ -1,10 +1,22 @@
-# Feedie
+<h1 align="center">
+  <br>
+  <a href="https://fuse-org.firebaseapp.com/"><img src="https://raw.githubusercontent.com/liyasthomas/fuse-org/master/images/manifest/icon-512x512.png" alt="Fuse Org" width="200"></a>
+  <br>
+  Fuse Org
+  <br>
+</h1>
 
-[![Build Status](https://travis-ci.org/FuseOrg/Feedie.svg?branch=master)](https://travis-ci.org/FuseOrg/Feedie)
-[![Github All Releases](https://img.shields.io/github/downloads/FuseOrg/Feedie/total.svg)](https://github.com/FuseOrg/Feedie/archive/master.zip)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/FuseOrg/Feedie/issues)
-[![HitCount](http://hits.dwyl.io/FuseOrg/Feedie.svg)](http://hits.dwyl.io/FuseOrg/Feedie)
-[![Website](https://img.shields.io/website-up-down-ff69b4-ff69b4/https/shields.io.svg?label=Fuse%20Org)](http://fuse-org.firebaseapp.com)
+<div align="center">
+  <sub>Built with ❤︎ by
+  <a href="https://github.com/liyasthomas">liyasthomas</a>,
+  <a href="https://github.com/Jovial248">Jovial248</a> and
+  <a href="https://github.com/FuseOrg/Feedie/graphs/contributors">
+    contributors
+  </a>
+	</sub>
+</div>
+
+# Feedie [![Build Status](https://travis-ci.org/FuseOrg/Feedie.svg?branch=master)](https://travis-ci.org/FuseOrg/Feedie) [![GitHub release](https://img.shields.io/github/release/FuseOrg/Feedie.svg)](https://github.com/FuseOrg/Feedie/releases/latest) [![Github All Releases](https://img.shields.io/github/downloads/FuseOrg/Feedie/total.svg)](https://github.com/FuseOrg/Feedie/archive/master.zip) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/FuseOrg/Feedie/issues) [![Website](https://img.shields.io/website-up-down-ff69b4-ff69b4/https/shields.io.svg?label=Fuse%20Org)](http://fuse-org.firebaseapp.com) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Donate](https://img.shields.io/badge/$-donate-ff69b4.svg)](https://www.paypal.me/liyascthomas)
 
 Student-faculty feedback system developed under [Fuse Org](https://github.com/fuseorg)
 
