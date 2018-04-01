@@ -1,4 +1,10 @@
-# Feedie [![Build Status](https://travis-ci.org/FuseOrg/Feedie.svg?branch=master)](https://travis-ci.org/FuseOrg/Feedie) [![Build Status](https://travis-ci.org/liyasthomas/Feedie.svg?branch=master)](https://travis-ci.org/liyasthomas/Feedie) [![HitCount](http://hits.dwyl.io/liyasthomas/feedie.svg)](http://hits.dwyl.io/liyasthomas/feedie) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/liyasthomas/feedie/issues)
+# Feedie
+
+[![Build Status](https://travis-ci.org/FuseOrg/Feedie.svg?branch=master)](https://travis-ci.org/FuseOrg/Feedie)
+[![Github All Releases](https://img.shields.io/github/downloads/FuseOrg/Feedie/total.svg)](https://github.com/FuseOrg/Feedie/archive/master.zip)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/FuseOrg/Feedie/issues)
+[![HitCount](http://hits.dwyl.io/FuseOrg/Feedie.svg)](http://hits.dwyl.io/FuseOrg/Feedie)
+[![Website](https://img.shields.io/website-up-down-ff69b4-ff69b4/https/shields.io.svg?label=Fuse%20Org)](http://fuse-org.firebaseapp.com)
 
 Student-faculty feedback system developed under [Fuse Org](https://github.com/fuseorg)
 
