@@ -1,0 +1,1971 @@
+/*
+  <div class="row">
+    <?php $row = $result_q->fetch_assoc(); 
+        echo $row["quest_id"].". ".$row["quest_content"]; 
+    ?>
+  </div>
+  <div class="row">
+   <div class="side">
+    <div>5 stars</div>
+   </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT q1 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["q1"] == 5){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>4 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4" style="width:
+      <?php
+        $sql = "SELECT q1 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["q1"] == 4){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+  
+  <div class="side">
+    <div>3 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3" style="width:
+      <?php
+        $sql = "SELECT q1 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["q1"] == 3){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+   
+  <div class="side">
+    <div>2 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2" style="width:
+      <?php
+        $sql = "SELECT q1 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["q1"] == 2){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1" style="width: 
+      <?php
+        $sql = "SELECT q1 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["q1"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+  
+  <!--Total estimation-->
+ <div class="side">
+    <div>Total</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT q1 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $max =0;
+        $max = $feed_no*5;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["q1"] == 5){
+              $count = $count+5;
+            } 
+            if($row["q1"] == 4){
+              $count = $count+4;
+            } 
+            if($row["q1"] == 3){
+              $count = $count+3;
+            } 
+            if($row["q1"] == 2){
+              $count = $count+2;
+            } 
+            if($row["q1"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$max)*100;
+          $pt1 = $final;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $final; ?>%
+  </div>
+ </div>
+
+<div class="row">
+  <?php $row = $result_q->fetch_assoc(); 
+        echo $row["quest_id"].". ".$row["quest_content"]; 
+   ?>
+</div>
+  <div class="row">
+   <div class="side">
+    <div>5 stars</div>
+   </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT q2 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["q2"] == 5){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>4 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4" style="width:
+      <?php
+        $sql = "SELECT q2 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["q2"] == 4){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+  
+  <div class="side">
+    <div>3 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3" style="width:
+      <?php
+        $sql = "SELECT q2 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["q2"] == 3){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+   
+  <div class="side">
+    <div>2 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2" style="width:
+      <?php
+        $sql = "SELECT q2 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["q2"] == 2){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1" style="width: 
+      <?php
+        $sql = "SELECT q2 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["q2"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+    <!--Total estimation-->
+ <div class="side">
+    <div>Total</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT q2 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $max = 0;
+        $max = $feed_no*5;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["q2"] == 5){
+              $count = $count+5;
+            } 
+            if($row["q2"] == 4){
+              $count = $count+4;
+            } 
+            if($row["q2"] == 3){
+              $count = $count+3;
+            } 
+            if($row["q2"] == 2){
+              $count = $count+2;
+            } 
+            if($row["q2"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$max)*100;
+          $pt2 = $final;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $final; ?>%
+  </div>
+ </div>
+
+<div class="row">
+  <?php $row = $result_q->fetch_assoc(); 
+        echo $row["quest_id"].". ".$row["quest_content"]; 
+  ?>
+</div>
+  <div class="row">
+   <div class="side">
+    <div>5 stars</div>
+   </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["knowledge"] == 5){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>4 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4" style="width:
+      <?php
+        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["knowledge"] == 4){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+  
+  <div class="side">
+    <div>3 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3" style="width:
+      <?php
+        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["knowledge"] == 3){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+   
+  <div class="side">
+    <div>2 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2" style="width:
+      <?php
+        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["knowledge"] == 2){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1" style="width: 
+      <?php
+        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["knowledge"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+    <!--Total estimation-->
+ <div class="side">
+    <div>Total</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT knowledge FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $max = 0;
+        $max = $feed_no*5;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["knowledge"] == 5){
+              $count = $count+5;
+            } 
+            if($row["knowledge"] == 4){
+              $count = $count+4;
+            } 
+            if($row["knowledge"] == 3){
+              $count = $count+3;
+            } 
+            if($row["knowledge"] == 2){
+              $count = $count+2;
+            } 
+            if($row["knowledge"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$max)*100;
+          $pt3 = $final;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $final; ?>%
+  </div>
+ </div>
+
+<div class="row">
+  <?php $row = $result_q->fetch_assoc(); 
+        echo $row["quest_id"].". ".$row["quest_content"]; 
+   ?>
+</div>
+  <div class="row">
+   <div class="side">
+    <div>5 stars</div>
+   </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["communicate"] == 5){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>4 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4" style="width:
+      <?php
+        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["communicate"] == 4){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+  
+  <div class="side">
+    <div>3 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3" style="width:
+      <?php
+        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["communicate"] == 3){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+   
+  <div class="side">
+    <div>2 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2" style="width:
+      <?php
+        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["communicate"] == 2){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1" style="width: 
+      <?php
+        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["communicate"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+    <!--Total estimation-->
+ <div class="side">
+    <div>Total</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT communicate FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $max = 0;
+        $max = $feed_no*5;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["communicate"] == 5){
+              $count = $count+5;
+            } 
+            if($row["communicate"] == 4){
+              $count = $count+4;
+            } 
+            if($row["communicate"] == 3){
+              $count = $count+3;
+            } 
+            if($row["communicate"] == 2){
+              $count = $count+2;
+            } 
+            if($row["communicate"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$max)*100;
+          $pt4 = $final;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $final; ?>%
+  </div>
+ </div>
+
+<div class="row">
+  <?php $row = $result_q->fetch_assoc(); 
+        echo $row["quest_id"].". ".$row["quest_content"]; 
+   ?>
+</div>
+  <div class="row">
+   <div class="side">
+    <div>5 stars</div>
+   </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["inspire"] == 5){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>4 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4" style="width:
+      <?php
+        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["inspire"] == 4){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+  
+  <div class="side">
+    <div>3 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3" style="width:
+      <?php
+        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["inspire"] == 3){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+   
+  <div class="side">
+    <div>2 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2" style="width:
+      <?php
+        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["inspire"] == 2){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1" style="width: 
+      <?php
+        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["inspire"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+    <!--Total estimation-->
+ <div class="side">
+    <div>Total</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT inspire FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $max = 0;
+        $max = $feed_no*5;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["inspire"] == 5){
+              $count = $count+5;
+            } 
+            if($row["inspire"] == 4){
+              $count = $count+4;
+            } 
+            if($row["inspire"] == 3){
+              $count = $count+3;
+            } 
+            if($row["inspire"] == 2){
+              $count = $count+2;
+            } 
+            if($row["inspire"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$max)*100;
+          $pt5 = $final;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $final; ?>%
+  </div>
+ </div>
+
+<div class="row">
+  <?php $row = $result_q->fetch_assoc(); 
+        echo $row["quest_id"].". ".$row["quest_content"]; 
+   ?>
+</div>
+  <div class="row">
+   <div class="side">
+    <div>5 stars</div>
+   </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["punctual"] == 5){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>4 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4" style="width:
+      <?php
+        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["punctual"] == 4){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+  
+  <div class="side">
+    <div>3 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3" style="width:
+      <?php
+        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["punctual"] == 3){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+   
+  <div class="side">
+    <div>2 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2" style="width:
+      <?php
+        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["punctual"] == 2){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1" style="width: 
+      <?php
+        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["punctual"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+    <!--Total estimation-->
+ <div class="side">
+    <div>Total</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT punctual FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $max = 0;
+        $max = $feed_no*5;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["punctual"] == 5){
+              $count = $count+5;
+            } 
+            if($row["punctual"] == 4){
+              $count = $count+4;
+            } 
+            if($row["punctual"] == 3){
+              $count = $count+3;
+            } 
+            if($row["punctual"] == 2){
+              $count = $count+2;
+            } 
+            if($row["punctual"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$max)*100;
+          $pt6 = $final;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $final; ?>%
+  </div>
+ </div>
+
+<div class="row">
+  <?php $row = $result_q->fetch_assoc(); 
+        echo $row["quest_id"].". ".$row["quest_content"]; 
+   ?>
+</div>
+  <div class="row">
+   <div class="side">
+    <div>5 stars</div>
+   </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["engage"] == 5){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>4 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4" style="width:
+      <?php
+        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["engage"] == 4){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+  
+  <div class="side">
+    <div>3 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3" style="width:
+      <?php
+        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["engage"] == 3){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+   
+  <div class="side">
+    <div>2 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2" style="width:
+      <?php
+        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["engage"] == 2){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1" style="width: 
+      <?php
+        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["engage"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+    <!--Total estimation-->
+ <div class="side">
+    <div>Total</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT engage FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $max = 0;
+        $max = $feed_no*5;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["engage"] == 5){
+              $count = $count+5;
+            } 
+            if($row["engage"] == 4){
+              $count = $count+4;
+            } 
+            if($row["engage"] == 3){
+              $count = $count+3;
+            } 
+            if($row["engage"] == 2){
+              $count = $count+2;
+            } 
+            if($row["engage"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$max)*100;
+          $pt7 = $final;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $final; ?>%
+  </div>
+ </div>
+
+<div class="row">
+  <?php $row = $result_q->fetch_assoc(); 
+        echo $row["quest_id"].". ".$row["quest_content"]; 
+   ?>
+</div>
+  <div class="row">
+   <div class="side">
+    <div>5 stars</div>
+   </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["prepare"] == 5){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>4 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4" style="width:
+      <?php
+        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["prepare"] == 4){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+  
+  <div class="side">
+    <div>3 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3" style="width:
+      <?php
+        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["prepare"] == 3){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+   
+  <div class="side">
+    <div>2 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2" style="width:
+      <?php
+        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["prepare"] == 2){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1" style="width: 
+      <?php
+        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["prepare"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+    <!--Total estimation-->
+ <div class="side">
+    <div>Total</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT prepare FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $max = 0;
+        $max = $feed_no*5;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["prepare"] == 5){
+              $count = $count+5;
+            } 
+            if($row["prepare"] == 4){
+              $count = $count+4;
+            } 
+            if($row["prepare"] == 3){
+              $count = $count+3;
+            } 
+            if($row["prepare"] == 2){
+              $count = $count+2;
+            } 
+            if($row["prepare"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$max)*100;
+          $pt8 = $final;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $final; ?>%
+  </div>
+ </div>
+
+ <div class="row">
+   <?php $row = $result_q->fetch_assoc(); 
+        echo $row["quest_id"].". ".$row["quest_content"]; 
+   ?>
+ </div>
+  <div class="row">
+   <div class="side">
+    <div>5 stars</div>
+   </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["guidance"] == 5){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>4 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4" style="width:
+      <?php
+        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["guidance"] == 4){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+  
+  <div class="side">
+    <div>3 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3" style="width:
+      <?php
+        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["guidance"] == 3){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+   
+  <div class="side">
+    <div>2 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2" style="width:
+      <?php
+        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["guidance"] == 2){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1" style="width: 
+      <?php
+        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["guidance"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+    <!--Total estimation-->
+ <div class="side">
+    <div>Total</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT guidance FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $max = 0;
+        $max = $feed_no*5;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["guidance"] == 5){
+              $count = $count+5;
+            } 
+            if($row["guidance"] == 4){
+              $count = $count+4;
+            } 
+            if($row["guidance"] == 3){
+              $count = $count+3;
+            } 
+            if($row["guidance"] == 2){
+              $count = $count+2;
+            } 
+            if($row["guidance"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$max)*100;
+          $pt9 = $final;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $final; ?>%
+  </div>
+ </div>
+
+ <div class="row">
+   <?php $row = $result_q->fetch_assoc(); 
+        echo $row["quest_id"].". ".$row["quest_content"]; 
+   ?>
+ </div>
+  <div class="row">
+   <div class="side">
+    <div>5 stars</div>
+   </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["available"] == 5){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>4 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4" style="width:
+      <?php
+        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["available"] == 4){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+  
+  <div class="side">
+    <div>3 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3" style="width:
+      <?php
+        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["available"] == 3){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+   
+  <div class="side">
+    <div>2 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2" style="width:
+      <?php
+        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["available"] == 2){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1" style="width: 
+      <?php
+        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["available"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$feed_no)*100;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+
+    <!--Total estimation-->
+ <div class="side">
+    <div>Total</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
+      <?php
+        $sql = "SELECT available FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
+        $result = $conn->query($sql);
+        $count = 0;
+        $max = 0;
+        $max = $feed_no*5;
+        $final = 0;
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+            if($row["available"] == 5){
+              $count = $count+5;
+            } 
+            if($row["available"] == 4){
+              $count = $count+4;
+            } 
+            if($row["available"] == 3){
+              $count = $count+3;
+            } 
+            if($row["available"] == 2){
+              $count = $count+2;
+            } 
+            if($row["available"] == 1){
+              $count = $count+1;
+            } 
+          }
+          $final = ($count/$max)*100;
+          $pt10 = $final;
+          echo $final."%";
+        }
+      ?>
+      ">
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $final; ?>%
+  </div>
+ </div>
+ */
