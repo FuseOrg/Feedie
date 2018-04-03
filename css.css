@@ -98,13 +98,23 @@ width: 100%;
 }
 .inputvalue {
 display: flex;
-font-size: 14px;
+font-size: 16px;
 widows: 100%;
 margin: 8px 0;
 padding: 16px;
 border: none;
 background-color: #eee;
 border-radius: 5px;
+}
+.psw {
+width: 100%;
+}
+.shp {
+position: relative;
+right: 12px;
+top: -44px;
+float: right;
+z-index: 2;
 }
 textarea {
 min-width: 100%;

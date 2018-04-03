@@ -17,7 +17,22 @@
 		<center><img src="images/student.svg" class="avatar"/></center>
     <form class="myform" action="" method="post">
     <input type="text" class="inputvalue" name="rollno" placeholder="Register number"/>
-		<input type="password" class="inputvalue" name="password" placeholder="Password"/>
+		<input id="password" type="password" class="inputvalue" name="password"  placeholder="Password"/>
+		<div class="psw"><span class="shp" onclick="toggler(this)" type="button">Show</span></div>
+		<script>
+			function toggler(e) {
+				if( e.innerHTML == 'Show' ) {
+					e.innerHTML = 'Hide'
+					document.getElementById('password').type="text";
+				} else {
+					e.innerHTML = 'Show'
+					document.getElementById('password').type="password";
+				}
+			}
+		</script>
+    <div style="text-align: right">
+    <input class="button" type="submit" id="login_btn" value="Login"/>
+	  </div>
     <div class="phpr" style="color:red">
     <label>
     <?php   
@@ -66,9 +81,6 @@
     ?>
     </label>
     </div>
-    <div style="text-align: right">
-    <input class="button" type="submit" id="login_btn" value="Login"/>
-	  </div>
     </form>
   </div>
   </div>
