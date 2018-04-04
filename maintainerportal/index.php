@@ -7,6 +7,15 @@
   <title>Feedie | Maintainer Login</title>
  </head>
  <body>
+  <?php
+
+   session_start();
+   if (isset($_SESSION["ma_username"])){
+     sleep(1);
+     header('Location: dashboard/');
+   }
+
+ ?>
   <div class="header">
 		<img src="../images/logo.svg" class="logo"/>
 		<div class="title">Feedie</div>
