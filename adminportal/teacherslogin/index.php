@@ -7,6 +7,15 @@
   <title>Feedie | Teacher Login</title>
  </head>
  <body>
+ <?php
+
+   session_start();
+   if (isset($_SESSION["te_username"])){
+     sleep(1);
+     header('Location: dashboard/');
+   }
+
+ ?>
   <div class="header">
 		<div><a href="../"><img src="../../images/home.svg" class="home"></a></div>
 		<img src="../../images/logo.svg" class="logo"/>

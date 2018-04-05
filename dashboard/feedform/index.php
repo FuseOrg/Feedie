@@ -51,11 +51,15 @@
     $dbname = "feedie_base";
 
     $error = false;
-    $q = $_POST['q'];
     $counter = 0;
-    foreach($q as $field) {
-      ++$counter;
+    
+    if ( isset($_POST['q']) ){
+      $q = $_POST['q'];
+      foreach($q as $field) {
+        ++$counter;
+      }
     }
+    
     if($counter != 10){
       $error = true;
     }

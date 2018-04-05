@@ -44,6 +44,12 @@
         }
       }
 
+      session_start();
+      if (isset($_SESSION["st_username"])){
+        sleep(1);
+        header('Location: dashboard/');
+      }
+
       $servername = "127.0.0.1";
       $username = "root";
       $password = "";
