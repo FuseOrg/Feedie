@@ -43,6 +43,7 @@
   <div class="page">
   <div class="container">
 		<div class="heading">Admin Dashboard</div>
+		<a href="students" class="button">Edit Students</a>
 		<a href="changeqs" class="button">Change qusetions</a>
   </div>
   </div>
