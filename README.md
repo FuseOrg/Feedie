@@ -89,8 +89,22 @@ This project is developed under [Fuse Org](https://github.com/FuseOrg). For the 
 
 ## Authors
 
-* **Liyas Thomas** - *Front end* - [liyasthomas](https://github.com/liyasthomas)
-* **Jovial** - *Back end* - [Jovial248](https://github.com/Jovial248)
+### Lead Developers
+* [**Liyas Thomas**](https://github.com/liyasthomas) - *Front end*
+* [**Jovial**](https://github.com/Jovial248) - *Back end*
+
+### Testing and Debugging
+* [Ajith PG](https://github.com/AjithPG)
+* [Muvin M](https://github.com/Muvinm)
+
+### Contributors
+* [Adith K V](https://github.com/Adithkv)
+* [Arjun Jayesh](https://github.com/9997arjun)
+
+### Thanks
+* Principal of NCERC, Pampady
+* CSE department of NCERC, Pampady
+* Teaching and non-teaching staffs of NCERC, Pampady
 
 See also the list of [contributors](https://github.com/FuseOrg/Feedie/graphs/contributors) who participated in this project.
 
@@ -103,4 +117,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 * Hat tip to anyone who's code was used
 * Inspiration
 * etc
-
