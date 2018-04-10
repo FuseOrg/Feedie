@@ -6,17 +6,17 @@
   <link rel="icon" type="image/png" href="../images/favicon.svg">
   <title>Feedie | Dashboard</title>
   <style>
-		.given {
-			display: none;
-			color: #fff;
-			float: right;
-		}
-		.notgiven {
-			display: none;
-			color: #fff;
-			float: right;
-		}
-	</style>
+    .given {
+      display: none;
+      color: #fff;
+      float: right;
+    }
+    .notgiven {
+      display: none;
+      color: #fff;
+      float: right;
+    }
+  </style>
  </head>
  <body>
   <div class="header">
@@ -58,41 +58,22 @@
       <button onclick="location.href='feedform/?sub_name=<?php echo $row["sub_name"]; ?>'" class="button">
       <?php
         echo $row["sub_name"];
+
+        $sql1 = "SELECT st_username FROM feeds WHERE st_username = '".$_SESSION["st_username"]."' AND sub_code = '".$row["sub_code"]."' AND class = '".$_SESSION["class"]."'";
+        $result1 = $conn->query($sql1);
+        if( $result1->num_rows > 0 ){
       ?>
-      
-<!--
-      first uncomment this comment block
-      
-      using php, check wheather the sub's 'done' is true or not..
-      
-      if 'done' is true..
-      make the following style tag visible using php..
-      
-      <style>
-				.given {
-					display: block;
-				}
-				.notgiven {
-					display: none;
-				}
-			</style>
-      
-      if 'done' is false...
-      make the following style tag visible using php..
-      
-      <style>
-				.given {
-					display: none;
-				}
-				.notgiven {
-					display: block;
-				}
-			</style>
--->
-      
-      
-      <span class="given">&#10004;</span>
-      <span class="notgiven">&#x2716;</span>
+          <span class="given" style="display: block;">&#10004;</span>
+          <span class="notgiven" style="display: none;">&#x2716;</span>   
+      <?php
+        }
+        else{
+      ?>   
+          <span class="given" style="display: none;">&#10004;</span>
+          <span class="notgiven" style="display: block;">&#x2716;</span>
+      <?php
+        }
+      ?>
       </button>
     <?php
       }

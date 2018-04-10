@@ -59,13 +59,6 @@
         } //Closing if condn
 
       ?>
-    <label>Maximum Value for each questions:</label>
-    <input type="text" class="inputvalue" name="max" placeholder="Maximum value" 
-    value="<?php $sql = "SELECT quest_value FROM questions WHERE quest_id = 0 ";
-                 $result = $conn->query($sql);
-                 $row = $result->fetch_assoc();
-                 echo $row["quest_value"];
-           ?>">
     <div class="phpr" style="color:red">
     <label>
     <?php   

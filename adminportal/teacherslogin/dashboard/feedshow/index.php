@@ -61,6 +61,22 @@
   <?php
 
   include('../../../../db_config.php');
+
+    $max = 0;
+    $i = 1;
+    $sql1 = "SELECT r_value FROM ratings ORDER BY r_no";
+    $result1 = $conn->query($sql1);
+    if($result1->num_rows > 0) {
+      while($row1 = $result1->fetch_assoc()){
+        $mark[$i] = $row1["r_value"];
+        if( $max < $row1["r_value"] ){
+          $max = $row1["r_value"];
+        } 
+        ++$i;
+      }
+    }
+    $max = $max*$feed_no;
+
   $sql_q = "SELECT quest_id, quest_content FROM questions WHERE quest_id != 0 ORDER BY quest_id ASC";
   $result_q = $conn->query($sql_q);
   if ( $result_q->num_rows > 0 ){
@@ -232,25 +248,23 @@
         $sql = "SELECT ".$q_no." FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
-        $max =0;
-        $max = $feed_no*5;
         $final = 0;
         if($result->num_rows > 0) {
           while($row = $result->fetch_assoc()){
             if($row[$q_no] == 5){
-              $count = $count+5;
+              $count = $count+$mark[5];
             } 
             if($row[$q_no] == 4){
-              $count = $count+4;
+              $count = $count+$mark[4];
             } 
             if($row[$q_no] == 3){
-              $count = $count+3;
+              $count = $count+$mark[3];
             } 
             if($row[$q_no] == 2){
-              $count = $count+2;
+              $count = $count+$mark[2];
             } 
             if($row[$q_no] == 1){
-              $count = $count+1;
+              $count = $count+$mark[1];
             } 
           }
           $final = ($count/$max)*100;
