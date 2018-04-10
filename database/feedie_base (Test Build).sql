@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2018 at 03:13 PM
+-- Generation Time: Apr 10, 2018 at 03:26 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -46,14 +46,6 @@ CREATE TABLE `feeds` (
   `q9` int(2) DEFAULT NULL,
   `q10` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `feeds`
---
-
-INSERT INTO `feeds` (`feed_no`, `st_username`, `te_username`, `sub_code`, `sub_name`, `class`, `q1`, `q2`, `q3`, `q4`, `q5`, `q6`, `q7`, `q8`, `q9`, `q10`) VALUES
-(10, 'Aathira V E', 'ARUN K', 'CS306', 'Computer Networking', 'CSE-A S6', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-(11, 'Abhijith C', 'ARUN K', 'CS306', 'Computer Networking', 'CSE-A S6', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -423,7 +415,7 @@ CREATE TABLE `teachersinfo` (
 --
 
 INSERT INTO `teachersinfo` (`info_no`, `te_username`, `class`, `sub_name`, `sub_code`, `class_dept`, `overall`, `class_strength`, `feed_applied`) VALUES
-(1, 'ARUN K', 'CSE-A S6', 'Computer Networking', 'CS306', 'CSE', 20, 39, 2),
+(1, 'ARUN K', 'CSE-A S6', 'Computer Networking', 'CS306', 'CSE', NULL, 39, 0),
 (2, 'RESHMI H', 'CSE-A S6', 'Principles of Management', 'HS300', 'CSE', NULL, 39, 0),
 (3, 'SRUTHY M R', 'CSE-A S6', 'Design and Analysis of Algorithms', 'CS302', 'CSE', NULL, 39, 0),
 (4, 'DEEPTHI', 'CSE-A S6', 'Compiler Design', 'CS304', 'CSE', NULL, 39, 0),
