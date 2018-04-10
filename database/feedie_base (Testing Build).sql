@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2018 at 11:39 AM
+-- Generation Time: Apr 10, 2018 at 01:16 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -96,24 +96,26 @@ INSERT INTO `maintainers` (`ma_username`, `password`) VALUES
 
 CREATE TABLE `questions` (
   `quest_id` int(2) NOT NULL,
-  `quest_content` varchar(250) DEFAULT NULL
+  `quest_content` varchar(250) DEFAULT NULL,
+  `quest_value` int(2) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `questions`
 --
 
-INSERT INTO `questions` (`quest_id`, `quest_content`) VALUES
-(1, 'The teacher covers the entire syllabus'),
-(2, 'The teacher discusses topics in detail'),
-(3, 'The teacher possesses deep knowledge of the subject taught'),
-(4, 'The teacher communicate clearly'),
-(5, 'The teacher inspires me by his/her knowledge in the subject'),
-(6, 'The teacher is punctual to the class'),
-(7, 'The teacher engages the class for the full duration and completes the course in time'),
-(8, 'The teacher comes fully prepared for the class'),
-(9, 'The teacher provide guidance outside/inside the class'),
-(10, 'The teacher was available to answer questions in office hours');
+INSERT INTO `questions` (`quest_id`, `quest_content`, `quest_value`) VALUES
+(0, 'max_value', 0),
+(1, 'The teacher covers the entire syllabus', 0),
+(2, 'The teacher discusses topics in detail', 0),
+(3, 'The teacher possesses deep knowledge of the subject taught', 0),
+(4, 'The teacher communicate clearly', 0),
+(5, 'The teacher inspires me by his/her knowledge in the subject', 0),
+(6, 'The teacher is punctual to the class', 0),
+(7, 'The teacher engages the class for the full duration and completes the course in time', 0),
+(8, 'The teacher comes fully prepared for the class', 0),
+(9, 'The teacher provide guidance outside/inside the class', 0),
+(10, 'The teacher was available to answer questions in office hours', 0);
 
 -- --------------------------------------------------------
 
