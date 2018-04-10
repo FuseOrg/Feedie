@@ -70,7 +70,7 @@ background-color: #fff;
 display: flex;
 flex-direction: column;
 padding: 32px;
-width: 60%;
+width: 50%;
 height: auto;
 margin: 0 auto;
 border-radius: 5px;
@@ -118,6 +118,8 @@ z-index: 2;
 }
 textarea {
 min-width: 100%;
+max-width: 100%;
+min-height: 80px;
 font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
 }
 .button::-moz-focus-inner {

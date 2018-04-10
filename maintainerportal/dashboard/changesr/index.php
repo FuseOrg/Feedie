@@ -38,7 +38,7 @@
         if ($result->num_rows > 0){
           while ($row = $result->fetch_assoc()){
     ?>
-    <?php echo $i; ?> Star = <input type="text" class="inputvalue" name="r[]" placeholder="<?php echo $i; ?> point" value="<?php echo $row["r_value"]; ++$i; ?>" />
+    <?php echo $i; ?> Star = <input type="text" class="inputvalue" name="r[]" placeholder="<?php echo $i; ?> points" value="<?php echo $row["r_value"]; ++$i; ?>" />
     <?php
 
          } //Closing while loop

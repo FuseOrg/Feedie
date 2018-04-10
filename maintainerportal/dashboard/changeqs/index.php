@@ -38,9 +38,9 @@
         $i = 1;
         if ($result->num_rows > 0){
           while ($row = $result->fetch_assoc()){
-            echo $i.". ";
+            echo "Question ".$i.":";
       ?>
-			<textarea type="textarea" class="inputvalue" name="q[]" placeholder="Enter Question <?php echo $i; ?>" value="<?php echo $i; ?>"><?php echo $row["quest_content"]; ?></textarea>
+			<textarea type="textarea" class="inputvalue textarea" name="q[]" placeholder="Enter Question <?php echo $i; ?>" value="<?php echo $i; ?>"><?php echo $row["quest_content"]; ?></textarea>
       Value:
       <input type="textarea" class="inputvalue" style="margin-bottom: 60px; height: 40px;" name="v[]" placeholder="Enter Value/Mark for Question <?php echo $i; ?>" value="<?php echo $row["quest_value"]; ++$i; ?>">
 
