@@ -5,6 +5,18 @@
 	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
   <link rel="icon" type="image/png" href="../images/favicon.svg">
   <title>Feedie | Dashboard</title>
+  <style>
+		.given {
+			display: none;
+			color: #fff;
+			float: right;
+		}
+		.notgiven {
+			display: none;
+			color: #fff;
+			float: right;
+		}
+	</style>
  </head>
  <body>
   <div class="header">
@@ -47,6 +59,40 @@
       <?php
         echo $row["sub_name"];
       ?>
+      
+<!--
+      first uncomment this comment block
+      
+      using php, check wheather the sub's 'done' is true or not..
+      
+      if 'done' is true..
+      make the following style tag visible using php..
+      
+      <style>
+				.given {
+					display: block;
+				}
+				.notgiven {
+					display: none;
+				}
+			</style>
+      
+      if 'done' is false...
+      make the following style tag visible using php..
+      
+      <style>
+				.given {
+					display: none;
+				}
+				.notgiven {
+					display: block;
+				}
+			</style>
+-->
+      
+      
+      <span class="given">&#10004;</span>
+      <span class="notgiven">&#x2716;</span>
       </button>
     <?php
       }

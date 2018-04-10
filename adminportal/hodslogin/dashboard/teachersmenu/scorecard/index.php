@@ -31,7 +31,7 @@
 	?>
 	<div class="result">Teacher name: <?php echo $_SESSION["te_username"] ?></div>
 	<div class="result">Class : <?php echo $_SESSION["class"] ?></div>
-	<div class="result">Subject mane: <?php echo $_SESSION["sub_name"] ?></div>
+	<div class="result">Subject Name: <?php echo $_SESSION["sub_name"] ?></div>
 	<div class="result">Subject Code: <?php echo $_SESSION["sub_code"] ?></div>
 	<!--<div class="result">RANKING: <?php include('rank.php');?></div>-->
 	<div class="result">Overall Score: <?php include('overall.php');?></div>
