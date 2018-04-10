@@ -33,13 +33,17 @@
       <?php
  
         include('../../../db_config.php');
-        $sql = "SELECT quest_content FROM questions ORDER BY quest_id ASC";
+        $sql = "SELECT quest_content, quest_value FROM questions ORDER BY quest_id ASC";
         $result = $conn->query($sql);
         $i = 1;
         if ($result->num_rows > 0){
           while ($row = $result->fetch_assoc()){
+            echo $i.". ";
       ?>
-			<textarea type="textarea" class="inputvalue" name="q[]" placeholder="Enter Question <?php echo $i; ?>" value="<?php echo $i; ?>"><?php echo $row["quest_content"]; ++$i; ?></textarea>
+			<textarea type="textarea" class="inputvalue" name="q[]" placeholder="Enter Question <?php echo $i; ?>" value="<?php echo $i; ?>"><?php echo $row["quest_content"]; ?></textarea>
+      Value:
+      <input type="textarea" class="inputvalue" style="margin-bottom: 60px; height: 40px;" name="v[]" placeholder="Enter Value/Mark for Question <?php echo $i; ?>" value="<?php echo $row["quest_value"]; ++$i; ?>">
+
 			<!--<textarea type="textarea" class="inputvalue" name="q[2]" placeholder="Question 2"></textarea>
 			<textarea type="textarea" class="inputvalue" name="q[3]" placeholder="Question 3"></textarea>
 			<textarea type="textarea" class="inputvalue" name="q[4]" placeholder="Question 4"></textarea>
