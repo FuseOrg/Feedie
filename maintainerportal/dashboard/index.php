@@ -43,8 +43,9 @@
   <div class="page">
   <div class="container">
 		<div class="heading">Maintainer Dashboard</div>
-		<a href="students" class="button">Edit Students</a>
-		<a href="changeqs" class="button">Change qusetions</a>
+		<a href="students" class="button">Edit Students List</a>
+		<a href="changeqs" class="button">Change Qusetions</a>
+		<a href="changesr" class="button">Change Star Rating</a>
   </div>
   </div>
   <footer><a href="https://fuse-org.firebaseapp.com" class="link" target="_blank">Fuse Org</a></footer>
