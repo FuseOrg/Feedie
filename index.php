@@ -40,6 +40,7 @@
       if (isset($_GET["logout"])){
         if ($_GET["logout"] == 1){
           session_start();
+          include('done_check.php');
           session_destroy();
         }
       }

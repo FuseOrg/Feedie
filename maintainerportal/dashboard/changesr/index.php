@@ -7,6 +7,18 @@
   <title>Feedie | Edit Star Rating</title>
  </head>
  <body>
+  <?php
+       session_start();
+
+       if (!isset($_SESSION["ma_username"])){
+         sleep(1);
+         header('Location: ../');
+       }
+
+       if (!empty($_POST)){
+        include('update.php');
+       }
+  ?>
   <div class="header">
 		<div><a href="../"><img src="../../../images/back.svg" class="home"></a></div>
 		<img src="../../../images/logo.svg" class="logo"/>
@@ -15,13 +27,41 @@
   </div>
   <div class="wrapper">
   <div class="container">
+    <form class="myform" action="" method="post">
 		<div class="heading">Edit Star Rating</div>
-    1 Star = <input type="text" class="inputvalue" name="rollno" placeholder="1 point"/>
-    2 Star = <input type="text" class="inputvalue" name="rollno" placeholder="2 points"/>
-    3 Star = <input type="text" class="inputvalue" name="rollno" placeholder="3 points"/>
-    4 Star = <input type="text" class="inputvalue" name="rollno" placeholder="4 points"/>
-    5 Star = <input type="text" class="inputvalue" name="rollno" placeholder="5 points"/>
+    <?php
+ 
+        include('../../../db_config.php');
+        $sql = "SELECT r_value FROM ratings ORDER BY r_no ASC ";
+        $result = $conn->query($sql);
+        $i = 1;
+        if ($result->num_rows > 0){
+          while ($row = $result->fetch_assoc()){
+    ?>
+    <?php echo $i; ?> Star = <input type="text" class="inputvalue" name="r[]" placeholder="<?php echo $i; ?> point" value="<?php echo $row["r_value"]; ++$i; ?>" />
+    <?php
+
+         } //Closing while loop
+        } //Closing if condn
+
+    ?>
+    <div class="phpr" style="color:red">
+    <label>
+    <?php   
+
+      if ( !empty($_POST) ) {
+        //To update contents of questions
+        echo "Ratings updated";
+      }
+      else{
+        echo "Please fill all the rating fields";
+      }
+
+    ?>
+    </label>
+    </div>
     <button class="button">Change Star Rating</button>
+    </form>
   </div>
   </div>
   <footer><a href="https://fuse-org.firebaseapp.com" class="link" target="_blank">Fuse Org</a></footer>
