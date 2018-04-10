@@ -19,4 +19,7 @@
  	++$i;
  }
  
+ $sql = "UPDATE questions SET quest_value = '".$_POST["max"]."' WHERE quest_id = 0";
+ 	$result = $conn->query($sql);
+
 ?>

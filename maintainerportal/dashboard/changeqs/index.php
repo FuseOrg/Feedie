@@ -33,7 +33,7 @@
       <?php
  
         include('../../../db_config.php');
-        $sql = "SELECT quest_content, quest_value FROM questions ORDER BY quest_id ASC";
+        $sql = "SELECT quest_content, quest_value FROM questions WHERE quest_id != 0 ORDER BY quest_id ASC ";
         $result = $conn->query($sql);
         $i = 1;
         if ($result->num_rows > 0){
@@ -59,6 +59,13 @@
         } //Closing if condn
 
       ?>
+    <label>Maximum Value for each questions:</label>
+    <input type="text" class="inputvalue" name="max" placeholder="Maximum value" 
+    value="<?php $sql = "SELECT quest_value FROM questions WHERE quest_id = 0 ";
+                 $result = $conn->query($sql);
+                 $row = $result->fetch_assoc();
+                 echo $row["quest_value"];
+           ?>">
     <div class="phpr" style="color:red">
     <label>
     <?php   

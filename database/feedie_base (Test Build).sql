@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2018 at 01:16 PM
+-- Generation Time: Apr 10, 2018 at 03:13 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -46,6 +46,14 @@ CREATE TABLE `feeds` (
   `q9` int(2) DEFAULT NULL,
   `q10` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `feeds`
+--
+
+INSERT INTO `feeds` (`feed_no`, `st_username`, `te_username`, `sub_code`, `sub_name`, `class`, `q1`, `q2`, `q3`, `q4`, `q5`, `q6`, `q7`, `q8`, `q9`, `q10`) VALUES
+(10, 'Aathira V E', 'ARUN K', 'CS306', 'Computer Networking', 'CSE-A S6', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+(11, 'Abhijith C', 'ARUN K', 'CS306', 'Computer Networking', 'CSE-A S6', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -105,7 +113,6 @@ CREATE TABLE `questions` (
 --
 
 INSERT INTO `questions` (`quest_id`, `quest_content`, `quest_value`) VALUES
-(0, 'max_value', 0),
 (1, 'The teacher covers the entire syllabus', 0),
 (2, 'The teacher discusses topics in detail', 0),
 (3, 'The teacher possesses deep knowledge of the subject taught', 0),
@@ -116,6 +123,28 @@ INSERT INTO `questions` (`quest_id`, `quest_content`, `quest_value`) VALUES
 (8, 'The teacher comes fully prepared for the class', 0),
 (9, 'The teacher provide guidance outside/inside the class', 0),
 (10, 'The teacher was available to answer questions in office hours', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ratings`
+--
+
+CREATE TABLE `ratings` (
+  `r_no` int(1) NOT NULL,
+  `r_value` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ratings`
+--
+
+INSERT INTO `ratings` (`r_no`, `r_value`) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
 
 -- --------------------------------------------------------
 
@@ -394,7 +423,7 @@ CREATE TABLE `teachersinfo` (
 --
 
 INSERT INTO `teachersinfo` (`info_no`, `te_username`, `class`, `sub_name`, `sub_code`, `class_dept`, `overall`, `class_strength`, `feed_applied`) VALUES
-(1, 'ARUN K', 'CSE-A S6', 'Computer Networking', 'CS306', 'CSE', NULL, 39, 0),
+(1, 'ARUN K', 'CSE-A S6', 'Computer Networking', 'CS306', 'CSE', 20, 39, 2),
 (2, 'RESHMI H', 'CSE-A S6', 'Principles of Management', 'HS300', 'CSE', NULL, 39, 0),
 (3, 'SRUTHY M R', 'CSE-A S6', 'Design and Analysis of Algorithms', 'CS302', 'CSE', NULL, 39, 0),
 (4, 'DEEPTHI', 'CSE-A S6', 'Compiler Design', 'CS304', 'CSE', NULL, 39, 0),
@@ -451,6 +480,12 @@ ALTER TABLE `questions`
   ADD UNIQUE KEY `quest_id` (`quest_id`);
 
 --
+-- Indexes for table `ratings`
+--
+ALTER TABLE `ratings`
+  ADD PRIMARY KEY (`r_no`);
+
+--
 -- Indexes for table `students`
 --
 ALTER TABLE `students`
@@ -479,7 +514,7 @@ ALTER TABLE `teachersinfo`
 -- AUTO_INCREMENT for table `feeds`
 --
 ALTER TABLE `feeds`
-  MODIFY `feed_no` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `feed_no` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `teachersinfo`

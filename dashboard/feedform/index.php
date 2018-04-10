@@ -139,7 +139,7 @@
 <?php
 
   include('../../db_config.php');
-  $sql_q = "SELECT quest_id, quest_content FROM questions ORDER BY quest_id ASC";
+  $sql_q = "SELECT quest_id, quest_content FROM questions WHERE quest_id != 0 ORDER BY quest_id ASC";
   $result_q = $conn->query($sql_q);
   if ( $result_q->num_rows > 0 ){
 
