@@ -83,7 +83,7 @@
                   //echo "Successful. ";
                   include('overall.php');
                 }
-                echo "Response updated";
+                echo "Response have been updated";
                 echo 
                 '<script type="text/javascript">
                  function showsnackbar() {
@@ -110,7 +110,7 @@
                   //echo "Successful. ";
                   include('overall.php');
                 }
-                echo "First time response ";
+                echo "Thanks for your first time response";
                 echo '<script type="text/javascript">
                 function showsnackbar() {
                   var x = document.getElementById("snackbar");

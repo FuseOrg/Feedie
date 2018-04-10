@@ -4,7 +4,7 @@
   <link rel="stylesheet" type="text/css" href="../../css.css">
 	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
    <link rel="icon" type="image/png" href="../../images/favicon.svg">
-   <title>Feedie | Admin Dashboard</title>
+   <title>Feedie | Maintainer Dashboard</title>
  </head>
  <body>
   <div class="header">
@@ -42,7 +42,7 @@
   </div>
   <div class="page">
   <div class="container">
-		<div class="heading">Admin Dashboard</div>
+		<div class="heading">Maintainer Dashboard</div>
 		<a href="students" class="button">Edit Students</a>
 		<a href="changeqs" class="button">Change qusetions</a>
   </div>

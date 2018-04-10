@@ -4,7 +4,7 @@
   <link rel="stylesheet" type="text/css" href="../../../css.css">
 	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
   <link rel="icon" type="image/png" href="../../../images/favicon.svg">
-  <title>Feedie | Students</title>
+  <title>Feedie | Edit Students</title>
   <style>
 		.table {
 		display: table;
@@ -70,8 +70,9 @@
 				<div class="cell">S6<input type="checkbox"></div>
 				<div class="cell">Register no</div>
 				<div class="cell">Name</div>
-				<div class="cell">Department</div>
 				<div class="cell">Password</div>
+				<div class="cell">Department</div>
+				<div class="cell">Class</div>
 			</div>
 			<!-- Table contents -->
 			<div class="row">
@@ -95,8 +96,9 @@
 				<div class="cell">S5<input type="checkbox"></div>
 				<div class="cell">Register no</div>
 				<div class="cell">Name</div>
-				<div class="cell">Department</div>
 				<div class="cell">Password</div>
+				<div class="cell">Department</div>
+				<div class="cell">Class</div>
 			</div>
 			<!-- Table contents -->
 			<div class="row">
