@@ -15,11 +15,13 @@
       $tot_no = $row1["class_strength"]; 
     }
     
+    
+    $max = $feed_no*5;
+
     //For cover
         $sql = "SELECT q1 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
-        $max = $feed_no*5;
         $final = 0;
         if($result->num_rows > 0) {
           while($row = $result->fetch_assoc()){
@@ -47,7 +49,6 @@
         $sql = "SELECT q2 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
-        $max = $feed_no*5;
         $final = 0;
         if($result->num_rows > 0) {
           while($row = $result->fetch_assoc()){
@@ -75,7 +76,6 @@
         $sql = "SELECT q3 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
-        $max = $feed_no*5;
         $final = 0;
         if($result->num_rows > 0) {
           while($row = $result->fetch_assoc()){
@@ -103,7 +103,6 @@
         $sql = "SELECT q4 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
-        $max = $feed_no*5;
         $final = 0;
         if($result->num_rows > 0) {
           while($row = $result->fetch_assoc()){
@@ -131,7 +130,6 @@
         $sql = "SELECT q5 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
-        $max = $feed_no*5;
         $final = 0;
         if($result->num_rows > 0) {
           while($row = $result->fetch_assoc()){
@@ -159,7 +157,6 @@
      $sql = "SELECT q6 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
-        $max = $feed_no*5;
         $final = 0;
         if($result->num_rows > 0) {
           while($row = $result->fetch_assoc()){
@@ -187,7 +184,6 @@
         $sql = "SELECT q7 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
-        $max = $feed_no*5;
         $final = 0;
         if($result->num_rows > 0) {
           while($row = $result->fetch_assoc()){
@@ -215,7 +211,6 @@
         $sql = "SELECT q8 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
-        $max = $feed_no*5;
         $final = 0;
         if($result->num_rows > 0) {
           while($row = $result->fetch_assoc()){
@@ -243,7 +238,6 @@
         $sql = "SELECT q9 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
-        $max = $feed_no*5;
         $final = 0;
         if($result->num_rows > 0) {
           while($row = $result->fetch_assoc()){
@@ -271,7 +265,6 @@
         $sql = "SELECT q10 FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
-        $max = $feed_no*5;
         $final = 0;
         if($result->num_rows > 0) {
           while($row = $result->fetch_assoc()){

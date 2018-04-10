@@ -31,8 +31,8 @@
   	  ?> 
 
 			Department
-	</div>
-	<?php
+	    </div>
+      <?php
         include('../../../db_config.php');
 
         $sql = "SELECT te_username FROM teachers WHERE dept = '".$_SESSION["dept"]."'";
@@ -50,8 +50,33 @@
       }
      }
     ?>
+	  </div>
 	 </div>
-	 </div>
+  <div class="wrapper">
+    <div class="container">
+      <div class="heading">
+        Other Department's Collabrating Teachers
+      </div>
+      <?php
+       include('../../../db_config.php');
+
+        $sql = "SELECT te_username FROM teachers WHERE dept NOT LIKE '".$_SESSION["dept"]."' AND te_username = ANY (SELECT te_username FROM teachersinfo WHERE class_dept LIKE '".$_SESSION["dept"]."')";
+        $result = $conn->query($sql);
+
+        if($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()){
+      ?>
+      <button onclick="location.href='teachersmenu/?te_username=<?php echo $row["te_username"]; ?>'" class="button">
+      <?php
+        echo $row["te_username"];
+      ?>
+      </button>
+      <?php
+       }
+      }
+     ?>
+    </div>
+  </div>
   <footer><a href="https://fuse-org.firebaseapp.com" class="link" target="_blank">Fuse Org</a></footer>
 </body>
 </html>
