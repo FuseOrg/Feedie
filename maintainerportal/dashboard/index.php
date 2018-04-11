@@ -48,6 +48,6 @@
 		<a href="changesr" class="button">Change Star Rating</a>
   </div>
   </div>
-  <footer><a href="https://fuse-org.firebaseapp.com" class="link" target="_blank">Fuse Org</a></footer>
+  <footer><a href="https://fuseorg.github.io/Feedie" class="link" target="_blank">Fuse Org</a></footer>
 </body>
 </html>

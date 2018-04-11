@@ -38,7 +38,7 @@
         if ($result->num_rows > 0){
           while ($row = $result->fetch_assoc()){
     ?>
-    <?php echo $i; ?> Star = <input type="text" class="inputvalue" name="r[]" placeholder="<?php echo $i; ?> point" value="<?php echo $row["r_value"]; ++$i; ?>" />
+    <?php echo $i; ?> Star = <input type="text" class="inputvalue" name="r[]" placeholder="<?php echo $i; ?> points" value="<?php echo $row["r_value"]; ++$i; ?>" />
     <?php
 
          } //Closing while loop
@@ -64,6 +64,6 @@
     </form>
   </div>
   </div>
-  <footer><a href="https://fuse-org.firebaseapp.com" class="link" target="_blank">Fuse Org</a></footer>
+  <footer><a href="https://fuseorg.github.io/Feedie" class="link" target="_blank">Fuse Org</a></footer>
  </body>
 </html>
