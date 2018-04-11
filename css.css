@@ -78,7 +78,7 @@ border-radius: 5px;
 .heading {
 font-size: 32px;
 text-transform: capitalize;
-margin: 16px 0;
+margin: 32px 0 16px;
 text-align: center;
 }
 .subheading {
