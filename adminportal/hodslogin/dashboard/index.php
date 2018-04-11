@@ -50,10 +50,6 @@
       }
      }
     ?>
-	  </div>
-	 </div>
-  <div class="wrapper">
-    <div class="container">
       <div class="heading">
         Other Department's Collabrating Teachers
       </div>

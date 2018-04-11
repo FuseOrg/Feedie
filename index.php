@@ -47,7 +47,7 @@
 
       session_start();
       if (isset($_SESSION["st_username"])){
-        sleep(1);
+        //Add sleep here
         header('Location: dashboard/');
       }
 
@@ -73,7 +73,6 @@
             $_SESSION["rollno"] = $_POST["rollno"];
             $_SESSION["st_username"] = $row["st_username"];
             $_SESSION["class"] = $row["class"];
-            sleep(1);
             header("Location: dashboard/");  // lines
           }
           else

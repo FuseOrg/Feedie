@@ -1,5 +1,6 @@
 <?php
      
+     if( isset($_SESSION["st_username"]) AND isset($_SESSION["class"]) ){
      include('db_config.php');
      $flag = 0;
      $counter = 0;
@@ -25,5 +26,5 @@
       $sql = "UPDATE students SET done = '".$value."' WHERE st_username ='".$_SESSION["st_username"]."' AND class = '".$_SESSION["class"]."'";
       $result = $conn->query($sql);
      }
-
+   }
 ?>
