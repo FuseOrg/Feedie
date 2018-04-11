@@ -3,7 +3,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="../../../css.css">
 	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
-	<link rel="icon" type="image/png" href="../../../images/favicon.svg">
+	<link rel="icon" type="image/png" href="../../../images/logo.png">
 	<title>Feedie | Dashboard</title>
 	</head>
 	<body>
