@@ -13,13 +13,6 @@
 		<div class="title">Feedie</div>
     <a href="../?logout=1"><div class="logout">Logout</div></a>
   </div>
-  
-    
-<!--    Below code is from student login.
-   use admin table to display name ie: principal.
-   link that table with the below code-->
-  
-  
   <div class="details">
   Hi, 
   	  <?php
@@ -44,8 +37,9 @@
   <div class="container">
 		<div class="heading">Maintainer Dashboard</div>
 		<a href="students" class="button">Edit Students List</a>
-		<a href="changeqs" class="button">Change Qusetions</a>
+		<a href="changeqs" class="button">Change Questions</a>
 		<a href="changesr" class="button">Change Star Rating</a>
+		<a href="getoverall" class="button">Generate Overall</a>
   </div>
   </div>
   <footer><a href="https://fuseorg.github.io/Feedie" class="link" target="_blank">Fuse Org</a></footer>
