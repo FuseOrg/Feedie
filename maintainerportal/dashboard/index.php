@@ -39,7 +39,7 @@
 		<a href="students" class="button">Edit Students List</a>
 		<a href="changeqs" class="button">Change Questions</a>
 		<a href="changesr" class="button">Change Star Rating</a>
-		<a href="getoverall" class="button">Generate Overall</a>
+		<a href="changeoverall" class="button">Change Overall</a>
   </div>
   </div>
   <footer><a href="https://fuseorg.github.io/Feedie" class="link" target="_blank">Fuse Org</a></footer>
