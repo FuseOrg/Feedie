@@ -23,7 +23,6 @@
     if ($result1->num_rows > 0){
       while ($row1 = $result1->fetch_assoc()) {
         $new_overall = ( $row1["overall"] / 100.0 ) * ( $_POST["newoverall"] );
-        echo $new_overall." ";
         $sql2 = "UPDATE teachersinfo SET ".$col_name." = '".$new_overall."' WHERE te_username = '".$row1["te_username"]."' AND class = '".$row1["class"]."' AND sub_code = '".$row1["sub_code"]."'";
         $result2 = $conn->query($sql2);
       }
