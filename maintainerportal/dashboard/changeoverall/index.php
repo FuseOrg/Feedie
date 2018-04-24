@@ -50,11 +50,7 @@
 	</style>
  </head>
  <body>
-  <?php 
-    if( isset($_POST["newoverall"]) AND $_POST["newoverall"] != NULL){
-      include('addoverall.php');
-    }
-  ?>
+  
   <div class="header">
 		<div><a href="../"><img src="../../../images/back.svg" class="home"></a></div>
 		<img src="../../../images/logo.svg" class="logo"/>
@@ -76,6 +72,12 @@
         </div>
   </div>
   </div>
-  <footer><a href="https://fuseorg.github.io/Feedie" class="link" target="_blank">Fuse Org</a></footer>
+  <footer>
+  <?php 
+    if( isset($_POST["newoverall"]) AND $_POST["newoverall"] != NULL){
+      include('addoverall.php');
+    }
+  ?>
+  	<a href="https://fuseorg.github.io/Feedie" class="link" target="_blank">Fuse Org</a></footer>
  </body>
 </html>
