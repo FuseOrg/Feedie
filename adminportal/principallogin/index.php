@@ -1,41 +1,44 @@
 <html>
-  <head>
+
+<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="stylesheet" type="text/css" href="../../css.css">
+	<link rel="stylesheet" type="text/css" href="../../css.css">
 	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
-  <link rel="icon" type="image/png" href="../../images/favicon.svg">
-  <title>Feedie | HOD Login</title>
-  </head>
-  <body>
-  <div class="header">
+	<link rel="icon" type="image/png" href="../../images/favicon.svg">
+	<title>Feedie | HOD Login</title>
+</head>
+
+<body>
+	<div class="header">
 		<div><a href="../"><img src="../../images/home.svg" class="home"></a></div>
-		<img src="../../images/logo.svg" class="logo"/>
+		<img src="../../images/logo.svg" class="logo" />
 		<div class="title">Feedie</div>
-  </div>
-  <div class="wrapper">
-  <div class="container">
-		<div class="heading">HOD Login</div>
-		<center><img src="../../images/hod.svg" class="avatar"/></center>
-    <form class="myform" action="" method="post">
-		<input type="text" name="username" class="inputvalue" placeholder="Username"/> 
-		<input id="password" type="password" name="password" class="inputvalue" placeholder="Password">
-		<div class="psw"><span class="shp" onclick="toggler(this)" type="button">Show</span></div>
-		<script>
-			function toggler(e) {
-				if( e.innerHTML == 'Show' ) {
-					e.innerHTML = 'Hide'
-					document.getElementById('password').type="text";
-				} else {
-					e.innerHTML = 'Show'
-					document.getElementById('password').type="password";
-				}
-			}
-		</script>
-    <div style="text-align: right">
-      <input class="button" type="submit" id="login_btn" value="Login"/>
-	  </div>
-		<div class="phpr" style="color:red">
-		<label>
+	</div>
+	<div class="wrapper">
+		<div class="container">
+			<div class="heading">HOD Login</div>
+			<center><img src="../../images/hod.svg" class="avatar" /></center>
+			<form class="myform" action="" method="post">
+				<input type="text" name="username" class="inputvalue" placeholder="Username" />
+				<input id="password" type="password" name="password" class="inputvalue" placeholder="Password">
+				<div class="psw"><span class="shp" onclick="toggler(this)" type="button">Show</span></div>
+				<script>
+					function toggler(e) {
+						if (e.innerHTML == 'Show') {
+							e.innerHTML = 'Hide'
+							document.getElementById('password').type = "text";
+						} else {
+							e.innerHTML = 'Show'
+							document.getElementById('password').type = "password";
+						}
+					}
+
+				</script>
+				<div style="text-align: right">
+					<input class="button" type="submit" id="login_btn" value="Login" />
+				</div>
+				<div class="phpr" style="color:red">
+					<label>
 		<?php   
 
 		$servername = "127.0.0.1";
@@ -73,10 +76,11 @@
 
 		?>
 		</label>
-		</div>
-    </form>
+				</div>
+			</form>
 		</div>
 	</div>
-  <footer>&copy;<a href="https://fuseorg.github.io/Feedie" class="link" target="_blank">Fuse Org</a></footer>
-  </body>
+	<footer>&copy;<a href="https://fuseorg.github.io/Feedie" class="link" target="_blank">Fuse Org</a></footer>
+</body>
+
 </html>
