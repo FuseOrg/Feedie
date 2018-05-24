@@ -1,24 +1,20 @@
 <html>
-
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="../../../../../../css.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../../css.css">
 	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
-	<link rel="icon" type="image/png" href="../../../../../../images/logo.png">
+  <link rel="icon" type="image/png" href="../../../../../../images/logo.png">
 	<title>Feedie | View Feedback</title>
 </head>
-
 <body>
-	<div class="header">
+  <div class="header">
 		<div><a href="../../../"><img src="../../../../../../images/back.svg" class="home"></a></div>
-		<img src="../../../../../../images/logo.svg" class="logo" />
+		<img src="../../../../../../images/logo.svg" class="logo"/>
 		<div class="title">Feedie</div>
-		<a href="../../../../../?logout=1">
-			<div class="logout">Logout</div>
-		</a>
-	</div>
-	<div class="details">Subject name:
-		<?php
+    <a href="../../../../../?logout=1"><div class="logout">Logout</div></a>
+  </div>
+  <div class="details">Subject name:
+  <?php
     session_start();
 
     if (!isset($_SESSION["hod_username"])){
@@ -63,11 +59,11 @@
     $max = $max*$feed_no;
 
   ?>
-	</div>
-	<div class="page">
-		<div class="container">
-			<div class="phpr">
-				<?php
+  </div>
+  <div class="page">
+	<div class="container">
+		<div class="phpr">
+		<?php
         echo "Guidlines:<br>
 	      &#9733 = Poor<br>
 	      &#9733 &#9733 = Need improvements<br>
@@ -75,9 +71,9 @@
 	      &#9733 &#9733 &#9733 &#9733 = Good<br>
 	      &#9733 &#9733 &#9733 &#9733 &#9733 = Excellent";
 		?>
-			</div>
-
-			<?php
+		</div>
+  
+<?php
 
   include('../../../../../../db_config.php');
   $sql_q = "SELECT quest_id, quest_content FROM questions ORDER BY quest_id ASC";
@@ -88,21 +84,21 @@
 
   ?>
 
-				<div class="row">
-					<?php  
+  <div class="row">
+    <?php  
         echo $row_q["quest_id"].". ".$row_q["quest_content"]; 
         $q_no = "q".$row_q["quest_id"];
     ?>
-				</div>
-				<div class="row">
-					<div class="side">
-						<div>5 stars</div>
-					</div>
-					<div class="middle">
-						<div class="bar-container">
-							<div class="bar-5" style="width:
+  </div>
+  <div class="row">
+   <div class="side">
+    <div>5 stars</div>
+   </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
       <?php
-        $sql = " SELECT ".$q_no." FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."' ";
+        $sql = "SELECT ".$q_no." FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -113,25 +109,25 @@
             } 
           }
           $final = ($count/$feed_no)*100;
-          echo $final."% ";
+          echo $final."%";
         }
       ?>
-      ">
-							</div>
-						</div>
-					</div>
-					<div class="side right">
-						<?php echo $count; ?>
-					</div>
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
 
-					<div class="side">
-						<div>4 stars</div>
-					</div>
-					<div class="middle">
-						<div class="bar-container">
-							<div class="bar-4" style="width:
+  <div class="side">
+    <div>4 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4" style="width:
       <?php
-        $sql = " SELECT ".$q_no." FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."' ";
+        $sql = "SELECT ".$q_no." FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -142,25 +138,25 @@
             } 
           }
           $final = ($count/$feed_no)*100;
-          echo $final."% ";
+          echo $final."%";
         }
       ?>
       ">
-							</div>
-						</div>
-					</div>
-					<div class="side right">
-						<?php echo $count; ?>
-					</div>
-
-					<div class="side">
-						<div>3 stars</div>
-					</div>
-					<div class="middle">
-						<div class="bar-container">
-							<div class="bar-3" style="width:
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+  
+  <div class="side">
+    <div>3 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3" style="width:
       <?php
-        $sql = " SELECT ".$q_no." FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."' ";
+        $sql = "SELECT ".$q_no." FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -171,25 +167,25 @@
             } 
           }
           $final = ($count/$feed_no)*100;
-          echo $final."% ";
+          echo $final."%";
         }
       ?>
-      ">
-							</div>
-						</div>
-					</div>
-					<div class="side right">
-						<?php echo $count; ?>
-					</div>
-
-					<div class="side">
-						<div>2 stars</div>
-					</div>
-					<div class="middle">
-						<div class="bar-container">
-							<div class="bar-2" style="width:
+      ">  
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+   
+  <div class="side">
+    <div>2 stars</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2" style="width:
       <?php
-        $sql = " SELECT ".$q_no." FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."' ";
+        $sql = "SELECT ".$q_no." FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -200,25 +196,25 @@
             } 
           }
           $final = ($count/$feed_no)*100;
-          echo $final."% ";
+          echo $final."%";
         }
       ?>
       ">
-							</div>
-						</div>
-					</div>
-					<div class="side right">
-						<?php echo $count; ?>
-					</div>
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
 
-					<div class="side">
-						<div>1 star</div>
-					</div>
-					<div class="middle">
-						<div class="bar-container">
-							<div class="bar-1" style="width: 
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1" style="width: 
       <?php
-        $sql = " SELECT ".$q_no." FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."' ";
+        $sql = "SELECT ".$q_no." FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -229,26 +225,26 @@
             } 
           }
           $final = ($count/$feed_no)*100;
-          echo $final."% ";
+          echo $final."%";
         }
       ?>
       ">
-							</div>
-						</div>
-					</div>
-					<div class="side right">
-						<?php echo $count; ?>
-					</div>
-
-					<!--Total estimation-->
-					<div class="side">
-						<div>Total</div>
-					</div>
-					<div class="middle">
-						<div class="bar-container">
-							<div class="bar-5" style="width:
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $count; ?>
+  </div>
+  
+  <!--Total estimation-->
+ <div class="side">
+    <div>Total</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5" style="width:
       <?php
-        $sql = " SELECT ".$q_no." FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."' ";
+        $sql = "SELECT ".$q_no." FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."' AND sub_code='".$_SESSION["sub_code"]."'";
         $result = $conn->query($sql);
         $count = 0;
         $final = 0;
@@ -271,50 +267,49 @@
             } 
           }
           $final = ($count/$max)*100;
-          $pt[$row_q["quest_id "]] = $final;
-          echo $final."% ";
+          $pt[$row_q["quest_id"]] = $final;
+          echo $final."%";
         }
       ?>
       ">
-							</div>
-						</div>
-					</div>
-					<div class="side right">
-						<?php echo $final; ?>%
-					</div>
-				</div>
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo $final; ?>%
+  </div>
+ </div>
 
-				<?php
+  <?php
     } //while ends
   }   //if ends
 
   ?>
 
-					<div class="row">
-						<div class="side">
-							<div>Grand Total</div>
-						</div>
-						<div class="middle">
-							<div class="bar-container">
-								<div class="bar-1" style="width: 
+ <div class="row">
+    <div class="side">
+    <div>Grand Total</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1" style="width: 
       <?php
         $count = 0;
         $final = 0;
         $count = $pt[1] + $pt[2] + $pt[3] + $pt[4] + $pt[5] + $pt[6] + $pt[7] + $pt[8] + $pt[9] + $pt[10]; 
           $final = ($count/1000)*100;
-          echo $final." % ";
+          echo $final."%";
       ?>
       ">
-								</div>
-							</div>
-						</div>
-						<div class="side right">
-							<?php echo round($final); ?>%
-						</div>
-					</div>
-		</div>
-	</div>
-	<footer><a href="https://fuseorg.github.io/Feedie" class="link" target="_blank">Fuse Org</a></footer>
+      </div>
+    </div>
+  </div>
+  <div class="side right">
+   <?php echo round($final); ?>%
+  </div>
+ </div>
+</div>
+</div>
+  <footer><a href="https://fuseorg.github.io/Feedie" class="link" target="_blank">Fuse Org</a></footer>
 </body>
-
 </html>
