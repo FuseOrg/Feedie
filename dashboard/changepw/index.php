@@ -1,28 +1,32 @@
 <html>
- <head>
+
+<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="stylesheet" type="text/css" href="../../css.css">
+	<link rel="stylesheet" type="text/css" href="../../css.css">
 	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
-  <link rel="icon" type="image/png" href="../../images/favicon.svg">
-  <title>Feedie | Change Password</title>
- </head>
- <body>
-  <div class="header">
+	<link rel="icon" type="image/png" href="../../images/logo.png">
+	<title>Feedie | Change Password</title>
+</head>
+
+<body>
+	<div class="header">
 		<div><a href="../"><img src="../../images/back.svg" class="home"></a></div>
-		<img src="../../images/logo.svg" class="logo"/>
+		<img src="../../images/logo.svg" class="logo" />
 		<div class="title">Feedie</div>
-    <a href="../../?logout=1"><div class="logout">Logout</div></a>
-  </div>
-  <div class="wrapper">
-  <div class="container">
-		<div class="heading">Change Password</div>
-		<center><img src="../../images/student.svg" class="avatar"/></center>
-    <form class="myform" action="" method="post">
-		<input type="password" class="inputvalue" name="currentpassword" placeholder="Current Password"/>
-		<input type="password" class="inputvalue" name="newpassword" placeholder="New Password"/>
-		<input type="password" class="inputvalue" name="renewpassword" placeholder="Retype New Password"/>
-    <div class="phpr" style="color:red">
-    <label>
+		<a href="../../?logout=1">
+			<div class="logout">Logout</div>
+		</a>
+	</div>
+	<div class="wrapper">
+		<div class="container">
+			<div class="heading">Change Password</div>
+			<center><img src="../../images/student.svg" class="avatar" /></center>
+			<form class="myform" action="" method="post">
+				<input type="password" class="inputvalue" name="currentpassword" placeholder="Current Password" />
+				<input type="password" class="inputvalue" name="newpassword" placeholder="New Password" />
+				<input type="password" class="inputvalue" name="renewpassword" placeholder="Retype New Password" />
+				<div class="phpr" style="color:red">
+					<label>
     <?php   
       
       session_start();
@@ -65,13 +69,14 @@
 
     ?>
     </label>
-    </div>
-    <div style="text-align: right">
-    <input class="button" type="submit" value="Change Password"/>
-	  </div>
-    </form>
-  </div>
-  </div>
-  <footer><a href="https://fuse-org.firebaseapp.com" class="link" target="_blank">Fuse Org</a></footer>
- </body>
+				</div>
+				<div style="text-align: right">
+					<input class="button" type="submit" value="Change Password" />
+				</div>
+			</form>
+		</div>
+	</div>
+	<footer><a href="https://fuseorg.github.io/Feedie" class="link" target="_blank">Fuse Org</a></footer>
+</body>
+
 </html>

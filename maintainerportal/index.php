@@ -1,13 +1,15 @@
 <html>
- <head>
+
+<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="stylesheet" type="text/css" href="../css.css">
+	<link rel="stylesheet" type="text/css" href="../css.css">
 	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
-  <link rel="icon" type="image/png" href="../images/favicon.svg">
-  <title>Feedie | Maintainer Login</title>
- </head>
- <body>
-  <?php
+	<link rel="icon" type="image/png" href="../images/logo.png">
+	<title>Feedie | Maintainer Login</title>
+</head>
+
+<body>
+	<?php
 
    session_start();
    if (isset($_SESSION["ma_username"])){
@@ -16,34 +18,35 @@
    }
 
  ?>
-  <div class="header">
-		<img src="../images/logo.svg" class="logo"/>
-		<div class="title">Feedie</div>
-  </div>
-  <div class="wrapper">
-  <div class="container">
-		<div class="heading">Maintainer Login</div>
-		<center><img src="../images/maintainer.svg" class="avatar"/></center>
-    <form class="myform" action="" method="post">
-    <input type="text" class="inputvalue" name="username" placeholder="Username"/>
-		<input id="password" type="password" class="inputvalue" name="password" placeholder="Password"/>
-		<div class="psw"><span class="shp" onclick="toggler(this)" type="button">Show</span></div>
-		<script>
-			function toggler(e) {
-				if( e.innerHTML == 'Show' ) {
-					e.innerHTML = 'Hide'
-					document.getElementById('password').type="text";
-				} else {
-					e.innerHTML = 'Show'
-					document.getElementById('password').type="password";
-				}
-			}
-		</script>
-    <div style="text-align: right">
-    <input class="button" type="submit" id="login_btn" value="Login"/>
-	  </div>
-    <div class="phpr" style="color:red">
-    <label>
+		<div class="header">
+			<img src="../images/logo.svg" class="logo" />
+			<div class="title">Feedie</div>
+		</div>
+		<div class="wrapper">
+			<div class="container">
+				<div class="heading">Maintainer Login</div>
+				<center><img src="../images/maintainer.svg" class="avatar" /></center>
+				<form class="myform" action="" method="post">
+					<input type="text" class="inputvalue" name="username" placeholder="Username" />
+					<input id="password" type="password" class="inputvalue" name="password" placeholder="Password" />
+					<div class="psw"><span class="shp" onclick="toggler(this)" type="button">Show</span></div>
+					<script>
+						function toggler(e) {
+							if (e.innerHTML == 'Show') {
+								e.innerHTML = 'Hide'
+								document.getElementById('password').type = "text";
+							} else {
+								e.innerHTML = 'Show'
+								document.getElementById('password').type = "password";
+							}
+						}
+
+					</script>
+					<div style="text-align: right">
+						<input class="button" type="submit" id="login_btn" value="Login" />
+					</div>
+					<div class="phpr" style="color:red">
+						<label>
     <?php   
 
       if (isset($_GET["logout"])){
@@ -87,10 +90,11 @@
 
     ?>
     </label>
-    </div>
-    </form>
-  </div>
-  </div>
-  <footer><a href="https://fuse-org.firebaseapp.com" class="link" target="_blank">Fuse Org</a></footer>
- </body>
+					</div>
+				</form>
+			</div>
+		</div>
+		<footer><a href="https://fuseorg.github.io/Feedie" class="link" target="_blank">Fuse Org</a></footer>
+</body>
+
 </html>

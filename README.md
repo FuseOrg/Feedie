@@ -37,12 +37,6 @@ A step by step series of examples that tell you have to get a development env ru
 3. Start Web server(Apache) and Database server(phpMyadmin)
 4. Host copied project to any localhost
 
-And repeat
-
-```
-until finished
-```
-
 End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
@@ -54,7 +48,7 @@ Explain how to run the automated tests for this system
 Explain what these tests test and why
 
 ```
-Give an example
+Will be explained later
 ```
 
 ### And coding style tests
@@ -62,7 +56,7 @@ Give an example
 Explain what these tests test and why
 
 ```
-Give an example
+Will be explained later
 ```
 
 ## Deployment
@@ -89,8 +83,23 @@ This project is developed under [Fuse Org](https://github.com/FuseOrg). For the 
 
 ## Authors
 
-* **Liyas Thomas** - *Front end* - [liyasthomas](https://github.com/liyasthomas)
-* **Jovial** - *Back end* - [Jovial248](https://github.com/Jovial248)
+### Lead Developers
+* [**Liyas Thomas**](https://github.com/liyasthomas) - *Front end*
+* [**Jovial**](https://github.com/Jovial248) - *Back end*
+
+### Testing and Debugging
+* [Ajith PG](https://github.com/AjithPG)
+* [Muvin M](https://github.com/Muvinm)
+
+### Contributors
+* [Adith K V](https://github.com/Adithkv)
+* [Arjun Jayesh](https://github.com/9997arjun)
+
+### Thanks
+* Dr. Ambikadevi Amma.T, Principal of NCERC, Pampady
+* Silja Varghese, CSE department of NCERC, Pampady
+* CSE department of NCERC, Pampady
+* All teaching and non-teaching staffs of NCERC, Pampady
 
 See also the list of [contributors](https://github.com/FuseOrg/Feedie/graphs/contributors) who participated in this project.
 
@@ -103,4 +112,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 * Hat tip to anyone who's code was used
 * Inspiration
 * etc
-
