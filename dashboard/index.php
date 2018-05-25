@@ -61,7 +61,7 @@
      if($result->num_rows > 0) {
       while($row = $result->fetch_assoc()){
     ?>
-				<button onclick="location.href='feedform/?sub_name=<?php echo $row[" sub_name "]; ?>'" class="button">
+				<button onclick="location.href='feedform/?sub_name=<?php echo $row["sub_name"]; ?>'" class="button">
       <?php
         echo $row["sub_name"];
 
