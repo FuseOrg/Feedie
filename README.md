@@ -1,4 +1,4 @@
-<div align="center">
+﻿<div align="center">
   <a href="https://fuse-org.firebaseapp.com"><img src="https://raw.githubusercontent.com/liyasthomas/fuse-org/master/images/manifest/icon-512x512.png" alt="Fuse Org" width="200"></a>
   <br>
   <h1>Fuse Org</h1>
@@ -24,18 +24,18 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
-* Database server such as myPHPadmin
+* Database server such as phpMyAdmin
 * Server such as Apache
 * Web browser such as Chrome
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
+A step by step series of examples that tell you have to get a development envirnoment running
 
 1. Download the whole zip/clone the repo
 2. Copy files to server hosting location
 3. Start Web server(Apache) and Database server(phpMyadmin)
-4. Host copied project to any localhost
+4. Host copied project in any localhost
 
 End with an example of getting some data out of the system or using it for a little demo
 
@@ -65,9 +65,11 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* HTML - The web framework used
+* HTML - For creating web pages and web apps
 * CSS - Styling management
-* PHP - Used to generate SQL Feeds
+* JavaScript - For client computations
+* PHP - Used to generate SQL Feeds and server computation
+* SQL - Database management
 
 ## Contributing
 
