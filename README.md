@@ -30,38 +30,46 @@ What things you need to install the software and how to install them
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development envirnoment running
+Steps that tell you how to get a development envirnoment running
 
 1. Download the whole zip/clone the repo
 2. Copy files to server hosting location
-3. Start Web server(Apache) and Database server(phpMyadmin)
-4. Host copied project in any localhost
-
-End with an example of getting some data out of the system or using it for a little demo
+3. Import predefined database into phpMyAdmin
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Use any of the load testing softwares or platforms for this
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
+Test the application with
+
+1. Lowest possible input
+2. Highest possible input
+3. Most common inputs
 
 ```
-Will be explained later
+Will be explained more later
 ```
 
 ### And coding style tests
 
-Explain what these tests test and why
+Steps to test in coding style for developers, programmers or white-box testers
+
+1. Make your changes in the code
+2. Save it successfully
+3. Try appropriate input data and verify the output obtained
 
 ```
-Will be explained later
+Will be explained more later
 ```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Steps to deploy the application successfully
+
+1. Start Web server(Apache) and Database server(phpMyAdmin)
+2. Host copied project in any localhost, networks or DNS.
 
 ## Built With
 
