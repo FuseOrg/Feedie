@@ -14,7 +14,6 @@
 			color: #fff;
 			float: right;
             background-color: limegreen;
-            border: 2px solid;
 		}
 
 		.notgiven {
@@ -24,7 +23,6 @@
 			color: #fff;
 			float: right;
             background-color: orangered;
-            border: 2px solid;
 		}
 	</style>
 </head>

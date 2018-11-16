@@ -295,7 +295,7 @@
 ?>
 
 						<div style="text-align: right">
-							<input type="submit" value="SUBMIT" class="button">
+							<input type="submit" value="Submit" class="button">
 						</div>
 			</form>
 		</div>
