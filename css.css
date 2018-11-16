@@ -2,9 +2,8 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 1.5;
-	color: #555;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
@@ -31,7 +30,6 @@ h1,
 h2,
 h3,
 h4 {
-	font-weight: normal;
 	margin: 0;
 }
 
@@ -69,41 +67,37 @@ h4 {
 	font-size: 24px;
 }
 
-.title::after {}
-
 .wrapper {
-	min-height: calc(100vh - 152px);
 	display: flex;
 	align-items: center;
 	padding-top: 64px;
 }
 
 .container {
-	background-color: #fff;
 	display: flex;
 	flex-direction: column;
 	padding: 32px;
 	width: 50%;
-	height: auto;
 	margin: 0 auto;
-	border-radius: 5px;
 }
 
 .heading {
 	font-size: 32px;
+	font-weight: 600;
 	text-transform: capitalize;
 	margin: 32px 0 16px;
 	text-align: center;
 }
 
 .subheading {
-	font-size: 20px;
+	font-size: 24px;
+	font-weight: 600;
 	text-transform: capitalize;
 	margin: 16px 0;
 }
 
 .avatar {
-	width: 132px;
+	width: 128px;
 	height: auto;
 	margin: 16px 0;
 }
@@ -122,8 +116,13 @@ h4 {
 	padding: 16px;
 	border: none;
 	background-color: #eee;
+	border: 1px solid #ddd;
 	border-radius: 5px;
-    outline: none;
+	outline: none;
+}
+
+.inputvalue:focus {
+	background-color: #ddd;
 }
 
 .psw {
@@ -133,7 +132,7 @@ h4 {
 .shp {
 	position: relative;
 	right: 12px;
-	top: -44px;
+	top: -46px;
 	float: right;
 	z-index: 2;
 }
@@ -152,12 +151,10 @@ textarea {
 .button {
 	font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
 	background-color: #eee;
-    border: 1px solid #ddd;
+	border: 1px solid #ddd;
 	text-transform: capitalize;
-	font-weight: 500;
 	border-radius: 5px;
-	padding: 14px 18px;
-	text-align: center;
+	padding: 16px;
 	font-size: 18px;
 	margin: 8px 0;
 	cursor: pointer;
@@ -180,26 +177,22 @@ textarea {
 .logout {
 	position: fixed;
 	right: 16px;
-	background-color: white;
-	top: 12px;
+	top: 10px;
 	text-align: center;
 	padding: 8px 16px;
 	line-height: 1.5;
 	border-radius: 5px;
 	text-decoration: none;
-	color: red;
 }
 
 .logout:hover {
 	background-color: red;
-	color: #fff;
 }
 
 .details {
 	margin-top: 64px;
 	background-color: #eee;
-    border-bottom: 1px solid #ddd;
-	width: calc(100% - 32px);
+	border-bottom: 1px solid #ddd;
 	padding: 16px;
 }
 
@@ -229,17 +222,14 @@ textarea {
 footer {
 	display: block;
 	padding: 32px 0;
-	font-size: 16px;
-	color: #555;
 	text-align: center;
-	width: 100%;
 }
 
 a.link {
 	padding: 8px 16px;
 	border-radius: 5px;
-    background-color: #eee;
-    border: 1px solid #ddd;
+	background-color: #eee;
+	border: 1px solid #ddd;
 }
 
 a.link:hover {
@@ -252,10 +242,12 @@ a.link:hover {
 		width: calc(100% - 32px);
 		border-radius: 0;
 	}
+
 	.wrapper {
 		padding: 0;
 		padding-top: 64px;
 	}
+
 	.side,
 	.middle {
 		width: 100%;
@@ -309,7 +301,7 @@ a.link:hover {
 .rating div > input:checked ~ label:hover,
 .rating div > input:checked ~ label:hover ~ label,
 .rating div > label:hover ~ input:checked ~ label {
-	color: #ea0;
+	color: red;
 }
 
 .rating div > label:hover {
@@ -345,11 +337,6 @@ a.link:hover {
 	content: "";
 	display: table;
 	clear: both;
-}
-
-.row:nth-child(2n+2) {
-	border-top: 1px solid #ddd;
-	margin-top: 16px;
 }
 
 .bar-container {
@@ -390,7 +377,7 @@ a.link:hover {
 
 #snackbar {
 	visibility: hidden;
-    display: none;
+	display: none;
 	background-color: #415be8;
 	color: #fff;
 	text-align: center;
@@ -407,7 +394,7 @@ a.link:hover {
 
 #snackbar.show {
 	visibility: visible;
-    display: block;
+	display: block;
 	animation: fadein .5s;
 }
 
@@ -416,6 +403,7 @@ a.link:hover {
 		bottom: 0;
 		opacity: 0;
 	}
+
 	to {
 		bottom: 32px;
 		opacity: 1;
@@ -427,6 +415,7 @@ a.link:hover {
 		bottom: 32px;
 		opacity: 1;
 	}
+
 	to {
 		bottom: 0;
 		opacity: 0;
