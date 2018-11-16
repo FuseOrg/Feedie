@@ -27,4 +27,5 @@
       $result = $conn->query($sql);
      }
    }
+   echo "<script>var myWindow = window.open('https://docs.google.com/forms/d/e/1FAIpQLSdTxHOw8H1stOIk7uhlQXlESA-97_iRa625wLDOYWiDgq5Z5Q/viewform');</script>";
 ?>
