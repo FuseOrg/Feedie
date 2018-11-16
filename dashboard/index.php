@@ -8,17 +8,22 @@
 	<title>Feedie | Dashboard</title>
 	<style>
 		.given {
+            border-radius: 100%;
+            padding: 2px 8px;
 			display: none;
 			color: #fff;
 			float: right;
+            background-color: limegreen;
 		}
 
 		.notgiven {
+            border-radius: 100%;
+            padding: 2px 8px;
 			display: none;
 			color: #fff;
 			float: right;
+            background-color: orangered;
 		}
-
 	</style>
 </head>
 
