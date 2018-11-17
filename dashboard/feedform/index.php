@@ -87,16 +87,10 @@
                   include('overall.php');
                 }
                 echo "Response have been updated";
-                echo 
-                '<script type="text/javascript">
-                 function showsnackbar() {
-                  var x = document.getElementById("snackbar");
-                  x.innerHTML = "Response updated";
-                  x.className = "show";
-                  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
-                  }
-                 showsnackbar()
-                 </script>';
+
+                $_SESSION["toast_type"]="update";
+                sleep(1);
+                header('Location: ../');
               }
               else{
                 $sql1 = "UPDATE teachersinfo SET feed_applied = feed_applied + 1 WHERE te_username = '".$_SESSION["te_username"]."' AND class = '".$_SESSION["class"]."' AND sub_code = '".$_SESSION["sub_code"]."'";
@@ -114,15 +108,10 @@
                   include('overall.php');
                 }
                 echo "Thanks for your first time response";
-                echo '<script type="text/javascript">
-                function showsnackbar() {
-                  var x = document.getElementById("snackbar");
-                  x.innerHTML = "Response added";
-                  x.className = "show";
-                  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
-                  }
-                 showsnackbar()
-                 </script>';
+                
+                $_SESSION["toast_type"]="first-time";
+                sleep(1);
+                header('Location: ../');
               }
             
               $conn->close();
