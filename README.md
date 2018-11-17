@@ -95,7 +95,7 @@ This project is developed under [Fuse Org](https://github.com/FuseOrg). For the 
 
 ### Lead Developers
 * [**Liyas Thomas**](https://github.com/liyasthomas) - *Front end*
-* [**Jovial**](https://github.com/Jovial248) - *Back end*
+* [**Jovial George**](https://github.com/Jovial248) - *Back end*
 
 ### Testing and Debugging
 * [Ajith PG](https://github.com/AjithPG)
