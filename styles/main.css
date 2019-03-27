@@ -47,6 +47,7 @@ h5 {
 	font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
 	text-transform: none;
 	border-radius: 8px;
+	box-shadow: none;
 }
 
 .mdl-demo .mdl-layout__tab-bar-button {
@@ -83,6 +84,10 @@ h5 {
 	font-size: 18px;
 	text-transform: none;
 	padding: 0 16px;
+}
+
+.mdl-textfield {
+	width: 100%;
 }
 
 .mdl-demo main > .mdl-layout__tab-panel {
@@ -130,14 +135,9 @@ h5 {
 
 .questions {
 	padding: 32px;
-	border-top: 1px solid #eee;
 	display: flex;
 	align-items: center;
 	font-size: 18px;
-}
-
-.mdl-demo .mdl-layout.is-small-screen .questions:nth-child(even) {
-	border-top: 1px solid transparent;
 }
 
 .mdl-demo section .section__circle-container {
@@ -182,6 +182,7 @@ h5 {
 form,
 .rating {
 	width: 100%;
+	margin: 0;
 }
 
 .rating div input {
@@ -204,7 +205,7 @@ form,
 }
 
 .rating div:not(:checked) > label:before {
-	content: &#9733;
+	content: "";
 }
 
 .rating div > input:checked ~ label {

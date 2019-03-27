@@ -136,6 +136,11 @@
 									<label class="mdl-textfield__label" for="sample1">Retype new password</label>
 								</div>
 							</div>
+							<div class="mdl-cell mdl-cell--12-col questions">
+								<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+									Change password
+								</button>
+							</div>
 							<div class="mdl-cell mdl-cell--12-col mdl-color--yellow-300 questions">
 								<?php   
       $servername = "127.0.0.1";
@@ -172,11 +177,6 @@
         $conn->close();
       }
     ?>
-							</div>
-							<div class="mdl-cell mdl-cell--12-col questions">
-								<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-									Change password
-								</button>
 							</div>
 						</div>
 					</form>
