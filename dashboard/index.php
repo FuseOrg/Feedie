@@ -11,14 +11,20 @@
 	<title>Dashboard | Feedie</title>
 </head>
 
-<body class="mdl-demo mdl-color--grey-50 mdl-color-text--grey-900 mdl-base">
+<body class="mdl-demo mdl-color-text--grey-900 mdl-base">
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-		<header class="mdl-layout__header">
+		<header class="mdl-layout__header mdl-color--white mdl-color-text--grey-600">
 			<div class="mdl-layout__header-row">
+				<a href="../">
+					<button class="mdl-button mdl-js-button mdl-button--icon">
+						<i class="material-icons">home</i>
+					</button>
+				</a>
+				<div class="mdl-layout-spacer"></div>
 				<span class="mdl-layout-title">Feedie</span>
 				<div class="mdl-layout-spacer"></div>
 				<button id="more" class="mdl-button mdl-js-button mdl-button--icon">
-					<i class="material-icons">more_vert</i>
+					<i class="material-icons">account_circle</i>
 				</button>
 				<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="more">
 					<a href="../?logout=1">
@@ -35,74 +41,70 @@
 					</a>
 				</ul>
 			</div>
-			<div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+			<div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--white">
+				<div class="mdl-layout-spacer"></div>
 				<a href="#overview" class="mdl-layout__tab is-active">Feedback</a>
 				<a href="#account" class="mdl-layout__tab">
 					<?php
 						session_start();
-
 						if (!isset($_SESSION["st_username"])){
 						 sleep(1);
 						 header('Location: ../');
 						}
-
 						echo $_SESSION["st_username"];
 						echo " &middot; ";
 						echo $_SESSION["class"];
 					?>
 				</a>
+				<div class="mdl-layout-spacer"></div>
 			</div>
 		</header>
 		<main class="mdl-layout__content">
 			<div class="mdl-layout__tab-panel is-active" id="overview">
-				<section class="section--center mdl-card mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-					<div class="mdl-card__supporting-text mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
-						<h4 class="mdl-cell mdl-cell--12-col">Subjects</h4>
-						<?php
+				<section class="section--center mdl-card mdl-grid mdl-grid--no-spacing">
+					<h4 class="mdl-cell mdl-cell--12-col">Subjects</h4>
+					<?php
 							include('../db_config.php');
-
 							$sql = "SELECT te_username, sub_name, sub_code FROM teachersinfo WHERE class = '".$_SESSION["class"]."'";
 							$result = $conn->query($sql);
-
 							if($result->num_rows > 0) {
 							while($row = $result->fetch_assoc()){
 						?>
-						<div onclick="location.href='feedform/?sub_name=<?php echo $row["sub_name"]; ?>'" class="mdl-cell mdl-cell--12-col mdl-grid subjects">
-							<div class="section__circle-container mdl-cell mdl-cell--1-col">
-								<?php
+					<div onclick="location.href='feedform/?sub_name=<?php echo $row["sub_name"]; ?>'" class="mdl-cell mdl-cell--12-col mdl-grid subjects">
+						<div class="section__circle-container mdl-cell mdl-cell--1-col">
+							<?php
 									$sql1 = "SELECT st_username FROM feeds WHERE st_username = '".$_SESSION["st_username"]."' AND sub_code = '".$row["sub_code"]."' AND class = '".$_SESSION["class"]."'";
 									$result1 = $conn->query($sql1);
 									if( $result1->num_rows > 0 ) {
 								?>
-								<div class="section__circle-container__circle mdl-color-text--green-a400">
-									<i class="material-icons">done</i>
-								</div>
-								<?php
+							<div class="section__circle-container__circle mdl-color-text--green-a400">
+								<i class="material-icons">done</i>
+							</div>
+							<?php
 									}
 									else {
 								?>
-								<div class="section__circle-container__circle mdl-color-text--red-a400">
-									<i class="material-icons">close</i>
-								</div>
-								<?php
+							<div class="section__circle-container__circle mdl-color-text--red-a400">
+								<i class="material-icons">close</i>
+							</div>
+							<?php
 									}
 								?>
-							</div>
-							<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
-								<h5>
-									<?php echo $row["sub_name"]; ?>
-								</h5>
-							</div>
 						</div>
-						<?php
+						<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
+							<h5>
+								<?php echo $row["sub_name"]; ?>
+							</h5>
+						</div>
+					</div>
+					<?php
 								}
 							}
 						?>
-					</div>
 				</section>
 			</div>
 			<div class="mdl-layout__tab-panel" id="account">
-				<section class="section--center mdl-card mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+				<section class="section--center mdl-card mdl-grid mdl-grid--no-spacing">
 					<div class="mdl-cell mdl-cell--12-col">
 						<h4>Features</h4>
 						<section class="section--footer mdl-color--white mdl-grid">
@@ -121,7 +123,7 @@
 								Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
 							</div>
 						</section>
-						<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+						<section class="section--center mdl-grid mdl-grid--no-spacing">
 							<div class="mdl-card mdl-cell mdl-cell--12-col">
 								<div class="mdl-card__supporting-text">
 									<h4>Technology</h4>
@@ -140,7 +142,7 @@
 								<li class="mdl-menu__item">Dolor</li>
 							</ul>
 						</section>
-						<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+						<section class="section--center mdl-grid mdl-grid--no-spacing">
 							<header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
 								<i class="material-icons">play_circle_filled</i>
 							</header>
@@ -162,7 +164,6 @@
 								<li class="mdl-menu__item">Dolor</li>
 							</ul>
 						</section>
-
 					</div>
 				</section>
 			</div>
@@ -240,7 +241,6 @@
                  </script>';
           unset($_SESSION["toast_type"]);
 	  	}
-
         elseif ($_SESSION["toast_type"] == "first-time") {
          echo 
                 '<script type="text/javascript">

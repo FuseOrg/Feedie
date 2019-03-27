@@ -11,7 +11,7 @@
 	<title>Feedie | Feedback</title>
 </head>
 
-<body class="mdl-demo mdl-color--grey-50 mdl-color-text--grey-900 mdl-base">
+<body class="mdl-demo mdl-color-text--grey-800 mdl-base">
 	<?php
 		session_start();
 		if (!isset($_SESSION["st_username"])){
@@ -20,12 +20,18 @@
 		}
 	?>
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-		<header class="mdl-layout__header">
+		<header class="mdl-layout__header mdl-color--white mdl-color-text--grey-600">
 			<div class="mdl-layout__header-row">
+				<a href="../">
+					<button class="mdl-button mdl-js-button mdl-button--icon">
+						<i class="material-icons">arrow_backward</i>
+					</button>
+				</a>
+				<div class="mdl-layout-spacer"></div>
 				<span class="mdl-layout-title">Feedie</span>
 				<div class="mdl-layout-spacer"></div>
 				<button id="more" class="mdl-button mdl-js-button mdl-button--icon">
-					<i class="material-icons">more_vert</i>
+					<i class="material-icons">account_circle</i>
 				</button>
 				<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="more">
 					<a href="../../?logout=1">
@@ -42,7 +48,8 @@
 					</a>
 				</ul>
 			</div>
-			<div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+			<div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--white">
+				<div class="mdl-layout-spacer"></div>
 				<a href="#overview" class="mdl-layout__tab is-active">
 					<?php
      $_SESSION["sub_name"] = $_GET["sub_name"];
@@ -61,27 +68,15 @@
     echo $_SESSION["te_username"];
     ?>
 				</a>
-				<a href="#account" class="mdl-layout__tab">
-					<?php
-						session_start();
-						if (!isset($_SESSION["st_username"])){
-						 sleep(1);
-						 header('Location: ../');
-						}
-						echo $_SESSION["st_username"];
-						echo " &middot; ";
-						echo $_SESSION["class"];
-					?>
-				</a>
+				<div class="mdl-layout-spacer"></div>
 			</div>
 		</header>
 		<main class="mdl-layout__content">
 			<div class="mdl-layout__tab-panel is-active" id="overview">
-				<section class="section--center mdl-card mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-					<div class="mdl-card__supporting-text mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
-						<h4 class="mdl-cell mdl-cell--12-col">Feedback</h4>
-						<div class="mdl-cell mdl-cell--12-col">
-							<?php
+				<section class="section--center mdl-card mdl-grid mdl-grid--no-spacing">
+					<h4 class="mdl-cell mdl-cell--12-col">Feedback</h4>
+					<div class="mdl-cell mdl-cell--12-col questions">
+						<?php
     $servername = "127.0.0.1";
     $username = "root";
     $password = "";
@@ -152,8 +147,9 @@
 	      &#9733 &#9733 &#9733 &#9733 &#9733 = Excellent";
             }
    ?>
-						</div>
-						<form action="<?php  $_PHP_SELF ?>" method="post">
+					</div>
+					<form action="<?php  $_PHP_SELF ?>" method="post">
+						<div class="mdl-grid mdl-grid--no-spacing">
 							<?php
   include('../../db_config.php');
   $sql_q = "SELECT quest_id, quest_content FROM questions WHERE quest_id != 0 ORDER BY quest_id ASC";
@@ -161,14 +157,12 @@
   if ( $result_q->num_rows > 0 ){
 ?>
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
-								<div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-									<div class="mdl-card__supporting-text">
-										<?php $row = $result_q->fetch_assoc(); 
+								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
+									<?php $row = $result_q->fetch_assoc(); 
         echo $row["quest_id"].". ".$row["quest_content"]; 
    ?>
-									</div>
 								</div>
-								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
 									<fieldset class="rating">
 										<div style="direction: rtl;">
 											<input type="radio" id="star5-1" name="q[<?php echo $row["quest_id"]; ?>]" value="5" /><label for="star5-1" title="Rocks!"><span>&#9733</span></label>
@@ -181,14 +175,12 @@
 								</header>
 							</div>
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
-								<div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-									<div class="mdl-card__supporting-text">
-										<?php $row = $result_q->fetch_assoc(); 
+								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
+									<?php $row = $result_q->fetch_assoc(); 
         echo $row["quest_id"].". ".$row["quest_content"]; 
    ?>
-									</div>
 								</div>
-								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
 									<fieldset class="rating">
 										<div style="direction: rtl;">
 											<input type="radio" id="star5-2" name="q[<?php echo $row["quest_id"]; ?>]" value="5" /><label for="star5-2" title="Rocks!"><span>&#9733</span></label>
@@ -201,14 +193,12 @@
 								</header>
 							</div>
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
-								<div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-									<div class="mdl-card__supporting-text">
-										<?php $row = $result_q->fetch_assoc(); 
+								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
+									<?php $row = $result_q->fetch_assoc(); 
         echo $row["quest_id"].". ".$row["quest_content"]; 
    ?>
-									</div>
 								</div>
-								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
 									<fieldset class="rating">
 										<div style="direction: rtl;">
 											<input type="radio" id="star5-3" name="q[<?php echo $row["quest_id"]; ?>]" value="5" /><label for="star5-3" title="Rocks!"><span>&#9733</span></label>
@@ -221,14 +211,12 @@
 								</header>
 							</div>
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
-								<div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-									<div class="mdl-card__supporting-text">
-										<?php $row = $result_q->fetch_assoc(); 
+								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
+									<?php $row = $result_q->fetch_assoc(); 
         echo $row["quest_id"].". ".$row["quest_content"]; 
    ?>
-									</div>
 								</div>
-								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
 									<fieldset class="rating">
 										<div style="direction: rtl;">
 											<input type="radio" id="star5-4" name="q[<?php echo $row["quest_id"]; ?>]" value="5" /><label for="star5-4" title="Rocks!"><span>&#9733</span></label>
@@ -241,14 +229,12 @@
 								</header>
 							</div>
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
-								<div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-									<div class="mdl-card__supporting-text">
-										<?php $row = $result_q->fetch_assoc(); 
+								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
+									<?php $row = $result_q->fetch_assoc(); 
         echo $row["quest_id"].". ".$row["quest_content"]; 
    ?>
-									</div>
 								</div>
-								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
 									<fieldset class="rating">
 										<div style="direction: rtl;">
 											<input type="radio" id="star5-5" name="q[<?php echo $row["quest_id"]; ?>]" value="5" /><label for="star5-5" title="Rocks!"><span>&#9733</span></label>
@@ -261,14 +247,12 @@
 								</header>
 							</div>
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
-								<div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-									<div class="mdl-card__supporting-text">
-										<?php $row = $result_q->fetch_assoc(); 
+								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
+									<?php $row = $result_q->fetch_assoc(); 
         echo $row["quest_id"].". ".$row["quest_content"]; 
    ?>
-									</div>
 								</div>
-								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
 									<fieldset class="rating">
 										<div style="direction: rtl;">
 											<input type="radio" id="star5-6" name="q[<?php echo $row["quest_id"]; ?>]" value="5" /><label for="star5-6" title="Rocks!"><span>&#9733</span></label>
@@ -281,14 +265,12 @@
 								</header>
 							</div>
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
-								<div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-									<div class="mdl-card__supporting-text">
-										<?php $row = $result_q->fetch_assoc(); 
+								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
+									<?php $row = $result_q->fetch_assoc(); 
         echo $row["quest_id"].". ".$row["quest_content"]; 
    ?>
-									</div>
 								</div>
-								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
 									<fieldset class="rating">
 										<div style="direction: rtl;">
 											<input type="radio" id="star5-7" name="q[<?php echo $row["quest_id"]; ?>]" value="5" /><label for="star5-7" title="Rocks!"><span>&#9733</span></label>
@@ -301,14 +283,12 @@
 								</header>
 							</div>
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
-								<div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-									<div class="mdl-card__supporting-text">
-										<?php $row = $result_q->fetch_assoc(); 
+								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
+									<?php $row = $result_q->fetch_assoc(); 
         echo $row["quest_id"].". ".$row["quest_content"]; 
    ?>
-									</div>
 								</div>
-								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
 									<fieldset class="rating">
 										<div style="direction: rtl;">
 											<input type="radio" id="star5-8" name="q[<?php echo $row["quest_id"]; ?>]" value="5" /><label for="star5-8" title="Rocks!"><span>&#9733</span></label>
@@ -321,14 +301,12 @@
 								</header>
 							</div>
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
-								<div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-									<div class="mdl-card__supporting-text">
-										<?php $row = $result_q->fetch_assoc(); 
+								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
+									<?php $row = $result_q->fetch_assoc(); 
         echo $row["quest_id"].". ".$row["quest_content"]; 
    ?>
-									</div>
 								</div>
-								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
 									<fieldset class="rating">
 										<div style="direction: rtl;">
 											<input type="radio" id="star5-9" name="q[<?php echo $row["quest_id"]; ?>]" value="5" /><label for="star5-9" title="Rocks!"><span>&#9733</span></label>
@@ -341,14 +319,12 @@
 								</header>
 							</div>
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
-								<div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-									<div class="mdl-card__supporting-text">
-										<?php $row = $result_q->fetch_assoc(); 
+								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
+									<?php $row = $result_q->fetch_assoc(); 
         echo $row["quest_id"].". ".$row["quest_content"]; 
    ?>
-									</div>
 								</div>
-								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+								<header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone questions">
 									<fieldset class="rating">
 										<div style="direction: rtl;">
 											<input type="radio" id="star5-10" name="q[<?php echo $row["quest_id"]; ?>]" value="5" /><label for="star5-10" title="Rocks!"><span>&#9733</span></label>
@@ -363,38 +339,13 @@
 							<?php
   }
 ?>
-							<div style="text-align: right">
-								<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-									Button
+							<div class="mdl-cell mdl-cell--12-col questions">
+								<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+									Submit
 								</button>
 							</div>
-						</form>
-					</div>
-				</section>
-			</div>
-			<div class="mdl-layout__tab-panel" id="account">
-				<section class="mdl-card mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-					<div class="mdl-cell mdl-cell--12-col">
-						<h4>Features</h4>
-						<!--
-						<section class="section--footer mdl-color--white mdl-grid">
-							<div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-								<div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
-							</div>
-							<div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-								<h5>Lorem ipsum dolor sit amet</h5>
-								Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
-							</div>
-							<div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-								<div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
-							</div>
-							<div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-								<h5>Lorem ipsum dolor sit amet</h5>
-								Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
-							</div>
-						</section>
--->
-					</div>
+						</div>
+					</form>
 				</section>
 			</div>
 			<!--

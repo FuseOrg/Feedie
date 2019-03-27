@@ -5,8 +5,8 @@ body {
 	font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
 	font-size: 18px;
 	line-height: 1.5;
-	--primary-color: rgb(96, 125, 139);
-	--accent-color: rgb(24, 255, 255);
+	--primary-color: #fff;
+	--accent-color: rgb(68, 138, 255);
 }
 
 a {
@@ -27,6 +27,13 @@ h5 {
 .mdl-layout-title {
 	font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
 	font-size: 24px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	color: #666;
+}
+
+.mdl-layout__header {
+	box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.2);
 }
 
 .mdl-demo .mdl-layout__header-row {
@@ -53,6 +60,15 @@ h5 {
 	width: 100%;
 }
 
+.mdl-demo .mdl-layout__tab-bar .mdl-layout__tab.is-active {
+	color: var(--accent-color);
+}
+
+.mdl-demo .mdl-layout__tab-bar .mdl-layout__tab.is-active::after {
+	height: 3px;
+	border-radius: 4px 4px 0 0;
+}
+
 .mdl-layout__tab {
 	font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
 	font-size: 18px;
@@ -60,13 +76,8 @@ h5 {
 	padding: 0 16px;
 }
 
-.mdl-demo .mdl-layout__tab-bar .mdl-layout__tab.is-active::after {
-	background-color: var(--accent-color);
-	height: 2px;
-}
-
 .mdl-demo main > .mdl-layout__tab-panel {
-	padding: 16px 8px;
+	padding: 32px 8px;
 }
 
 .mdl-demo .mdl-card__actions {
@@ -84,10 +95,6 @@ h5 {
 .mdl-demo .mdl-card__actions a:active {
 	color: inherit;
 	background-color: transparent;
-}
-
-.mdl-demo .mdl-card__supporting-text {
-	width: auto;
 }
 
 .mdl-demo .mdl-layout__content section:not(:last-of-type) {
@@ -121,6 +128,18 @@ h5 {
 
 .subjects:hover {
 	background-color: #efefef;
+}
+
+.questions {
+	padding: 32px;
+	border-top: 1px solid #eee;
+	display: flex;
+	align-items: center;
+	font-size: 18px;
+}
+
+.mdl-demo .mdl-layout.is-small-screen .questions:nth-child(even) {
+	border-top: 1px solid transparent;
 }
 
 .mdl-demo section .section__circle-container {
@@ -157,6 +176,7 @@ h5 {
 
 .mdl-card {
 	min-height: auto;
+	border: 1px solid #eee;
 }
 
 .mdl-demo .mdl-card h4 {
@@ -175,7 +195,10 @@ h5 {
 	z-index: 99;
 }
 
-
+form,
+.rating {
+	width: 100%;
+}
 
 .rating div input {
 	visibility: hidden;
