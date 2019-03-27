@@ -46,21 +46,21 @@
 				<div class="mdl-layout-spacer"></div>
 				<a href="#overview" class="mdl-layout__tab is-active">
 					<?php
-     $_SESSION["sub_name"] = $_GET["sub_name"];
-     echo $_GET["sub_name"];
-		echo " &middot; ";
-    ?>
+						$_SESSION["sub_name"] = $_GET["sub_name"];
+						echo $_GET["sub_name"];
+						echo " &middot; ";
+					?>
 					<?php
-    include('../../db_config.php');
-    $sql1 = "SELECT sub_code, te_username FROM teachersinfo WHERE  sub_name='".$_GET["sub_name"]."' AND class='".$_SESSION["class"]."'";
-    $result1 = $conn->query($sql1);
-    if($result1->num_rows > 0){
-      $row = $result1->fetch_assoc();
-      $_SESSION["te_username"] = $row["te_username"];
-      $_SESSION["sub_code"] = $row["sub_code"];
-    }
-    echo $_SESSION["te_username"];
-    ?>
+						include('../../db_config.php');
+						$sql1 = "SELECT sub_code, te_username FROM teachersinfo WHERE  sub_name='".$_GET["sub_name"]."' AND class='".$_SESSION["class"]."'";
+						$result1 = $conn->query($sql1);
+						if($result1->num_rows > 0) {
+							$row = $result1->fetch_assoc();
+							$_SESSION["te_username"] = $row["te_username"];
+							$_SESSION["sub_code"] = $row["sub_code"];
+						}
+						echo $_SESSION["te_username"];
+					?>
 				</a>
 				<div class="mdl-layout-spacer"></div>
 			</div>
@@ -71,90 +71,90 @@
 					<h4 class="mdl-cell mdl-cell--12-col">Feedback</h4>
 					<div class="mdl-cell mdl-cell--12-col questions mdl-color--yellow-300">
 						<?php
-    $servername = "127.0.0.1";
-    $username = "root";
-    $password = "";
-    $dbname = "feedie_base";
-    $error = false;
-    $counter = 0;
-    if ( isset($_POST['q']) ){
-      $q = $_POST['q'];
-      foreach($q as $field) {
-        ++$counter;
-      }
-    }
-    if($counter != 10){
-      $error = true;
-    }
-    if ( !$error ){
-            // Create connection
-              $conn = new mysqli($servername, $username, $password, $dbname);
-              $q = $_POST['q'];
-              $i = 1;
-              foreach( $q as $key ){
-                $qf[$i] = $key;
-                ++$i;
-              }
-              //For checking whether user have already submit a feed on this teacher
-              $sql_check = "SELECT st_username FROM feeds WHERE st_username = '".$_SESSION["st_username"]."' AND te_username = '".$_SESSION["te_username"]."' AND sub_code='".$_SESSION["sub_code"]."' AND class = '".$_SESSION["class"]."'";
-              $result_check = $conn->query($sql_check);
-              if($result_check->num_rows > 0){
-                $sql = "UPDATE feeds SET q1='".$qf[1]."', q2='".$qf[2]."', q3='".$qf[3]."', q4='".$qf[4]."', q5='".$qf[5]."', q6='".$qf[6]."', q7='".$qf[7]."', q8='".$qf[8]."', q9='".$qf[9]."', q10='".$qf[10]."' WHERE st_username='".$_SESSION["st_username"]."' AND te_username='".$_SESSION["te_username"]."' AND sub_code='".$_SESSION["sub_code"]."' AND class = '".$_SESSION["class"]."'";
-                $result = $conn->query($sql);
-                if($result){
-                  //echo "Successful. ";
-                  include('overall.php');
-                }
-                echo "Response have been updated";
-                $_SESSION["toast_type"]="update";
-                sleep(1);
-                header('Location: ../');
-              }
-              else{
-                $sql1 = "UPDATE teachersinfo SET feed_applied = feed_applied + 1 WHERE te_username = '".$_SESSION["te_username"]."' AND class = '".$_SESSION["class"]."' AND sub_code = '".$_SESSION["sub_code"]."'";
-                $result1 = $conn->query($sql1);
-                /*
-                if($result1){
-                  echo "Updated";
-                }
-                */
-                $sql = "INSERT INTO feeds (st_username, te_username, sub_code, sub_name, class, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 ) VALUES('".$_SESSION["st_username"]."','".$_SESSION["te_username"]."','".$_SESSION["sub_code"]."','".$_SESSION["sub_name"]."','".$_SESSION["class"]."','".$qf[1]."','".$qf[2]."','".$qf[3]."','".$qf[4]."','".$qf[5]."','".$qf[6]."','".$qf[7]."','".$qf[8]."','".$qf[9]."','".$qf[10]."')";
-                $result = $conn->query($sql);
-                if($result){
-                  //echo "Successful. ";
-                  include('overall.php');
-                }
-                echo "Thanks for your first time response";
-                $_SESSION["toast_type"]="first-time";
-                sleep(1);
-                header('Location: ../');
-              }
-              $conn->close();
-            }
-            else{
-              echo "Please complete the feedback<br><br>
-	      Guidlines:<br>
-	      &#9733 = Poor<br>
-	      &#9733 &#9733 = Need improvements<br>
-	      &#9733 &#9733 &#9733 = Average<br>
-	      &#9733 &#9733 &#9733 &#9733        = Good<br>
-	      &#9733 &#9733 &#9733 &#9733 &#9733 = Excellent";
-            }
-   ?>
+							$servername = "127.0.0.1";
+							$username = "root";
+							$password = "";
+							$dbname = "feedie_base";
+							$error = false;
+							$counter = 0;
+							if ( isset($_POST['q']) ){
+								$q = $_POST['q'];
+								foreach($q as $field) {
+									++$counter;
+								}
+							}
+							if($counter != 10){
+								$error = true;
+							}
+							if ( !$error ){
+								// Create connection
+								$conn = new mysqli($servername, $username, $password, $dbname);
+								$q = $_POST['q'];
+								$i = 1;
+								foreach( $q as $key ){
+									$qf[$i] = $key;
+									++$i;
+								}
+								//For checking whether user have already submit a feed on this teacher
+								$sql_check = "SELECT st_username FROM feeds WHERE st_username = '".$_SESSION["st_username"]."' AND te_username = '".$_SESSION["te_username"]."' AND sub_code='".$_SESSION["sub_code"]."' AND class = '".$_SESSION["class"]."'";
+								$result_check = $conn->query($sql_check);
+								if($result_check->num_rows > 0){
+									$sql = "UPDATE feeds SET q1='".$qf[1]."', q2='".$qf[2]."', q3='".$qf[3]."', q4='".$qf[4]."', q5='".$qf[5]."', q6='".$qf[6]."', q7='".$qf[7]."', q8='".$qf[8]."', q9='".$qf[9]."', q10='".$qf[10]."' WHERE st_username='".$_SESSION["st_username"]."' AND te_username='".$_SESSION["te_username"]."' AND sub_code='".$_SESSION["sub_code"]."' AND class = '".$_SESSION["class"]."'";
+									$result = $conn->query($sql);
+									if($result){
+										//echo "Successful. ";
+										include('overall.php');
+									}
+									echo "Response have been updated";
+									$_SESSION["toast_type"]="update";
+									sleep(1);
+									header('Location: ../');
+								}
+								else{
+									$sql1 = "UPDATE teachersinfo SET feed_applied = feed_applied + 1 WHERE te_username = '".$_SESSION["te_username"]."' AND class = '".$_SESSION["class"]."' AND sub_code = '".$_SESSION["sub_code"]."'";
+									$result1 = $conn->query($sql1);
+									/*
+									if($result1){
+										echo "Updated";
+									}
+									*/
+									$sql = "INSERT INTO feeds (st_username, te_username, sub_code, sub_name, class, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10 ) VALUES('".$_SESSION["st_username"]."','".$_SESSION["te_username"]."','".$_SESSION["sub_code"]."','".$_SESSION["sub_name"]."','".$_SESSION["class"]."','".$qf[1]."','".$qf[2]."','".$qf[3]."','".$qf[4]."','".$qf[5]."','".$qf[6]."','".$qf[7]."','".$qf[8]."','".$qf[9]."','".$qf[10]."')";
+									$result = $conn->query($sql);
+									if($result){
+										//echo "Successful. ";
+										include('overall.php');
+									}
+									echo "Thanks for your first time response";
+									$_SESSION["toast_type"]="first-time";
+									sleep(1);
+									header('Location: ../');
+								}
+								$conn->close();
+							}
+							else{
+								echo "Please complete the feedback<br><br>
+								Guidlines:<br>
+								&#9733 = Poor<br>
+								&#9733 &#9733 = Need improvements<br>
+								&#9733 &#9733 &#9733 = Average<br>
+								&#9733 &#9733 &#9733 &#9733        = Good<br>
+								&#9733 &#9733 &#9733 &#9733 &#9733 = Excellent";
+							}
+						?>
 					</div>
 					<form action="<?php  $_PHP_SELF ?>" method="post">
 						<div class="mdl-grid mdl-grid--no-spacing">
 							<?php
-  include('../../db_config.php');
-  $sql_q = "SELECT quest_id, quest_content FROM questions WHERE quest_id != 0 ORDER BY quest_id ASC";
-  $result_q = $conn->query($sql_q);
-  if ( $result_q->num_rows > 0 ){
-?>
+								include('../../db_config.php');
+								$sql_q = "SELECT quest_id, quest_content FROM questions WHERE quest_id != 0 ORDER BY quest_id ASC";
+								$result_q = $conn->query($sql_q);
+								if ( $result_q->num_rows > 0 ){
+							?>
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
 								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone questions">
 									<?php $row = $result_q->fetch_assoc(); 
-        echo $row["quest_id"].". ".$row["quest_content"]; 
-   ?>
+										echo $row["quest_id"].". ".$row["quest_content"]; 
+									?>
 								</div>
 								<header class="section__play-btn mdl-cell mdl-cell--4-col mdl-cell--2-col-phone questions">
 									<fieldset class="rating">
@@ -171,8 +171,8 @@
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
 								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone questions">
 									<?php $row = $result_q->fetch_assoc(); 
-        echo $row["quest_id"].". ".$row["quest_content"]; 
-   ?>
+										echo $row["quest_id"].". ".$row["quest_content"]; 
+									?>
 								</div>
 								<header class="section__play-btn mdl-cell mdl-cell--4-col mdl-cell--2-col-phone questions">
 									<fieldset class="rating">
@@ -189,8 +189,8 @@
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
 								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone questions">
 									<?php $row = $result_q->fetch_assoc(); 
-        echo $row["quest_id"].". ".$row["quest_content"]; 
-   ?>
+										echo $row["quest_id"].". ".$row["quest_content"]; 
+									?>
 								</div>
 								<header class="section__play-btn mdl-cell mdl-cell--4-col mdl-cell--2-col-phone questions">
 									<fieldset class="rating">
@@ -207,8 +207,8 @@
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
 								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone questions">
 									<?php $row = $result_q->fetch_assoc(); 
-        echo $row["quest_id"].". ".$row["quest_content"]; 
-   ?>
+										echo $row["quest_id"].". ".$row["quest_content"]; 
+									?>
 								</div>
 								<header class="section__play-btn mdl-cell mdl-cell--4-col mdl-cell--2-col-phone questions">
 									<fieldset class="rating">
@@ -225,8 +225,8 @@
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
 								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone questions">
 									<?php $row = $result_q->fetch_assoc(); 
-        echo $row["quest_id"].". ".$row["quest_content"]; 
-   ?>
+										echo $row["quest_id"].". ".$row["quest_content"]; 
+									?>
 								</div>
 								<header class="section__play-btn mdl-cell mdl-cell--4-col mdl-cell--2-col-phone questions">
 									<fieldset class="rating">
@@ -243,8 +243,8 @@
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
 								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone questions">
 									<?php $row = $result_q->fetch_assoc(); 
-        echo $row["quest_id"].". ".$row["quest_content"]; 
-   ?>
+										echo $row["quest_id"].". ".$row["quest_content"]; 
+									?>
 								</div>
 								<header class="section__play-btn mdl-cell mdl-cell--4-col mdl-cell--2-col-phone questions">
 									<fieldset class="rating">
@@ -261,8 +261,8 @@
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
 								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone questions">
 									<?php $row = $result_q->fetch_assoc(); 
-        echo $row["quest_id"].". ".$row["quest_content"]; 
-   ?>
+										echo $row["quest_id"].". ".$row["quest_content"]; 
+									?>
 								</div>
 								<header class="section__play-btn mdl-cell mdl-cell--4-col mdl-cell--2-col-phone questions">
 									<fieldset class="rating">
@@ -279,8 +279,8 @@
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
 								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone questions">
 									<?php $row = $result_q->fetch_assoc(); 
-        echo $row["quest_id"].". ".$row["quest_content"]; 
-   ?>
+										echo $row["quest_id"].". ".$row["quest_content"]; 
+									?>
 								</div>
 								<header class="section__play-btn mdl-cell mdl-cell--4-col mdl-cell--2-col-phone questions">
 									<fieldset class="rating">
@@ -297,8 +297,8 @@
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
 								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone questions">
 									<?php $row = $result_q->fetch_assoc(); 
-        echo $row["quest_id"].". ".$row["quest_content"]; 
-   ?>
+										echo $row["quest_id"].". ".$row["quest_content"]; 
+									?>
 								</div>
 								<header class="section__play-btn mdl-cell mdl-cell--4-col mdl-cell--2-col-phone questions">
 									<fieldset class="rating">
@@ -315,8 +315,8 @@
 							<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-grid--no-spacing">
 								<div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone questions">
 									<?php $row = $result_q->fetch_assoc(); 
-        echo $row["quest_id"].". ".$row["quest_content"]; 
-   ?>
+										echo $row["quest_id"].". ".$row["quest_content"]; 
+									?>
 								</div>
 								<header class="section__play-btn mdl-cell mdl-cell--4-col mdl-cell--2-col-phone questions">
 									<fieldset class="rating">
@@ -331,8 +331,8 @@
 								</header>
 							</div>
 							<?php
-  }
-?>
+								}
+							?>
 							<div class="mdl-cell mdl-cell--12-col questions">
 								<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
 									Submit
@@ -342,61 +342,6 @@
 					</form>
 				</section>
 			</div>
-			<!--
-			<footer class="mdl-mega-footer">
-				<div class="mdl-mega-footer--middle-section">
-					<div class="mdl-mega-footer--drop-down-section">
-						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-						<h1 class="mdl-mega-footer--heading">Features</h1>
-						<ul class="mdl-mega-footer--link-list">
-							<li><a href="#">About</a></li>
-							<li><a href="#">Terms</a></li>
-							<li><a href="#">Partners</a></li>
-							<li><a href="#">Updates</a></li>
-						</ul>
-					</div>
-					<div class="mdl-mega-footer--drop-down-section">
-						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-						<h1 class="mdl-mega-footer--heading">Details</h1>
-						<ul class="mdl-mega-footer--link-list">
-							<li><a href="#">Spec</a></li>
-							<li><a href="#">Tools</a></li>
-							<li><a href="#">Resources</a></li>
-						</ul>
-					</div>
-					<div class="mdl-mega-footer--drop-down-section">
-						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-						<h1 class="mdl-mega-footer--heading">Technology</h1>
-						<ul class="mdl-mega-footer--link-list">
-							<li><a href="#">How it works</a></li>
-							<li><a href="#">Patterns</a></li>
-							<li><a href="#">Usage</a></li>
-							<li><a href="#">Products</a></li>
-							<li><a href="#">Contracts</a></li>
-						</ul>
-					</div>
-					<div class="mdl-mega-footer--drop-down-section">
-						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-						<h1 class="mdl-mega-footer--heading">FAQ</h1>
-						<ul class="mdl-mega-footer--link-list">
-							<li><a href="#">Questions</a></li>
-							<li><a href="#">Answers</a></li>
-							<li><a href="#">Contact us</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="mdl-mega-footer--bottom-section">
-					<div class="mdl-logo">
-						More Information
-					</div>
-					<ul class="mdl-mega-footer--link-list">
-						<li><a href="https://developers.google.com/web/starter-kit/">Web Starter Kit</a></li>
-						<li><a href="#">Help</a></li>
-						<li><a href="#">Privacy and Terms</a></li>
-					</ul>
-				</div>
-			</footer>
--->
 		</main>
 	</div>
 	<div id="snackbar">Some text some message..</div>
