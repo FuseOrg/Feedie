@@ -58,32 +58,32 @@
 				<section class="section--center mdl-card mdl-grid mdl-grid--no-spacing">
 					<h4 class="mdl-cell mdl-cell--12-col">Subjects</h4>
 					<?php
-							include('../db_config.php');
-							$sql = "SELECT te_username, sub_name, sub_code FROM teachersinfo WHERE class = '".$_SESSION["class"]."'";
-							$result = $conn->query($sql);
-							if($result->num_rows > 0) {
-							while($row = $result->fetch_assoc()){
-						?>
+						include('../db_config.php');
+						$sql = "SELECT te_username, sub_name, sub_code FROM teachersinfo WHERE class = '".$_SESSION["class"]."'";
+						$result = $conn->query($sql);
+						if($result->num_rows > 0) {
+						while($row = $result->fetch_assoc()){
+					?>
 					<div onclick="location.href='feedform/?sub_name=<?php echo $row["sub_name"]; ?>'" class="mdl-cell mdl-cell--12-col mdl-grid subjects">
 						<div class="section__circle-container mdl-cell mdl-cell--1-col">
 							<?php
-									$sql1 = "SELECT st_username FROM feeds WHERE st_username = '".$_SESSION["st_username"]."' AND sub_code = '".$row["sub_code"]."' AND class = '".$_SESSION["class"]."'";
-									$result1 = $conn->query($sql1);
-									if( $result1->num_rows > 0 ) {
-								?>
+								$sql1 = "SELECT st_username FROM feeds WHERE st_username = '".$_SESSION["st_username"]."' AND sub_code = '".$row["sub_code"]."' AND class = '".$_SESSION["class"]."'";
+								$result1 = $conn->query($sql1);
+								if( $result1->num_rows > 0 ) {
+							?>
 							<div class="section__circle-container__circle mdl-color-text--green-a400">
 								<i class="material-icons">done</i>
 							</div>
 							<?php
-									}
-									else {
-								?>
+								}
+								else {
+							?>
 							<div class="section__circle-container__circle mdl-color-text--red-a400">
 								<i class="material-icons">close</i>
 							</div>
 							<?php
-									}
-								?>
+								}
+							?>
 						</div>
 						<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
 							<h5>
@@ -92,17 +92,16 @@
 						</div>
 					</div>
 					<?php
-								}
 							}
-						?>
+						}
+					?>
 				</section>
 			</div>
 			<div class="mdl-layout__tab-panel" id="account">
 				<section class="section--center mdl-card mdl-grid mdl-grid--no-spacing">
-					<h4 class="mdl-cell mdl-cell--12-col">Account</h4>
+					<h4 class="mdl-cell mdl-cell--12-col">Change password</h4>
 					<form action="" method="post">
 						<div class="mdl-grid mdl-grid--no-spacing">
-							<h5 class="mdl-cell mdl-cell--12-col questions">Change password</h5>
 							<div class="section__circle-container mdl-cell mdl-cell--1-col">
 								<div class="section__circle-container__circle mdl-color-text--green-a400">
 									<i class="material-icons">vpn_key</i>
@@ -111,7 +110,7 @@
 							<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
 								<div class="mdl-textfield mdl-js-textfield">
 									<input class="mdl-textfield__input" type="password" name="currentpassword">
-									<label class="mdl-textfield__label" for="sample1">Current password</label>
+									<label class="mdl-textfield__label">Current password</label>
 								</div>
 							</div>
 							<div class="section__circle-container mdl-cell mdl-cell--1-col">
@@ -122,7 +121,7 @@
 							<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
 								<div class="mdl-textfield mdl-js-textfield">
 									<input class="mdl-textfield__input" type="password" name="newpassword">
-									<label class="mdl-textfield__label" for="sample1">New password</label>
+									<label class="mdl-textfield__label">New password</label>
 								</div>
 							</div>
 							<div class="section__circle-container mdl-cell mdl-cell--1-col">
@@ -133,155 +132,55 @@
 							<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
 								<div class="mdl-textfield mdl-js-textfield">
 									<input class="mdl-textfield__input" type="password" name="renewpassword">
-									<label class="mdl-textfield__label" for="sample1">Retype new password</label>
+									<label class="mdl-textfield__label">Retype new password</label>
 								</div>
-							</div>
-							<div class="mdl-cell mdl-cell--12-col mdl-color--yellow-300 questions">
-								<?php   
-      $servername = "127.0.0.1";
-      $username = "root";
-      $password = "";
-      $dbname = "feedie_base";
-      if (isset($_POST["currentpassword"]) AND isset($_POST["newpassword"]) AND isset($_POST["renewpassword"])){
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        $sql = "SELECT password FROM students WHERE st_username = '".$_SESSION["st_username"]."' AND class = '".$_SESSION["class"]."'";
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-          // output data of each row
-          $row = $result->fetch_assoc();
-          if( $_POST["currentpassword"] == $row["password"] ){
-            if($_POST["newpassword"] != $_POST["renewpassword"]){
-              echo "Password didn't match, Retype new password!";
-            }
-            else{
-            $newpassword = $_POST["newpassword"];
-            $sql1 = "UPDATE students SET password = '".$newpassword."' WHERE rollno = '".$_SESSION["rollno"]."' AND class = '".$_SESSION["class"]."'";
-            $result1 = $conn->query($sql1);
-            if($result1){
-              echo "Password changed!";
-            }
-            else{
-              echo "Try again!";
-            }
-           }
-          }
-          else
-            echo "Current password incorrect!";
-        } 
-        $conn->close();
-      }
-    ?>
 							</div>
 							<div class="mdl-cell mdl-cell--12-col questions">
 								<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
 									Change password
 								</button>
 							</div>
+							<div class="mdl-cell mdl-cell--12-col mdl-color-text--red-a400 questions">
+								<?php
+									$servername = "127.0.0.1";
+									$username = "root";
+									$password = "";
+									$dbname = "feedie_base";
+									if (isset($_POST["currentpassword"]) AND isset($_POST["newpassword"]) AND isset($_POST["renewpassword"])){
+										// Create connection
+										$conn = new mysqli($servername, $username, $password, $dbname);
+										$sql = "SELECT password FROM students WHERE st_username = '".$_SESSION["st_username"]."' AND class = '".$_SESSION["class"]."'";
+										$result = $conn->query($sql);
+										if ($result->num_rows > 0) {
+											// output data of each row
+											$row = $result->fetch_assoc();
+											if( $_POST["currentpassword"] == $row["password"] ){
+												if($_POST["newpassword"] != $_POST["renewpassword"]){
+													echo "Password didn't match, Retype new password!";
+												}
+												else{
+												$newpassword = $_POST["newpassword"];
+												$sql1 = "UPDATE students SET password = '".$newpassword."' WHERE rollno = '".$_SESSION["rollno"]."' AND class = '".$_SESSION["class"]."'";
+												$result1 = $conn->query($sql1);
+												if($result1){
+													echo "Password changed!";
+												}
+												else{
+													echo "Try again!";
+												}
+											 }
+											}
+											else
+												echo "Current password incorrect!";
+										} 
+										$conn->close();
+									}
+								?>
+							</div>
 						</div>
 					</form>
-					<!--
-						<section class="section--center mdl-grid mdl-grid--no-spacing">
-							<div class="mdl-card mdl-cell mdl-cell--12-col">
-								<div class="mdl-card__supporting-text">
-									<h4>Technology</h4>
-									Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse. Pariatur occaecat nisi laboris tempor laboris eiusmod qui id Lorem esse commodo in. Exercitation aute dolore deserunt culpa consequat elit labore incididunt elit anim.
-								</div>
-								<div class="mdl-card__actions">
-									<a href="#" class="mdl-button">Read our account</a>
-								</div>
-							</div>
-							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
-								<i class="material-icons">more_vert</i>
-							</button>
-							<ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
-								<li class="mdl-menu__item">Lorem</li>
-								<li class="mdl-menu__item" disabled>Ipsum</li>
-								<li class="mdl-menu__item">Dolor</li>
-							</ul>
-						</section>
--->
-					<!--
-						<section class="section--center mdl-grid mdl-grid--no-spacing">
-							<header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
-								<i class="material-icons">play_circle_filled</i>
-							</header>
-							<div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
-								<div class="mdl-card__supporting-text">
-									<h4>Features</h4>
-									Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse.
-								</div>
-								<div class="mdl-card__actions">
-									<a href="#" class="mdl-button">Read our account</a>
-								</div>
-							</div>
-							<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
-								<i class="material-icons">more_vert</i>
-							</button>
-							<ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1">
-								<li class="mdl-menu__item">Lorem</li>
-								<li class="mdl-menu__item" disabled>Ipsum</li>
-								<li class="mdl-menu__item">Dolor</li>
-							</ul>
-						</section>
--->
 				</section>
 			</div>
-			<!--
-			<footer class="mdl-mega-footer">
-				<div class="mdl-mega-footer--middle-section">
-					<div class="mdl-mega-footer--drop-down-section">
-						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-						<h1 class="mdl-mega-footer--heading">Features</h1>
-						<ul class="mdl-mega-footer--link-list">
-							<li><a href="#">About</a></li>
-							<li><a href="#">Terms</a></li>
-							<li><a href="#">Partners</a></li>
-							<li><a href="#">Updates</a></li>
-						</ul>
-					</div>
-					<div class="mdl-mega-footer--drop-down-section">
-						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-						<h1 class="mdl-mega-footer--heading">Details</h1>
-						<ul class="mdl-mega-footer--link-list">
-							<li><a href="#">Spec</a></li>
-							<li><a href="#">Tools</a></li>
-							<li><a href="#">Resources</a></li>
-						</ul>
-					</div>
-					<div class="mdl-mega-footer--drop-down-section">
-						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-						<h1 class="mdl-mega-footer--heading">Technology</h1>
-						<ul class="mdl-mega-footer--link-list">
-							<li><a href="#">How it works</a></li>
-							<li><a href="#">Patterns</a></li>
-							<li><a href="#">Usage</a></li>
-							<li><a href="#">Products</a></li>
-							<li><a href="#">Contracts</a></li>
-						</ul>
-					</div>
-					<div class="mdl-mega-footer--drop-down-section">
-						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-						<h1 class="mdl-mega-footer--heading">FAQ</h1>
-						<ul class="mdl-mega-footer--link-list">
-							<li><a href="#">Questions</a></li>
-							<li><a href="#">Answers</a></li>
-							<li><a href="#">Contact us</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="mdl-mega-footer--bottom-section">
-					<div class="mdl-logo">
-						More Information
-					</div>
-					<ul class="mdl-mega-footer--link-list">
-						<li><a href="https://developers.google.com/web/starter-kit/">Web Starter Kit</a></li>
-						<li><a href="#">Help</a></li>
-						<li><a href="#">Privacy and Terms</a></li>
-					</ul>
-				</div>
-			</footer>
--->
 		</main>
 	</div>
 	<div id="snackbar">Some text some message..</div>
@@ -297,7 +196,7 @@
                   x.className = "show";
                   setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
                   }
-                 showsnackbar()
+                 showsnackbar();
                  </script>';
           unset($_SESSION["toast_type"]);
 	  	}
@@ -310,7 +209,7 @@
                   x.className = "show";
                   setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
                   }
-                 showsnackbar()
+                 showsnackbar();
                  </script>';
           unset($_SESSION["toast_type"]);
         }

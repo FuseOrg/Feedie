@@ -2,98 +2,103 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="css.css">
+	<script src="scripts/material.min.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="styles/material.min.css">
+	<link rel="stylesheet" href="styles/main.css">
 	<link rel="icon" type="image/png" href="images/logo.png">
-	<title>Feedie | Student Login</title>
+	<title>Login | Feedie</title>
 </head>
 
-<body>
-	<div class="header">
-		<img src="images/logo.svg" class="logo" />
-		<div class="title">Feedie</div>
-	</div>
-	<div class="wrapper">
-		<div class="container">
-			<div class="heading">Student Login</div>
-			<center><img src="images/student.svg" class="avatar" /></center>
-			<form class="myform" action="" method="post">
-				<input type="text" class="inputvalue" name="rollno" placeholder="Register number" />
-				<input id="password" type="password" class="inputvalue" name="password" placeholder="Password" />
-				<div class="psw"><span class="shp" onclick="toggler(this)" type="button">Show</span></div>
-				<script>
-					function toggler(e) {
-						if (e.innerHTML == 'Show') {
-							e.innerHTML = 'Hide'
-							document.getElementById('password').type = "text";
-						} else {
-							e.innerHTML = 'Show'
-							document.getElementById('password').type = "password";
+<body class="mdl-demo mdl-color-text--grey-900 mdl-base">
+	<div class="mdl-grid mdl-grid--no-spacing">
+		<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone section--center mdl-grid mdl-grid--no-spacing">
+			<div class="mdl-cell mdl-cell--12-col">
+			</div>
+			<form action="" method="post">
+				<div class="mdl-grid mdl-grid--no-spacing">
+					<h4 class="mdl-cell mdl-cell--12-col questions">Sign in</h4>
+					<div class="mdl-cell mdl-cell--12-col questions" style="flex-direction: column;">
+						<div class="mdl-textfield mdl-js-textfield">
+							<input class="mdl-textfield__input" type="text" name="rollno">
+							<label class="mdl-textfield__label">Register number</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield">
+							<input class="mdl-textfield__input" type="password" name="password">
+							<label class="mdl-textfield__label">Password</label>
+						</div>
+					</div>
+					<div class="mdl-cell mdl-cell--12-col questions">
+						<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+							Log in
+						</button>
+					</div>
+					<!--
+					<div class="psw"><span class="shp" onclick="toggler(this)" type="button">Show</span></div>
+					<script>
+						function toggler(e) {
+							if (e.innerHTML == 'Show') {
+								e.innerHTML = 'Hide'
+								document.getElementById('password').type = "text";
+							} else {
+								e.innerHTML = 'Show'
+								document.getElementById('password').type = "password";
+							}
 						}
-					}
-
-				</script>
-				<div style="text-align: right">
-					<input class="button" type="submit" id="login_btn" value="Login" />
-				</div>
-				<div class="phpr" style="color:red">
-					<label>
-    <?php
-
-      if (isset($_GET["logout"])){
-        if ($_GET["logout"] == 1){
-          session_start();
-          include('done_check.php');
-          session_destroy();
-        }
-      }
-
-      session_start();
-      if (isset($_SESSION["st_username"])){
-        //Add sleep here
-        header('Location: dashboard/');
-      }
-
-      $servername = "127.0.0.1";
-      $username = "root";
-      $password = "";
-      $dbname = "feedie_base";
-            
-      if (isset($_POST["rollno"]) AND isset($_POST["password"])){
-      // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        $rollno = $_POST["rollno"];
-        $sql = "SELECT st_username, password, class FROM students WHERE rollno = '".$rollno."'";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-          // output data of each row
-          $row = $result->fetch_assoc();
-          if( $_POST["password"] == $row["password"] ){
-            echo "Logging you in..";    
-            session_start();
-            $_SESSION["rollno"] = $_POST["rollno"];
-            $_SESSION["st_username"] = $row["st_username"];
-            $_SESSION["class"] = $row["class"];
-            header("Location: dashboard/");  // lines
-          }
-          else
-            echo "Password incorrect!";
-          } 
-        else {
-            echo "Unknown Register number!";
-        }
-        $conn->close();
-      }
-
-    ?>
-    </label>
+					</script>
+-->
+					<div class="mdl-cell mdl-cell--12-col mdl-color-text--red-a400 questions">
+						<?php
+							if (isset($_GET["logout"])){
+								if ($_GET["logout"] == 1){
+									session_start();
+									include('done_check.php');
+									session_destroy();
+								}
+							}
+							session_start();
+							if (isset($_SESSION["st_username"])){
+								//Add sleep here
+								header('Location: dashboard/');
+							}
+							$servername = "127.0.0.1";
+							$username = "root";
+							$password = "";
+							$dbname = "feedie_base";
+							if (isset($_POST["rollno"]) AND isset($_POST["password"])){
+							// Create connection
+								$conn = new mysqli($servername, $username, $password, $dbname);
+								$rollno = $_POST["rollno"];
+								$sql = "SELECT st_username, password, class FROM students WHERE rollno = '".$rollno."'";
+								$result = $conn->query($sql);
+								if ($result->num_rows > 0) {
+									// output data of each row
+									$row = $result->fetch_assoc();
+									if( $_POST["password"] == $row["password"] ){
+										echo "Logging you in..";    
+										session_start();
+										$_SESSION["rollno"] = $_POST["rollno"];
+										$_SESSION["st_username"] = $row["st_username"];
+										$_SESSION["class"] = $row["class"];
+										header("Location: dashboard/");  // lines
+									}
+									else
+										echo "Password incorrect!";
+									} 
+								else {
+										echo "Unknown Register number!";
+								}
+								$conn->close();
+							}
+						?>
+					</div>
 				</div>
 			</form>
 		</div>
+		<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone banner">
+		</div>
 	</div>
-	<footer><a href="https://fuseorg.github.io/Feedie" class="link" target="_blank">Fuse Org</a></footer>
 </body>
 
 </html>

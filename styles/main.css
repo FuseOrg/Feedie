@@ -47,6 +47,7 @@ h5 {
 	font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
 	text-transform: none;
 	border-radius: 8px;
+	box-shadow: none;
 }
 
 .mdl-demo .mdl-layout__tab-bar-button {
@@ -85,6 +86,10 @@ h5 {
 	padding: 0 16px;
 }
 
+.mdl-textfield {
+	width: 100%;
+}
+
 .mdl-demo main > .mdl-layout__tab-panel {
 	padding: 32px 8px;
 }
@@ -120,6 +125,14 @@ h5 {
 	margin-right: 16px;
 }
 
+.banner {
+	background-image: url(../images/banner.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 75%;
+	height: 100%;
+}
+
 .subjects {
 	cursor: pointer;
 }
@@ -130,14 +143,8 @@ h5 {
 
 .questions {
 	padding: 32px;
-	border-top: 1px solid #eee;
 	display: flex;
 	align-items: center;
-	font-size: 18px;
-}
-
-.mdl-demo .mdl-layout.is-small-screen .questions:nth-child(even) {
-	border-top: 1px solid transparent;
 }
 
 .mdl-demo section .section__circle-container {
@@ -182,6 +189,7 @@ h5 {
 form,
 .rating {
 	width: 100%;
+	margin: 0;
 }
 
 .rating div input {
@@ -204,7 +212,7 @@ form,
 }
 
 .rating div:not(:checked) > label:before {
-	content: &#9733;
+	content: "";
 }
 
 .rating div > input:checked ~ label {
@@ -222,4 +230,51 @@ form,
 .rating div > input:checked ~ label:hover ~ label,
 .rating div > label:hover ~ input:checked ~ label {
 	color: red;
+}
+
+#snackbar {
+	visibility: hidden;
+	display: none;
+	background-color: #415be8;
+	color: #fff;
+	text-align: center;
+	border-radius: 5px;
+	padding: 16px;
+	position: fixed;
+	z-index: 1;
+	left: 50%;
+	transform: translate(-50%);
+	bottom: 32px;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, .3);
+	animation: fadeout .5s;
+}
+
+#snackbar.show {
+	visibility: visible;
+	display: block;
+	animation: fadein .5s;
+}
+
+@keyframes fadein {
+	from {
+		bottom: 0;
+		opacity: 0;
+	}
+
+	to {
+		bottom: 32px;
+		opacity: 1;
+	}
+}
+
+@keyframes fadeout {
+	from {
+		bottom: 32px;
+		opacity: 1;
+	}
+
+	to {
+		bottom: 0;
+		opacity: 0;
+	}
 }
