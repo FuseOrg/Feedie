@@ -33,12 +33,6 @@
 							Logout
 						</li>
 					</a>
-					<a href="changepw">
-						<li class="mdl-menu__item">
-							<i class="material-icons" role="presentation">vpn_key</i>
-							Change password
-						</li>
-					</a>
 				</ul>
 			</div>
 			<div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--white">
@@ -105,24 +99,88 @@
 			</div>
 			<div class="mdl-layout__tab-panel" id="account">
 				<section class="section--center mdl-card mdl-grid mdl-grid--no-spacing">
-					<div class="mdl-cell mdl-cell--12-col">
-						<h4>Features</h4>
-						<section class="section--footer mdl-color--white mdl-grid">
-							<div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-								<div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
+					<h4 class="mdl-cell mdl-cell--12-col">Account</h4>
+					<form action="" method="post">
+						<div class="mdl-grid mdl-grid--no-spacing">
+							<h5 class="mdl-cell mdl-cell--12-col questions">Change password</h5>
+							<div class="section__circle-container mdl-cell mdl-cell--1-col">
+								<div class="section__circle-container__circle mdl-color-text--green-a400">
+									<i class="material-icons">vpn_key</i>
+								</div>
 							</div>
-							<div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-								<h5>Lorem ipsum dolor sit amet</h5>
-								Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
+							<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
+								<div class="mdl-textfield mdl-js-textfield">
+									<input class="mdl-textfield__input" type="password" name="currentpassword">
+									<label class="mdl-textfield__label" for="sample1">Current password</label>
+								</div>
 							</div>
-							<div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
-								<div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
+							<div class="section__circle-container mdl-cell mdl-cell--1-col">
+								<div class="section__circle-container__circle mdl-color-text--green-a400">
+									<i class="material-icons">vpn_key</i>
+								</div>
 							</div>
-							<div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
-								<h5>Lorem ipsum dolor sit amet</h5>
-								Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
+							<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
+								<div class="mdl-textfield mdl-js-textfield">
+									<input class="mdl-textfield__input" type="password" name="newpassword">
+									<label class="mdl-textfield__label" for="sample1">New password</label>
+								</div>
 							</div>
-						</section>
+							<div class="section__circle-container mdl-cell mdl-cell--1-col">
+								<div class="section__circle-container__circle mdl-color-text--green-a400">
+									<i class="material-icons">vpn_key</i>
+								</div>
+							</div>
+							<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
+								<div class="mdl-textfield mdl-js-textfield">
+									<input class="mdl-textfield__input" type="password" name="renewpassword">
+									<label class="mdl-textfield__label" for="sample1">Retype new password</label>
+								</div>
+							</div>
+							<div class="mdl-cell mdl-cell--12-col mdl-color--yellow-300 questions">
+								<?php   
+      $servername = "127.0.0.1";
+      $username = "root";
+      $password = "";
+      $dbname = "feedie_base";
+      if (isset($_POST["currentpassword"]) AND isset($_POST["newpassword"]) AND isset($_POST["renewpassword"])){
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        $sql = "SELECT password FROM students WHERE st_username = '".$_SESSION["st_username"]."' AND class = '".$_SESSION["class"]."'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+          // output data of each row
+          $row = $result->fetch_assoc();
+          if( $_POST["currentpassword"] == $row["password"] ){
+            if($_POST["newpassword"] != $_POST["renewpassword"]){
+              echo "Password didn't match, Retype new password!";
+            }
+            else{
+            $newpassword = $_POST["newpassword"];
+            $sql1 = "UPDATE students SET password = '".$newpassword."' WHERE rollno = '".$_SESSION["rollno"]."' AND class = '".$_SESSION["class"]."'";
+            $result1 = $conn->query($sql1);
+            if($result1){
+              echo "Password changed!";
+            }
+            else{
+              echo "Try again!";
+            }
+           }
+          }
+          else
+            echo "Current password incorrect!";
+        } 
+        $conn->close();
+      }
+    ?>
+							</div>
+							<div class="mdl-cell mdl-cell--12-col questions">
+								<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+									Change password
+								</button>
+							</div>
+						</div>
+					</form>
+					<!--
 						<section class="section--center mdl-grid mdl-grid--no-spacing">
 							<div class="mdl-card mdl-cell mdl-cell--12-col">
 								<div class="mdl-card__supporting-text">
@@ -142,6 +200,8 @@
 								<li class="mdl-menu__item">Dolor</li>
 							</ul>
 						</section>
+-->
+					<!--
 						<section class="section--center mdl-grid mdl-grid--no-spacing">
 							<header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
 								<i class="material-icons">play_circle_filled</i>
@@ -164,7 +224,7 @@
 								<li class="mdl-menu__item">Dolor</li>
 							</ul>
 						</section>
-					</div>
+-->
 				</section>
 			</div>
 			<!--

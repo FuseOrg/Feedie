@@ -40,6 +40,15 @@ h5 {
 	padding: 0 16px;
 }
 
+.mdl-button.mdl-button--raised {
+	padding: 8px 32px;
+	height: auto;
+	font-size: 18px;
+	font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
+	text-transform: none;
+	border-radius: 8px;
+}
+
 .mdl-demo .mdl-layout__tab-bar-button {
 	display: none;
 }
@@ -78,17 +87,6 @@ h5 {
 
 .mdl-demo main > .mdl-layout__tab-panel {
 	padding: 32px 8px;
-}
-
-.mdl-demo .mdl-card__actions {
-	margin: 0;
-	padding: 4px 40px;
-	color: inherit;
-}
-
-.mdl-demo .mdl-card__actions a {
-	color: #00BCD4;
-	margin: 0;
 }
 
 .mdl-demo .mdl-card__actions a:hover,
@@ -155,20 +153,6 @@ h5 {
 	color: #fff;
 }
 
-.mdl-demo section.section--footer .section__circle--big {
-	width: 100px;
-	height: 100px;
-	border-radius: 50px;
-	margin: 8px 32px;
-}
-
-.mdl-demo .is-small-screen section.section--footer .section__circle--big {
-	width: 50px;
-	height: 50px;
-	border-radius: 25px;
-	margin: 8px 16px;
-}
-
 .mdl-demo section.section--footer {
 	padding: 64px 0;
 	margin: 0 -8px -8px -8px;
@@ -216,7 +200,7 @@ form,
 	cursor: pointer;
 	font-size: 200%;
 	line-height: 1.5;
-	color: #aaa;
+	color: #b2b2b2;
 }
 
 .rating div:not(:checked) > label:before {
@@ -224,12 +208,12 @@ form,
 }
 
 .rating div > input:checked ~ label {
-	color: #ff7700;
+	color: gold;
 }
 
 .rating div:not(:checked) > label:hover,
 .rating div:not(:checked) > label:hover ~ label {
-	color: gold;
+	color: limegreen;
 }
 
 .rating div > input:checked + label:hover,
@@ -238,12 +222,4 @@ form,
 .rating div > input:checked ~ label:hover ~ label,
 .rating div > label:hover ~ input:checked ~ label {
 	color: red;
-}
-
-.rating div > label:hover {
-	transform: scale(1.2);
-}
-
-.rating div > label:active {
-	transform: scale(.9);
 }

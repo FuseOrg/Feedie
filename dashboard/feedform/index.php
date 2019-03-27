@@ -8,10 +8,10 @@
 	<link rel="stylesheet" href="../../styles/material.min.css">
 	<link rel="stylesheet" href="../../styles/main.css">
 	<link rel="icon" type="image/png" href="../../images/logo.png">
-	<title>Feedie | Feedback</title>
+	<title>Feedback | Feedie</title>
 </head>
 
-<body class="mdl-demo mdl-color-text--grey-800 mdl-base">
+<body class="mdl-demo mdl-color-text--grey-900 mdl-base">
 	<?php
 		session_start();
 		if (!isset($_SESSION["st_username"])){
@@ -38,12 +38,6 @@
 						<li class="mdl-menu__item">
 							<i class="material-icons" role="presentation">exit_to_app</i>
 							Logout
-						</li>
-					</a>
-					<a href="../changepw">
-						<li class="mdl-menu__item">
-							<i class="material-icons" role="presentation">vpn_key</i>
-							Change password
 						</li>
 					</a>
 				</ul>
@@ -75,7 +69,7 @@
 			<div class="mdl-layout__tab-panel is-active" id="overview">
 				<section class="section--center mdl-card mdl-grid mdl-grid--no-spacing">
 					<h4 class="mdl-cell mdl-cell--12-col">Feedback</h4>
-					<div class="mdl-cell mdl-cell--12-col questions">
+					<div class="mdl-cell mdl-cell--12-col questions mdl-color--yellow-300">
 						<?php
     $servername = "127.0.0.1";
     $username = "root";
