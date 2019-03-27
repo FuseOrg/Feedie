@@ -110,7 +110,7 @@
 							<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
 								<div class="mdl-textfield mdl-js-textfield">
 									<input class="mdl-textfield__input" type="password" name="currentpassword">
-									<label class="mdl-textfield__label" for="sample1">Current password</label>
+									<label class="mdl-textfield__label">Current password</label>
 								</div>
 							</div>
 							<div class="section__circle-container mdl-cell mdl-cell--1-col">
@@ -121,7 +121,7 @@
 							<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
 								<div class="mdl-textfield mdl-js-textfield">
 									<input class="mdl-textfield__input" type="password" name="newpassword">
-									<label class="mdl-textfield__label" for="sample1">New password</label>
+									<label class="mdl-textfield__label">New password</label>
 								</div>
 							</div>
 							<div class="section__circle-container mdl-cell mdl-cell--1-col">
@@ -132,7 +132,7 @@
 							<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
 								<div class="mdl-textfield mdl-js-textfield">
 									<input class="mdl-textfield__input" type="password" name="renewpassword">
-									<label class="mdl-textfield__label" for="sample1">Retype new password</label>
+									<label class="mdl-textfield__label">Retype new password</label>
 								</div>
 							</div>
 							<div class="mdl-cell mdl-cell--12-col questions">
@@ -140,7 +140,7 @@
 									Change password
 								</button>
 							</div>
-							<div class="mdl-cell mdl-cell--12-col mdl-color--yellow-300 questions">
+							<div class="mdl-cell mdl-cell--12-col mdl-color-text--red-a400 questions">
 								<?php
 									$servername = "127.0.0.1";
 									$username = "root";

@@ -125,6 +125,14 @@ h5 {
 	margin-right: 16px;
 }
 
+.banner {
+	background-image: url(../images/banner.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 75%;
+	height: 100%;
+}
+
 .subjects {
 	cursor: pointer;
 }
@@ -137,7 +145,6 @@ h5 {
 	padding: 32px;
 	display: flex;
 	align-items: center;
-	font-size: 18px;
 }
 
 .mdl-demo section .section__circle-container {
