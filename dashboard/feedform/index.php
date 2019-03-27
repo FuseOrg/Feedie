@@ -357,7 +357,7 @@
                   x.className = "show";
                   setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
                   }
-                 showsnackbar()
+                 showsnackbar();
                  </script>';
           unset($_SESSION["toast_type"]);
 	  	}
@@ -370,7 +370,7 @@
                   x.className = "show";
                   setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
                   }
-                 showsnackbar()
+                 showsnackbar();
                  </script>';
           unset($_SESSION["toast_type"]);
         }

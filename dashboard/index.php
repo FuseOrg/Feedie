@@ -99,10 +99,9 @@
 			</div>
 			<div class="mdl-layout__tab-panel" id="account">
 				<section class="section--center mdl-card mdl-grid mdl-grid--no-spacing">
-					<h4 class="mdl-cell mdl-cell--12-col">Account</h4>
+					<h4 class="mdl-cell mdl-cell--12-col">Change password</h4>
 					<form action="" method="post">
 						<div class="mdl-grid mdl-grid--no-spacing">
-							<h5 class="mdl-cell mdl-cell--12-col questions">Change password</h5>
 							<div class="section__circle-container mdl-cell mdl-cell--1-col">
 								<div class="section__circle-container__circle mdl-color-text--green-a400">
 									<i class="material-icons">vpn_key</i>
@@ -197,7 +196,7 @@
                   x.className = "show";
                   setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
                   }
-                 showsnackbar()
+                 showsnackbar();
                  </script>';
           unset($_SESSION["toast_type"]);
 	  	}
@@ -210,7 +209,7 @@
                   x.className = "show";
                   setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
                   }
-                 showsnackbar()
+                 showsnackbar();
                  </script>';
           unset($_SESSION["toast_type"]);
         }
