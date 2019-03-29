@@ -27,9 +27,19 @@
 						<i class="material-icons">arrow_backward</i>
 					</button>
 				</a>
-				<div class="mdl-layout-spacer"></div>
 				<span class="mdl-layout-title">Feedie</span>
 				<div class="mdl-layout-spacer"></div>
+				<span class="mdl-layout-title">
+					<?php
+						if (!isset($_SESSION["st_username"])){
+						 sleep(1);
+						 header('Location: ../');
+						}
+						echo $_SESSION["st_username"];
+						echo " &middot; ";
+						echo $_SESSION["class"];
+					?>
+				</span>
 				<button id="more" class="mdl-button mdl-js-button mdl-button--icon">
 					<i class="material-icons">account_circle</i>
 				</button>
@@ -43,7 +53,6 @@
 				</ul>
 			</div>
 			<div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--white">
-				<div class="mdl-layout-spacer"></div>
 				<a href="#overview" class="mdl-layout__tab is-active">
 					<?php
 						$_SESSION["sub_name"] = $_GET["sub_name"];
@@ -62,7 +71,6 @@
 						echo $_SESSION["te_username"];
 					?>
 				</a>
-				<div class="mdl-layout-spacer"></div>
 			</div>
 		</header>
 		<main class="mdl-layout__content">
