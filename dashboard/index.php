@@ -26,7 +26,6 @@
 					<?php
 						session_start();
 						if (!isset($_SESSION["st_username"])){
-						 sleep(1);
 						 header('Location: ../');
 						}
 						echo $_SESSION["st_username"];

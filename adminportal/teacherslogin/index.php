@@ -15,7 +15,6 @@
 	<?php
 		session_start();
 		if (isset($_SESSION["te_username"])){
-			//Add sleep here
 			header('Location: dashboard/');
 		}
 	?>
@@ -75,7 +74,6 @@
 									echo "You are logged in...";
 									session_start();
 									$_SESSION["te_username"] = $_POST["username"];
-									//Add sleep here
 									header("Location: dashboard/");
 								}
 								else

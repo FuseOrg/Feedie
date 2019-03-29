@@ -15,7 +15,6 @@
 	<?php
 		session_start();
 		if (isset($_SESSION["hod_username"])){
-			sleep(1);
 			header('Location: dashboard/');
 		}
 	?>
@@ -76,7 +75,6 @@
 										session_start();
 										$_SESSION["hod_username"] = $_POST["username"];
 										$_SESSION["dept"] = $row["dept"];
-										sleep(1);
 										header("Location: dashboard/");  // lines
 									}
 									else
