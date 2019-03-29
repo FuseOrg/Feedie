@@ -63,22 +63,22 @@
 						while($row = $result->fetch_assoc()){
 					?>
 					<div onclick="location.href='feedform/?sub_name=<?php echo $row["sub_name"]; ?>'" class="mdl-cell mdl-cell--12-col mdl-grid subjects">
-						<div class="section__circle-container mdl-cell mdl-cell--1-col">
+						<div class="flex-center mdl-cell mdl-cell--1-col">
 							<?php
 								$sql1 = "SELECT st_username FROM feeds WHERE st_username = '".$_SESSION["st_username"]."' AND sub_code = '".$row["sub_code"]."' AND class = '".$_SESSION["class"]."'";
 								$result1 = $conn->query($sql1);
 								if( $result1->num_rows > 0 ) {
 							?>
-							<div class="section__circle-container__circle mdl-color-text--green-a400">
+							<span class="mdl-color-text--green-a400">
 								<i class="material-icons">done</i>
-							</div>
+							</span>
 							<?php
 								}
 								else {
 							?>
-							<div class="section__circle-container__circle mdl-color-text--red-a400">
+							<span class="mdl-color-text--red-a400">
 								<i class="material-icons">close</i>
-							</div>
+							</span>
 							<?php
 								}
 							?>
@@ -100,7 +100,7 @@
 					<h4 class="mdl-cell mdl-cell--12-col">Change password</h4>
 					<form action="" method="post">
 						<div class="mdl-grid mdl-grid--no-spacing">
-							<div class="section__circle-container mdl-cell mdl-cell--1-col">
+							<div class="flex-center mdl-cell mdl-cell--1-col">
 								<div class="section__circle-container__circle mdl-color-text--amber-300">
 									<i class="material-icons">vpn_key</i>
 								</div>
@@ -111,12 +111,12 @@
 									<label class="mdl-textfield__label">Current password</label>
 								</div>
 							</div>
-							<div class="section__circle-container mdl-cell mdl-cell--1-col">
+							<div class="flex-center mdl-cell mdl-cell--1-col">
 								<span onclick="cptoggler()" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent">
 									<i id="cp" class="material-icons">visibility_off</i>
 								</span>
 							</div>
-							<div class="section__circle-container mdl-cell mdl-cell--1-col">
+							<div class="flex-center mdl-cell mdl-cell--1-col">
 								<div class="section__circle-container__circle mdl-color-text--green-a400">
 									<i class="material-icons">vpn_key</i>
 								</div>
@@ -127,12 +127,12 @@
 									<label class="mdl-textfield__label">New password</label>
 								</div>
 							</div>
-							<div class="section__circle-container mdl-cell mdl-cell--1-col">
+							<div class="flex-center mdl-cell mdl-cell--1-col">
 								<span onclick="nptoggler()" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent">
 									<i id="np" class="material-icons">visibility_off</i>
 								</span>
 							</div>
-							<div class="section__circle-container mdl-cell mdl-cell--1-col">
+							<div class="flex-center mdl-cell mdl-cell--1-col">
 								<div class="section__circle-container__circle mdl-color-text--green-a400">
 									<i class="material-icons">vpn_key</i>
 								</div>
@@ -143,7 +143,7 @@
 									<label class="mdl-textfield__label">Retype new password</label>
 								</div>
 							</div>
-							<div class="section__circle-container mdl-cell mdl-cell--1-col">
+							<div class="flex-center mdl-cell mdl-cell--1-col">
 								<span onclick="rptoggler()" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent">
 									<i id="rp" class="material-icons">visibility_off</i>
 								</span>

@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="styles/material.min.css">
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="icon" type="image/png" href="images/logo.png">
-	<title>Login | Feedie</title>
+	<title>Student Login | Feedie</title>
 </head>
 
 <body class="mdl-demo mdl-color-text--grey-900 mdl-base">
@@ -18,7 +18,7 @@
 			</div>
 			<form action="" method="post">
 				<div class="mdl-grid mdl-grid--no-spacing">
-					<h4 class="mdl-cell mdl-cell--12-col questions">Sign in</h4>
+					<h4 class="mdl-cell mdl-cell--12-col questions">Student sign in</h4>
 					<div class="mdl-cell mdl-cell--12-col questions" style="flex-direction: column;">
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 							<input class="mdl-textfield__input" type="text" name="rollno" id="rollno">

@@ -144,17 +144,10 @@ h5 {
 	align-items: center;
 }
 
-.mdl-demo section .section__circle-container {
+.flex-center {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-
-.mdl-demo section .section__circle-container > .section__circle-container__circle {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: #fff;
 }
 
 .mdl-demo section.section--footer {
