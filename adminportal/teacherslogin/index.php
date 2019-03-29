@@ -13,12 +13,12 @@
 
 <body class="mdl-demo mdl-color-text--grey-900 mdl-base">
 	<?php
-   session_start();
-   if (isset($_SESSION["te_username"])){
-     //Add sleep here
-     header('Location: dashboard/');
-   }
- ?>
+		session_start();
+		if (isset($_SESSION["te_username"])){
+			//Add sleep here
+			header('Location: dashboard/');
+		}
+	?>
 	<div class="mdl-grid mdl-grid--no-spacing mdl-layout mdl-js-layout">
 		<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone section--center mdl-grid mdl-grid--no-spacing">
 			<div class="mdl-cell mdl-cell--12-col">
@@ -58,35 +58,35 @@
 					</script>
 					<div class="mdl-cell mdl-cell--12-col mdl-color-text--red-a400 questions">
 						<?php   
-				$servername = "127.0.0.1";
-				$username = "root";
-				$password = "";
-				$dbname = "feedie_base";
-				if (isset($_POST["username"]) AND isset($_POST["password"])){
-				// Create connection
-					$conn = new mysqli($servername, $username, $password, $dbname);
-					$username = $_POST["username"];
-					$sql = "SELECT password FROM teachers WHERE te_username = '".$username."'";
-					$result = $conn->query($sql);
-					if ($result->num_rows > 0) {
-					// output data of each row
-					$row = $result->fetch_assoc();
-					if( $_POST["password"] == $row["password"] ){
-						echo "You are logged in...";
-						session_start();
-						$_SESSION["te_username"] = $_POST["username"];
-						//Add sleep here
-						header("Location: dashboard/");
-					}
-					else
-						echo "Password incorrect";
-					} 
-					else {
-						echo "Unknown username";
-					}
-					$conn->close();
-				}
-		?>
+							$servername = "127.0.0.1";
+							$username = "root";
+							$password = "";
+							$dbname = "feedie_base";
+							if (isset($_POST["username"]) AND isset($_POST["password"])){
+							// Create connection
+								$conn = new mysqli($servername, $username, $password, $dbname);
+								$username = $_POST["username"];
+								$sql = "SELECT password FROM teachers WHERE te_username = '".$username."'";
+								$result = $conn->query($sql);
+								if ($result->num_rows > 0) {
+								// output data of each row
+								$row = $result->fetch_assoc();
+								if( $_POST["password"] == $row["password"] ){
+									echo "You are logged in...";
+									session_start();
+									$_SESSION["te_username"] = $_POST["username"];
+									//Add sleep here
+									header("Location: dashboard/");
+								}
+								else
+									echo "Password incorrect";
+								} 
+								else {
+									echo "Unknown username";
+								}
+								$conn->close();
+							}
+						?>
 					</div>
 				</div>
 			</form>

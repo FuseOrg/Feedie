@@ -13,13 +13,13 @@
 
 <body class="mdl-demo mdl-color-text--grey-900 mdl-base">
 	<?php
-    if (isset($_GET["logout"])){
-      if ($_GET["logout"] == 1){
-        session_start();
-        session_destroy();
-      }
-    }
-  ?>
+		if (isset($_GET["logout"])){
+			if ($_GET["logout"] == 1){
+				session_start();
+				session_destroy();
+			}
+		}
+	?>
 	<div class="mdl-grid mdl-grid--no-spacing mdl-layout mdl-js-layout">
 		<div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone flex-center">
 			<a href="teacherslogin">

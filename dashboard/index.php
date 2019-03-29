@@ -230,35 +230,35 @@
 	</div>
 	<div id="snackbar">Some text some message..</div>
 	<?php
-	  //Toast setting-up
-	  if (isset($_SESSION["toast_type"])) {
-	  	if($_SESSION["toast_type"] == "update") {
-	     echo 
-                '<script type="text/javascript">
-                 function showsnackbar() {
-                  var x = document.getElementById("snackbar");
-                  x.innerHTML = "Response updated";
-                  x.className = "show";
-                  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
-                  }
-                 showsnackbar();
-                 </script>';
-          unset($_SESSION["toast_type"]);
-	  	}
-        elseif ($_SESSION["toast_type"] == "first-time") {
-         echo 
-                '<script type="text/javascript">
-                 function showsnackbar() {
-                  var x = document.getElementById("snackbar");
-                  x.innerHTML = "Response added";
-                  x.className = "show";
-                  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
-                  }
-                 showsnackbar();
-                 </script>';
-          unset($_SESSION["toast_type"]);
-        }
-      }
+		//Toast setting-up
+		if (isset($_SESSION["toast_type"])) {
+			if($_SESSION["toast_type"] == "update") {
+				echo 
+					'<script type="text/javascript">
+					function showsnackbar() {
+					var x = document.getElementById("snackbar");
+					x.innerHTML = "Response updated";
+					x.className = "show";
+					setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
+					}
+					showsnackbar();
+					</script>';
+					unset($_SESSION["toast_type"]);
+			}
+			elseif ($_SESSION["toast_type"] == "first-time") {
+				echo 
+					'<script type="text/javascript">
+					function showsnackbar() {
+					var x = document.getElementById("snackbar");
+					x.innerHTML = "Response added";
+					x.className = "show";
+					setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
+					}
+					showsnackbar();
+					</script>';
+					unset($_SESSION["toast_type"]);
+			}
+		}
 	?>
 </body>
 
