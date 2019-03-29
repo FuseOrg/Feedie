@@ -15,7 +15,6 @@
 	<?php
 		session_start();
 		if (!isset($_SESSION["st_username"])){
-			sleep(1);
 			header('Location: ../../');
 		}
 	?>
@@ -27,9 +26,18 @@
 						<i class="material-icons">arrow_backward</i>
 					</button>
 				</a>
-				<div class="mdl-layout-spacer"></div>
 				<span class="mdl-layout-title">Feedie</span>
 				<div class="mdl-layout-spacer"></div>
+				<span class="mdl-layout-title">
+					<?php
+						if (!isset($_SESSION["st_username"])){
+						 header('Location: ../');
+						}
+						echo $_SESSION["st_username"];
+						echo " &middot; ";
+						echo $_SESSION["class"];
+					?>
+				</span>
 				<button id="more" class="mdl-button mdl-js-button mdl-button--icon">
 					<i class="material-icons">account_circle</i>
 				</button>
@@ -43,7 +51,6 @@
 				</ul>
 			</div>
 			<div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--white">
-				<div class="mdl-layout-spacer"></div>
 				<a href="#overview" class="mdl-layout__tab is-active">
 					<?php
 						$_SESSION["sub_name"] = $_GET["sub_name"];
@@ -62,7 +69,6 @@
 						echo $_SESSION["te_username"];
 					?>
 				</a>
-				<div class="mdl-layout-spacer"></div>
 			</div>
 		</header>
 		<main class="mdl-layout__content">
@@ -346,35 +352,35 @@
 	</div>
 	<div id="snackbar">Some text some message..</div>
 	<?php
-	  //Toast setting-up
-	  if (isset($_SESSION["toast_type"])) {
-	  	if($_SESSION["toast_type"] == "update") {
-	     echo 
-                '<script type="text/javascript">
-                 function showsnackbar() {
-                  var x = document.getElementById("snackbar");
-                  x.innerHTML = "Response updated";
-                  x.className = "show";
-                  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
-                  }
-                 showsnackbar();
-                 </script>';
-          unset($_SESSION["toast_type"]);
-	  	}
-        elseif ($_SESSION["toast_type"] == "first-time") {
-         echo 
-                '<script type="text/javascript">
-                 function showsnackbar() {
-                  var x = document.getElementById("snackbar");
-                  x.innerHTML = "Response added";
-                  x.className = "show";
-                  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
-                  }
-                 showsnackbar();
-                 </script>';
-          unset($_SESSION["toast_type"]);
-        }
-      }
+		//Toast setting-up
+		if (isset($_SESSION["toast_type"])) {
+			if($_SESSION["toast_type"] == "update") {
+				echo 
+					'<script type="text/javascript">
+					function showsnackbar() {
+					var x = document.getElementById("snackbar");
+					x.innerHTML = "Response updated";
+					x.className = "show";
+					setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
+					}
+					showsnackbar();
+					</script>';
+					unset($_SESSION["toast_type"]);
+			}
+			elseif ($_SESSION["toast_type"] == "first-time") {
+				echo 
+					'<script type="text/javascript">
+					function showsnackbar() {
+					var x = document.getElementById("snackbar");
+					x.innerHTML = "Response added";
+					x.className = "show";
+					setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
+					}
+					showsnackbar();
+					</script>';
+					unset($_SESSION["toast_type"]);
+			}
+		}
 	?>
 </body>
 
