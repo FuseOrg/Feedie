@@ -29,7 +29,7 @@
 					<div class="mdl-cell mdl-cell--12-col questions" style="flex-direction: column;">
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 							<input class="mdl-textfield__input" type="text" name="username" id="username">
-							<label class="mdl-textfield__label">Register number</label>
+							<label class="mdl-textfield__label">User name</label>
 						</div>
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 							<input class="mdl-textfield__input" type="password" name="password" id="password">
