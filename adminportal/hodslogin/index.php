@@ -2,13 +2,16 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="../../css.css">
+	<script src="scripts/material.min.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
-	<link rel="icon" type="image/png" href="../../images/logo.png">
-	<title>Feedie | HOD Login</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="/Feedie/styles/material.min.css">
+	<link rel="stylesheet" href="/Feedie/styles/main.css">
+	<link rel="icon" type="image/png" href="images/logo.png">
+	<title>HOD Login | Feedie</title>
 </head>
 
-<body>
+<body class="mdl-demo mdl-color-text--grey-900 mdl-base">
 	<?php
 
    session_start();
@@ -18,19 +21,28 @@
    }
 
  ?>
-		<div class="header">
-			<div><a href="../"><img src="../../images/home.svg" class="home"></a></div>
-			<img src="../../images/logo.svg" class="logo" />
-			<div class="title">Feedie</div>
-		</div>
-		<div class="wrapper">
-			<div class="container">
-				<div class="heading">HOD Login</div>
-				<center><img src="../../images/hod.svg" class="avatar" /></center>
-				<form class="myform" action="" method="post">
-					<input type="text" name="username" class="inputvalue" placeholder="Username" />
-					<input id="password" type="password" name="password" class="inputvalue" placeholder="Password">
-					<div class="psw"><span class="shp" onclick="toggler(this)" type="button">Show</span></div>
+	<div class="mdl-grid mdl-grid--no-spacing">
+		<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone section--center mdl-grid mdl-grid--no-spacing">
+			<div class="mdl-cell mdl-cell--12-col">
+			</div>
+			<form action="" method="post">
+				<div class="mdl-grid mdl-grid--no-spacing">
+					<h4 class="mdl-cell mdl-cell--12-col questions">Sign in</h4>
+					<div class="mdl-cell mdl-cell--12-col questions" style="flex-direction: column;">
+						<div class="mdl-textfield mdl-js-textfield">
+							<input class="mdl-textfield__input" type="text" name="rollno">
+							<label class="mdl-textfield__label">Register number</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield">
+							<input class="mdl-textfield__input" type="password" name="password">
+							<label class="mdl-textfield__label">Password</label>
+						</div>
+					</div>
+					<div class="mdl-cell mdl-cell--12-col questions">
+						<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+							Log in
+						</button>
+					</div>
 					<script>
 						function toggler(e) {
 							if (e.innerHTML == 'Show') {
@@ -43,12 +55,8 @@
 						}
 
 					</script>
-					<div style="text-align: right">
-						<input class="button" type="submit" id="login_btn" value="Login" />
-					</div>
-					<div class="phpr" style="color:red">
-						<label>
-		<?php   
+					<div class="mdl-cell mdl-cell--12-col mdl-color-text--red-a400 questions">
+						<?php   
 
 		$servername = "127.0.0.1";
 		$username = "root";
@@ -84,12 +92,19 @@
 		 }
 
 		?>
-		</label>
 					</div>
-				</form>
-			</div>
+				</div>
+			</form>
+
+
 		</div>
-		<footer><a href="https://fuseorg.github.io/Feedie" class="link" target="_blank">Fuse Org</a></footer>
+		<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone hodbanner">
+		</div>
+	</div>
+
+
+
+
 </body>
 
 </html>
