@@ -16,7 +16,7 @@
 
    session_start();
    if (isset($_SESSION["hod_username"])){
-     sleep(1);
+     
      header('Location: dashboard/');
    }
 
@@ -94,17 +94,13 @@
 		?>
 					</div>
 				</div>
-			</form>
+	 </form>
 
 
-		</div>
+	 </div>
 		<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone hodbanner">
 		</div>
-	</div>
-
-
-
+	 </div>
 
 </body>
-
 </html>
