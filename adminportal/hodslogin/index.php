@@ -2,22 +2,21 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-	<script src="scripts/material.min.js"></script>
+	<script src="../../scripts/material.min.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="/Feedie/styles/material.min.css">
-	<link rel="stylesheet" href="/Feedie/styles/main.css">
-	<link rel="icon" type="image/png" href="images/logo.png">
+	<link rel="stylesheet" href="../../styles/material.min.css">
+	<link rel="stylesheet" href="../../styles/main.css">
+	<link rel="icon" type="image/png" href="../../images/logo.png">
 	<title>HOD Login | Feedie</title>
 </head>
 
 <body class="mdl-demo mdl-color-text--grey-900 mdl-base">
 	<?php
 
-   session_start();
-   if (isset($_SESSION["hod_username"])){
-     
-     header('Location: dashboard/');
+  		 session_start();
+     		 if (isset($_SESSION["hod_username"])){
+     			header('Location: dashboard/');
    }
 
  ?>
@@ -27,15 +26,18 @@
 			</div>
 			<form action="" method="post">
 				<div class="mdl-grid mdl-grid--no-spacing">
-					<h4 class="mdl-cell mdl-cell--12-col questions">Sign in</h4>
+					<h4 class="mdl-cell mdl-cell--12-col questions">HOD Sign in</h4>
 					<div class="mdl-cell mdl-cell--12-col questions" style="flex-direction: column;">
-						<div class="mdl-textfield mdl-js-textfield">
-							<input class="mdl-textfield__input" type="text" name="rollno">
-							<label class="mdl-textfield__label">Register number</label>
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="text" name="username" id="username">
+							<label class="mdl-textfield__label">User name</label>
 						</div>
-						<div class="mdl-textfield mdl-js-textfield">
-							<input class="mdl-textfield__input" type="password" name="password">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="password" name="password" id="password">
 							<label class="mdl-textfield__label">Password</label>
+							<span onclick="toggler()" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent">
+								<i id="sp" class="material-icons">visibility_off</i>
+							</span>
 						</div>
 					</div>
 					<div class="mdl-cell mdl-cell--12-col questions">
@@ -44,63 +46,55 @@
 						</button>
 					</div>
 					<script>
-						function toggler(e) {
-							if (e.innerHTML == 'Show') {
-								e.innerHTML = 'Hide'
-								document.getElementById('password').type = "text";
+						function toggler() {
+							if (document.getElementById("sp").innerHTML == 'visibility_off') {
+								document.getElementById("sp").innerHTML = 'visibility';
+								document.getElementById("password").type = "text";
 							} else {
-								e.innerHTML = 'Show'
-								document.getElementById('password').type = "password";
+								document.getElementById("sp").innerHTML = 'visibility_off';
+								document.getElementById("password").type = "password";
 							}
 						}
-
 					</script>
 					<div class="mdl-cell mdl-cell--12-col mdl-color-text--red-a400 questions">
 						<?php   
-
-		$servername = "127.0.0.1";
-		$username = "root";
-		$password = "";
-		$dbname = "feedie_base";
-
-		if (isset($_POST["username"]) AND isset($_POST["password"])){
-		// Create connection
-			$conn = new mysqli($servername, $username, $password, $dbname);
-
-			$username = $_POST["username"];
-			$sql = "SELECT password, dept FROM hods WHERE hod_username = '".$username."'";
-			$result = $conn->query($sql);
-
-			if ($result->num_rows > 0) {
-				// output data of each row
-				$row = $result->fetch_assoc();
-				if( $_POST["password"] == $row["password"] ){
-					echo "Logging you in...";    
-					session_start();
-					$_SESSION["hod_username"] = $_POST["username"];
-					$_SESSION["dept"] = $row["dept"];
-					sleep(1);
-					header("Location: dashboard/");  // lines
-				}
-				else
-					echo "Password incorrect";
-				} 
-			else {
-					echo "Unknown username";
-			}
-			$conn->close();
-		 }
-
-		?>
+							$servername = "127.0.0.1";
+							$username = "root";
+							$password = "";
+							$dbname = "feedie_base";
+							if (isset($_POST["username"]) AND isset($_POST["password"])){
+							// Create connection
+								$conn = new mysqli($servername, $username, $password, $dbname);
+								$username = $_POST["username"];
+								$sql = "SELECT password, dept FROM hods WHERE hod_username = '".$username."'";
+								$result = $conn->query($sql);
+								if ($result->num_rows > 0) {
+									// output data of each row
+									$row = $result->fetch_assoc();
+									if( $_POST["password"] == $row["password"] ){
+										echo "Logging you in...";    
+										session_start();
+										$_SESSION["hod_username"] = $_POST["username"];
+										$_SESSION["dept"] = $row["dept"];
+										header("Location: dashboard/");  // lines
+									}
+									else
+										echo "Password incorrect";
+									}
+								else {
+									echo "Unknown username";
+								}
+								$conn->close();
+							}
+						?>
 					</div>
 				</div>
-	 </form>
-
-
-	 </div>
-		<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone hodbanner">
+			</form>
 		</div>
-	 </div>
-
+		<div class="mdl-layout--large-screen-only mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-phone banner">
+		</div>
+	</div>
 </body>
+
 </html>
+© 2019 GitHub, Inc.
