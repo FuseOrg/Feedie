@@ -13,20 +13,18 @@
 
 <body class="mdl-demo mdl-color-text--grey-900 mdl-base">
 	<?php
-
-  		 session_start();
-     		 if (isset($_SESSION["hod_username"])){
-     			header('Location: dashboard/');
-   }
-
- ?>
+		session_start();
+		if (isset($_SESSION["hod_username"])){
+			header('Location: dashboard/');
+		}
+	?>
 	<div class="mdl-grid mdl-grid--no-spacing">
 		<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone section--center mdl-grid mdl-grid--no-spacing">
 			<div class="mdl-cell mdl-cell--12-col">
 			</div>
 			<form action="" method="post">
 				<div class="mdl-grid mdl-grid--no-spacing">
-					<h4 class="mdl-cell mdl-cell--12-col questions">HOD Sign in</h4>
+					<h4 class="mdl-cell mdl-cell--12-col questions">HOD sign in</h4>
 					<div class="mdl-cell mdl-cell--12-col questions" style="flex-direction: column;">
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 							<input class="mdl-textfield__input" type="text" name="username" id="username">
