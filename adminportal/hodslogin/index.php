@@ -53,6 +53,7 @@
 								document.getElementById("password").type = "password";
 							}
 						}
+
 					</script>
 					<div class="mdl-cell mdl-cell--12-col mdl-color-text--red-a400 questions">
 						<?php   
@@ -89,10 +90,9 @@
 				</div>
 			</form>
 		</div>
-		<div class="mdl-layout--large-screen-only mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-phone banner" style="background-image: url('../../images/hodbanner.svg')">
+		<div class="mdl-layout--large-screen-only mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-phone banner" style="background-image: url('../../images/hodbanner.svg');">
 		</div>
 	</div>
 </body>
 
 </html>
-© 2019 GitHub, Inc.
