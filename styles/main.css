@@ -26,10 +26,7 @@ h5 {
 
 .mdl-layout-title {
 	font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
-	font-size: 24px;
-	font-weight: 600;
-	letter-spacing: 1px;
-	color: #666;
+	padding: 0 16px;
 }
 
 .mdl-layout__header {
@@ -74,11 +71,6 @@ h5 {
 	color: var(--accent-color);
 }
 
-.mdl-demo .mdl-layout__tab-bar .mdl-layout__tab.is-active::after {
-	height: 3px;
-	border-radius: 4px 4px 0 0;
-}
-
 .mdl-layout__tab {
 	font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
 	font-size: 18px;
@@ -88,6 +80,11 @@ h5 {
 
 .mdl-textfield {
 	width: 100%;
+}
+
+.mdl-textfield .mdl-button {
+	position: absolute;
+	right: 0;
 }
 
 .mdl-demo main > .mdl-layout__tab-panel {
@@ -146,26 +143,19 @@ h5 {
 }
 
 .subjects:hover {
-	background-color: #efefef;
+	background-color: #eee;
 }
 
 .questions {
-	padding: 32px;
+	padding: 24px 32px;
 	display: flex;
 	align-items: center;
 }
 
-.mdl-demo section .section__circle-container {
+.flex-center {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-
-.mdl-demo section .section__circle-container > .section__circle-container__circle {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: #fff;
 }
 
 .mdl-demo section.section--footer {

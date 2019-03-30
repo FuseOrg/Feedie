@@ -20,9 +20,19 @@
 						<i class="material-icons">home</i>
 					</button>
 				</a>
-				<div class="mdl-layout-spacer"></div>
 				<span class="mdl-layout-title">Feedie</span>
 				<div class="mdl-layout-spacer"></div>
+				<span class="mdl-layout-title">
+					<?php
+						session_start();
+						if (!isset($_SESSION["st_username"])){
+						 header('Location: ../');
+						}
+						echo $_SESSION["st_username"];
+						echo " &middot; ";
+						echo $_SESSION["class"];
+					?>
+				</span>
 				<button id="more" class="mdl-button mdl-js-button mdl-button--icon">
 					<i class="material-icons">account_circle</i>
 				</button>
@@ -36,21 +46,8 @@
 				</ul>
 			</div>
 			<div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--white">
-				<div class="mdl-layout-spacer"></div>
 				<a href="#overview" class="mdl-layout__tab is-active">Feedback</a>
-				<a href="#account" class="mdl-layout__tab">
-					<?php
-						session_start();
-						if (!isset($_SESSION["st_username"])){
-						 sleep(1);
-						 header('Location: ../');
-						}
-						echo $_SESSION["st_username"];
-						echo " &middot; ";
-						echo $_SESSION["class"];
-					?>
-				</a>
-				<div class="mdl-layout-spacer"></div>
+				<a href="#account" class="mdl-layout__tab">Profile</a>
 			</div>
 		</header>
 		<main class="mdl-layout__content">
@@ -65,22 +62,22 @@
 						while($row = $result->fetch_assoc()){
 					?>
 					<div onclick="location.href='feedform/?sub_name=<?php echo $row["sub_name"]; ?>'" class="mdl-cell mdl-cell--12-col mdl-grid subjects">
-						<div class="section__circle-container mdl-cell mdl-cell--1-col">
+						<div class="flex-center mdl-cell mdl-cell--1-col">
 							<?php
 								$sql1 = "SELECT st_username FROM feeds WHERE st_username = '".$_SESSION["st_username"]."' AND sub_code = '".$row["sub_code"]."' AND class = '".$_SESSION["class"]."'";
 								$result1 = $conn->query($sql1);
 								if( $result1->num_rows > 0 ) {
 							?>
-							<div class="section__circle-container__circle mdl-color-text--green-a400">
+							<span class="mdl-color-text--green-a400">
 								<i class="material-icons">done</i>
-							</div>
+							</span>
 							<?php
 								}
 								else {
 							?>
-							<div class="section__circle-container__circle mdl-color-text--red-a400">
+							<span class="mdl-color-text--red-a400">
 								<i class="material-icons">close</i>
-							</div>
+							</span>
 							<?php
 								}
 							?>
@@ -102,44 +99,91 @@
 					<h4 class="mdl-cell mdl-cell--12-col">Change password</h4>
 					<form action="" method="post">
 						<div class="mdl-grid mdl-grid--no-spacing">
-							<div class="section__circle-container mdl-cell mdl-cell--1-col">
-								<div class="section__circle-container__circle mdl-color-text--green-a400">
+							<div class="flex-center mdl-cell mdl-cell--1-col">
+								<div class="section__circle-container__circle mdl-color-text--amber-300">
 									<i class="material-icons">vpn_key</i>
 								</div>
 							</div>
-							<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
-								<div class="mdl-textfield mdl-js-textfield">
-									<input class="mdl-textfield__input" type="password" name="currentpassword">
+							<div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--2-col-phone">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input class="mdl-textfield__input" type="password" name="currentpassword" id="currentpassword">
 									<label class="mdl-textfield__label">Current password</label>
 								</div>
 							</div>
-							<div class="section__circle-container mdl-cell mdl-cell--1-col">
+							<div class="flex-center mdl-cell mdl-cell--1-col">
+								<span onclick="cptoggler()" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent">
+									<i id="cp" class="material-icons">visibility_off</i>
+								</span>
+							</div>
+							<div class="flex-center mdl-cell mdl-cell--1-col">
 								<div class="section__circle-container__circle mdl-color-text--green-a400">
 									<i class="material-icons">vpn_key</i>
 								</div>
 							</div>
-							<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
-								<div class="mdl-textfield mdl-js-textfield">
-									<input class="mdl-textfield__input" type="password" name="newpassword">
+							<div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--2-col-phone">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input class="mdl-textfield__input" type="password" name="newpassword" id="newpassword">
 									<label class="mdl-textfield__label">New password</label>
 								</div>
 							</div>
-							<div class="section__circle-container mdl-cell mdl-cell--1-col">
+							<div class="flex-center mdl-cell mdl-cell--1-col">
+								<span onclick="nptoggler()" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent">
+									<i id="np" class="material-icons">visibility_off</i>
+								</span>
+							</div>
+							<div class="flex-center mdl-cell mdl-cell--1-col">
 								<div class="section__circle-container__circle mdl-color-text--green-a400">
 									<i class="material-icons">vpn_key</i>
 								</div>
 							</div>
-							<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
-								<div class="mdl-textfield mdl-js-textfield">
-									<input class="mdl-textfield__input" type="password" name="renewpassword">
+							<div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--2-col-phone">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input class="mdl-textfield__input" type="password" name="renewpassword" id="renewpassword">
 									<label class="mdl-textfield__label">Retype new password</label>
 								</div>
+							</div>
+							<div class="flex-center mdl-cell mdl-cell--1-col">
+								<span onclick="rptoggler()" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent">
+									<i id="rp" class="material-icons">visibility_off</i>
+								</span>
 							</div>
 							<div class="mdl-cell mdl-cell--12-col questions">
 								<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
 									Change password
 								</button>
 							</div>
+							<script>
+								function cptoggler() {
+									if (document.getElementById("cp").innerHTML == 'visibility_off') {
+										document.getElementById("cp").innerHTML = 'visibility';
+										document.getElementById("currentpassword").type = "text";
+									} else {
+										document.getElementById("cp").innerHTML = 'visibility_off';
+										document.getElementById("currentpassword").type = "password";
+									}
+								}
+
+								function nptoggler() {
+									if (document.getElementById("np").innerHTML == 'visibility_off') {
+										document.getElementById("np").innerHTML = 'visibility';
+										document.getElementById("newpassword").type = "text";
+									} else {
+										document.getElementById("np").innerHTML = 'visibility_off';
+										document.getElementById("newpassword").type = "password";
+									}
+								}
+
+								function rptoggler() {
+									if (document.getElementById("rp").innerHTML == 'visibility_off') {
+										document.getElementById("rp").innerHTML = 'visibility';
+										document.getElementById("renewpassword").type = "text";
+									} else {
+										document.getElementById("rp").innerHTML = 'visibility_off';
+										document.getElementById("renewpassword").type = "password";
+									}
+								}
+
+							</script>
 							<div class="mdl-cell mdl-cell--12-col mdl-color-text--red-a400 questions">
 								<?php
 									$servername = "127.0.0.1";
@@ -185,35 +229,35 @@
 	</div>
 	<div id="snackbar">Some text some message..</div>
 	<?php
-	  //Toast setting-up
-	  if (isset($_SESSION["toast_type"])) {
-	  	if($_SESSION["toast_type"] == "update") {
-	     echo 
-                '<script type="text/javascript">
-                 function showsnackbar() {
-                  var x = document.getElementById("snackbar");
-                  x.innerHTML = "Response updated";
-                  x.className = "show";
-                  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
-                  }
-                 showsnackbar();
-                 </script>';
-          unset($_SESSION["toast_type"]);
-	  	}
-        elseif ($_SESSION["toast_type"] == "first-time") {
-         echo 
-                '<script type="text/javascript">
-                 function showsnackbar() {
-                  var x = document.getElementById("snackbar");
-                  x.innerHTML = "Response added";
-                  x.className = "show";
-                  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
-                  }
-                 showsnackbar();
-                 </script>';
-          unset($_SESSION["toast_type"]);
-        }
-      }
+		//Toast setting-up
+		if (isset($_SESSION["toast_type"])) {
+			if($_SESSION["toast_type"] == "update") {
+				echo 
+					'<script type="text/javascript">
+					function showsnackbar() {
+					var x = document.getElementById("snackbar");
+					x.innerHTML = "Response updated";
+					x.className = "show";
+					setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
+					}
+					showsnackbar();
+					</script>';
+					unset($_SESSION["toast_type"]);
+			}
+			elseif ($_SESSION["toast_type"] == "first-time") {
+				echo 
+					'<script type="text/javascript">
+					function showsnackbar() {
+					var x = document.getElementById("snackbar");
+					x.innerHTML = "Response added";
+					x.className = "show";
+					setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
+					}
+					showsnackbar();
+					</script>';
+					unset($_SESSION["toast_type"]);
+			}
+		}
 	?>
 </body>
 

@@ -8,25 +8,28 @@
 	<link rel="stylesheet" href="styles/material.min.css">
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="icon" type="image/png" href="images/logo.png">
-	<title>Login | Feedie</title>
+	<title>Student Login | Feedie</title>
 </head>
 
 <body class="mdl-demo mdl-color-text--grey-900 mdl-base">
-	<div class="mdl-grid mdl-grid--no-spacing">
-		<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone section--center mdl-grid mdl-grid--no-spacing">
+	<div class="mdl-grid mdl-grid--no-spacing mdl-layout mdl-js-layout">
+		<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone section--center mdl-grid mdl-grid--no-spacing">
 			<div class="mdl-cell mdl-cell--12-col">
 			</div>
 			<form action="" method="post">
 				<div class="mdl-grid mdl-grid--no-spacing">
-					<h4 class="mdl-cell mdl-cell--12-col questions">Sign in</h4>
+					<h4 class="mdl-cell mdl-cell--12-col questions">Student sign in</h4>
 					<div class="mdl-cell mdl-cell--12-col questions" style="flex-direction: column;">
-						<div class="mdl-textfield mdl-js-textfield">
-							<input class="mdl-textfield__input" type="text" name="rollno">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="text" name="rollno" id="rollno">
 							<label class="mdl-textfield__label">Register number</label>
 						</div>
-						<div class="mdl-textfield mdl-js-textfield">
-							<input class="mdl-textfield__input" type="password" name="password">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input" type="password" name="password" id="password">
 							<label class="mdl-textfield__label">Password</label>
+							<span onclick="toggler()" class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent">
+								<i id="sp" class="material-icons">visibility_off</i>
+							</span>
 						</div>
 					</div>
 					<div class="mdl-cell mdl-cell--12-col questions">
@@ -34,20 +37,18 @@
 							Log in
 						</button>
 					</div>
-					<!--
-					<div class="psw"><span class="shp" onclick="toggler(this)" type="button">Show</span></div>
 					<script>
-						function toggler(e) {
-							if (e.innerHTML == 'Show') {
-								e.innerHTML = 'Hide'
-								document.getElementById('password').type = "text";
+						function toggler() {
+							if (document.getElementById("sp").innerHTML == 'visibility_off') {
+								document.getElementById("sp").innerHTML = 'visibility';
+								document.getElementById("password").type = "text";
 							} else {
-								e.innerHTML = 'Show'
-								document.getElementById('password').type = "password";
+								document.getElementById("sp").innerHTML = 'visibility_off';
+								document.getElementById("password").type = "password";
 							}
 						}
+
 					</script>
--->
 					<div class="mdl-cell mdl-cell--12-col mdl-color-text--red-a400 questions">
 						<?php
 							if (isset($_GET["logout"])){
@@ -96,7 +97,7 @@
 				</div>
 			</form>
 		</div>
-		<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone banner">
+		<div class="mdl-layout--large-screen-only mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-phone banner">
 		</div>
 	</div>
 </body>

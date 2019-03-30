@@ -2,46 +2,44 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="../css.css">
+	<script src="../scripts/material.min.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
-	<link rel="icon" type="image/png" href="../images/favicon.svg">
-	<title>Feedie | Admin portal</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="../styles/material.min.css">
+	<link rel="stylesheet" href="../styles/main.css">
+	<link rel="icon" type="image/png" href="../images/logo.png">
+	<title>Admin portal | Feedie</title>
 </head>
 
-<body>
+<body class="mdl-demo mdl-color-text--grey-900 mdl-base">
 	<?php
-
-    if (isset($_GET["logout"])){
-      if ($_GET["logout"] == 1){
-        session_start();
-        session_destroy();
-      }
-    }
-
-  ?>
-		<div class="header">
-			<img src="../images/logo.svg" class="logo" />
-			<div class="title">Feedie</div>
+		if (isset($_GET["logout"])){
+			if ($_GET["logout"] == 1){
+				session_start();
+				session_destroy();
+			}
+		}
+	?>
+	<div class="mdl-grid mdl-grid--no-spacing mdl-layout mdl-js-layout">
+		<div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone flex-center">
+			<a href="teacherslogin">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+					Faculty Log in
+				</button></a>
 		</div>
-		<div class="wrapper">
-			<div class="container">
-				<div>
-					<div class="tlogin">
-						<img src="../images/teacher.svg" class="avatar">
-					</div>
-					<div class="hlogin">
-						<img src="../images/hod.svg" class="avatar">
-					</div>
-					<div class="tlogin">
-						<a href="teacherslogin"><button class="button">Teacher Login</button></a>
-					</div>
-					<div class="hlogin">
-						<a href="hodslogin/index.php"><button class="button">HOD Login</button></a>
-					</div>
-				</div>
-			</div>
+		<div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone flex-center">
+			<a href="hodslogin">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+					HOD Log in
+				</button></a>
 		</div>
-		<footer><a href="https://fuseorg.github.io/Feedie" class="link" target="_blank">Fuse Org</a></footer>
+		<div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone flex-center">
+			<a href="principallogin">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+					Principal Log in
+				</button></a>
+		</div>
+	</div>
 </body>
 
 </html>
