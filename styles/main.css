@@ -123,14 +123,6 @@ h5 {
 }
 
 .banner {
-	background-image: url(../images/hodbanner.svg);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 75%;
-	height: 100%;
-}
-.hodbanner {
-	background-image: url(../images/hodbanner.svg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 75%;
