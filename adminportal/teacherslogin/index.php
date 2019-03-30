@@ -89,7 +89,7 @@
 				</div>
 			</form>
 		</div>
-		<div class="mdl-layout--large-screen-only mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-phone banner" style="background-image: url('../../images/teacherbanner.svg')">
+		<div class="mdl-layout--large-screen-only mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-phone banner" style="background-image: url('../../images/teacherbanner.svg');">
 		</div>
 	</div>
 </body>
