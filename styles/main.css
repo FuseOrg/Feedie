@@ -27,6 +27,7 @@ h5 {
 .mdl-layout-title {
 	font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
 	padding: 0 16px;
+	text-transform: capitalize;
 }
 
 .mdl-layout__header {
