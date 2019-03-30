@@ -96,6 +96,43 @@
 			</div>
 			<div class="mdl-layout__tab-panel" id="account">
 				<section class="section--center mdl-card mdl-grid mdl-grid--no-spacing">
+					<h4 class="mdl-cell mdl-cell--12-col">Account</h4>
+					<div class="mdl-cell mdl-cell--12-col mdl-grid">
+						<div class="flex-center mdl-cell mdl-cell--1-col">
+							<span class="mdl-color-text--red-a400">
+								<i class="material-icons">close</i>
+							</span>
+						</div>
+						<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
+							<h5>
+								Name: <?php echo $_SESSION["st_username"]; ?>
+							</h5>
+						</div>
+					</div>
+					<div class="mdl-cell mdl-cell--12-col mdl-grid">
+						<div class="flex-center mdl-cell mdl-cell--1-col">
+							<span class="mdl-color-text--red-a400">
+								<i class="material-icons">close</i>
+							</span>
+						</div>
+						<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
+							<h5>
+								Register no: <span style="text-transform: uppercase;"><?php echo $_SESSION["rollno"]; ?></span>
+							</h5>
+						</div>
+					</div>
+					<div class="mdl-cell mdl-cell--12-col mdl-grid">
+						<div class="flex-center mdl-cell mdl-cell--1-col">
+							<span class="mdl-color-text--red-a400">
+								<i class="material-icons">close</i>
+							</span>
+						</div>
+						<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
+							<h5>
+								Class: <?php echo $_SESSION["class"]; ?>
+							</h5>
+						</div>
+					</div>
 					<h4 class="mdl-cell mdl-cell--12-col">Change password</h4>
 					<form action="" method="post">
 						<div class="mdl-grid mdl-grid--no-spacing">
