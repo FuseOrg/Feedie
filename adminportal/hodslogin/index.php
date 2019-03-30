@@ -18,8 +18,8 @@
 			header('Location: dashboard/');
 		}
 	?>
-	<div class="mdl-grid mdl-grid--no-spacing">
-		<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone section--center mdl-grid mdl-grid--no-spacing">
+	<div class="mdl-grid mdl-grid--no-spacing mdl-layout mdl-js-layout">
+		<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone section--center mdl-grid mdl-grid--no-spacing">
 			<div class="mdl-cell mdl-cell--12-col">
 			</div>
 			<form action="" method="post">
