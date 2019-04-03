@@ -45,7 +45,7 @@
             echo "Question ".$i.":";
       ?>
 						<textarea type="textarea" class="inputvalue textarea" name="q[]" placeholder="Enter Question <?php echo $i; ?>" value="<?php echo $i; ?>"><?php echo $row["quest_content"]; ?></textarea> Value:
-						<input type="textarea" class="inputvalue" style="margin-bottom: 60px; height: 40px;" name="v[]" placeholder="Enter Value/Mark for Question <?php echo $i; ?>" value="<?php echo $row[" quest_value "]; ++$i; ?>">
+						<input type="textarea" class="inputvalue" style="margin-bottom: 60px; height: 40px;" name="v[]" placeholder="Enter Value/Mark for Question <?php echo $i; ?>" value="<?php echo $row["quest_value"]; ++$i; ?>">
 
 						<!--<textarea type="textarea" class="inputvalue" name="q[2]" placeholder="Question 2"></textarea>
 			<textarea type="textarea" class="inputvalue" name="q[3]" placeholder="Question 3"></textarea>
@@ -69,6 +69,9 @@
       if ( !empty($_POST) ) {
         //To update contents of questions
         echo "Questions updated";
+      }
+      elseif ( isset($_POST) ) {
+      	;
       }
       else{
         echo "Please fill all the question fields";
