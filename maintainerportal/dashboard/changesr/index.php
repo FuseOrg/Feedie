@@ -42,7 +42,7 @@
         if ($result->num_rows > 0){
           while ($row = $result->fetch_assoc()){
     ?>
-						<?php echo $i; ?> Star = <input type="text" class="inputvalue" name="r[]" placeholder="<?php echo $i; ?> points" value="<?php echo $row[" r_value "]; ++$i; ?>" />
+						<?php echo $i; ?> Star = <input type="text" class="inputvalue" name="r[]" placeholder="<?php echo $i; ?> points" value="<?php echo $row["r_value"]; ++$i; ?>" />
 						<?php
 
          } //Closing while loop
@@ -56,6 +56,9 @@
       if ( !empty($_POST) ) {
         //To update contents of questions
         echo "Ratings updated";
+      }
+      elseif ( isset($_POST) ) {
+      	;
       }
       else{
         echo "Please fill all the rating fields";
