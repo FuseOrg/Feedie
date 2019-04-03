@@ -11,6 +11,6 @@
 		"jshint": "^2.8.0"
 	},
 	"scripts": {
-		"test": "jshint hello.js"
+		"test": "jshint travis.js"
 	}
 }
