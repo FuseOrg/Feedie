@@ -48,7 +48,7 @@
         if($result->num_rows > 0) {
           while($row = $result->fetch_assoc()){
       ?>
-				<button onclick="location.href='scorecard/?class=<?php echo $row[" class "]; ?>&sub_name=<?php echo $row["sub_name "] ?>&sub_code=<?php echo $row["sub_code "] ?>'" class="button">
+				<button onclick="location.href='scorecard/?class=<?php echo $row["class"]; ?>&sub_name=<?php echo $row["sub_name"] ?>&sub_code=<?php echo $row["sub_code"] ?>'" class="button">
       <?php
         echo $row["sub_name"].", ".$row["class"];
       ?>
