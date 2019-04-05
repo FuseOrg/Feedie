@@ -62,10 +62,10 @@
 						if($result->num_rows > 0) {
 							while($row = $result->fetch_assoc()){
 					?>
-					<div onclick="location.href='teachersmenu/?te_username=<?php echo $row["te_username"]; ?>'" class="mdl-cell mdl-cell--12-col mdl-grid subjects">
+					<div onclick="location.href='teachersmenu/?te_username=<?php echo $row["te_username"]; ?>&te_dept=CSE'" class="mdl-cell mdl-cell--12-col mdl-grid subjects">
 						<div class="flex-center mdl-cell mdl-cell--1-col">
 							<span class="mdl-color-text--green-a400">
-								<i class="material-icons">done</i>
+								<i class="material-icons">person</i>
 							</span>
 						</div>
 						<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
@@ -81,15 +81,15 @@
 					<h4 class="mdl-cell mdl-cell--12-col">Other Department's Collabrating Teachers</h4>
 					<?php
 						include('../../../db_config.php');
-						$sql = "SELECT te_username FROM teachers WHERE dept NOT LIKE '".$_SESSION["dept"]."' AND te_username = ANY (SELECT te_username FROM teachersinfo WHERE class_dept LIKE '".$_SESSION["dept"]."')";
+						$sql = "SELECT te_username, dept FROM teachers WHERE dept NOT LIKE '".$_SESSION["dept"]."' AND te_username = ANY (SELECT te_username FROM teachersinfo WHERE class_dept LIKE '".$_SESSION["dept"]."')";
 						$result = $conn->query($sql);
 						if($result->num_rows > 0) {
 							while($row = $result->fetch_assoc()){
 					?>
-					<div onclick="location.href='teachersmenu/?te_username=<?php echo $row["te_username"]; ?>'" class="mdl-cell mdl-cell--12-col mdl-grid subjects">
+					<div onclick="location.href='teachersmenu/?te_username=<?php echo $row["te_username"]; ?>&te_dept=<?php echo $row["dept"]; ?>'" class="mdl-cell mdl-cell--12-col mdl-grid subjects">
 						<div class="flex-center mdl-cell mdl-cell--1-col">
 							<span class="mdl-color-text--green-a400">
-								<i class="material-icons">done</i>
+								<i class="material-icons">person</i>
 							</span>
 						</div>
 						<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">

@@ -50,6 +50,7 @@
 					<?php include('overall.php');?>
 				</div>
 				<div><a href="teachersview"><button class="button">More details</button></a></div>
+				<div><a href="exportpdf"><button class="button">Export PDF</button></a></div>
 		</div>
 	</div>
 	<footer><a href="https://fuseorg.github.io/Feedie" class="link" target="_blank">Fuse Org</a></footer>
