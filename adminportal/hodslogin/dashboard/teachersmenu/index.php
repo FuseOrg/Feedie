@@ -28,10 +28,12 @@
        }
 
        $te_username = $_GET["te_username"];
+       $te_dept = $_GET["te_dept"];
        $_SESSION["te_username"] = $te_username;
+       $_SESSION["te_dept"] = $te_dept;
   	   echo $_SESSION["te_username"];
        echo ", ";
-       echo $_SESSION["dept"];
+       echo $te_dept;
   	  ?>
 
 	</div>
