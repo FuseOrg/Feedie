@@ -18,6 +18,12 @@
 
 Student-faculty feedback system developed under [Fuse Org](https://github.com/fuseorg)
 
+<div align="center">
+  <br>
+  <img src="images/screely.png" alt="Feedie" width="100%">
+  <br>
+</div>
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -36,7 +42,7 @@ Steps that tell you how to get a development envirnoment running
 
 1. Download the whole zip/clone the repo
 2. Copy files to server hosting location
-3. Import predefined database into phpMyAdmin
+3. Import pre-defined database into phpMyAdmin
 
 ## Running the tests
 
@@ -50,10 +56,6 @@ Test the application with
 2. Highest possible input
 3. Most common inputs
 
-```
-Will be explained more later
-```
-
 ### And coding style tests
 
 Steps to test in coding style for developers, programmers or white-box testers
@@ -62,15 +64,11 @@ Steps to test in coding style for developers, programmers or white-box testers
 2. Save it successfully
 3. Try appropriate input data and verify the output obtained
 
-```
-Will be explained more later
-```
-
 ## Deployment
 
 Steps to deploy the application successfully
 
-1. Start Web server(Apache) and Database server(phpMyAdmin)
+1. Start Web server (Apache) and Database server (phpMyAdmin)
 2. Host copied project in any localhost, networks or DNS.
 
 ## Built With
