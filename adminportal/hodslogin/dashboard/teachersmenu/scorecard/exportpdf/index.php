@@ -8,42 +8,35 @@ class PDF extends FPDF
 // Page header
 function Header()
 {
-    include('../../../../../../db_config.php');
+	  include('../../../../../../db_config.php');
     // Logo
-    $this->Image('../../../../../../images/logo.png',116,7,12);
+    //$this->Image('../../../../../../images/logo.png',116,7,12);
     // Arial bold 15
     $this->SetFont('Arial','B',20);
     //$this->SetFillColor(200,220,255);
     // Move to the right
     $this->Cell(135);
     // Title
-    $this->Cell(27,10,'Feedback Report',0,1,'C');
+    $this->Cell(17,10,'Nehru College of Engineering and Research Center',0,1,'C');
     // Line break
     $this->Ln(9);
     // Details
     $this->SetFont('Times','',12);
-    $this->Cell(0,10,"Teacher's name  : ".$_SESSION["te_username"],0,1);
-    $this->Cell(0,10,"Department        : ".$_SESSION["te_dept"],0,1);
-    $this->Cell(0,10,"Class                  : ".$_SESSION["class"],0,1);
-    $sql = "SELECT overall FROM teachersinfo WHERE te_username = '".$_SESSION["te_username"]."' AND class = '".$_SESSION["class"]."' AND sub_code = '".$_SESSION["sub_code"]."'";
-    $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
-    if($row["overall"] == NULL)
-      $overall = "0 %";
-    else
-      $overall = $row["overall"]."%";
-    $this->Cell(0,10,"Overall Rating   : ".$overall,0,1);
+    $this->Cell(0,8,"Name of the Teacher    : ".$_SESSION["te_username"],0,1);
+    $this->Cell(0,8,"Department                   : ".$_SESSION["te_dept"],0,1);
+    $this->Cell(0,8,"Class                             : ".$_SESSION["class"],0,1);
+     
 
-    $this->SetY(29);
-    $this->SetX(80);
+    //$this->SetY(29);
+    //$this->SetX(80);
  
     //$pdf->Cell(20,4,$feature_list_item,0,1,L,'');
 
-    $this->Cell(0,10,"Subject name     : ".$_SESSION["sub_name"],0,1);
+    $this->Cell(0,8,"Title of Course	             : ".$_SESSION["sub_name"],0,1);
 
-    $this->SetX(80);
+    //$this->SetX(80);
     
-    $this->Cell(0,10,"Subject code      : ".$_SESSION["sub_code"],0,1);
+    $this->Cell(0,8,"Course Code                 : ".$_SESSION["sub_code"],0,1);
     $sql1 = "SELECT COUNT(*) FROM students WHERE  class='".$_SESSION["class"]."'";
     $result1 = $conn->query($sql1);
     if($result1->num_rows > 0) {
@@ -51,9 +44,9 @@ function Header()
       $strength = $row1["COUNT(*)"]; 
     }
 
-    $this->SetX(80);
+    //$this->SetX(80);
 
-    $this->Cell(70,10,"Class strength    : ".$strength,0,1);
+    $this->Cell(70,8,"Class Strength               : ".$strength,0,1);
     $sql1 = "SELECT COUNT(*) FROM feeds WHERE te_username='".$_SESSION["te_username"]."' AND class='".$_SESSION["class"]."'";
     $result1 = $conn->query($sql1);
     if($result1->num_rows > 0) {
@@ -61,24 +54,41 @@ function Header()
       $feed_app = $row1["COUNT(*)"]; 
     }
 
-    $this->SetX(80);
+	  //$this->SetY(29);
+    //$this->SetX(160);
 
-    $this->Cell(70,10,"Feed applied      : ".$feed_app,0,1);
+    $this->Cell(70,8,"No. of Responses          : ".$feed_app,0,1);
 }
 
 // Page footer
 function Footer()
 {
-    // Position at 1.5 cm from bottom
-    $this->SetY(-15);
+	  include('../../../../../../db_config.php');   
+	
+	  // Position at 1.5 cm from bottom
+    $this->SetY(-30);
     // Arial italic 8
-    $this->SetFont('Arial','B',9);
-    // Org name
-    $this->Cell(0,0,'Powered by Feedie',0,1,'C');
+    $this->SetFont('Arial','B',12);
+	
+	  $sql = "SELECT overall FROM teachersinfo WHERE te_username = '".$_SESSION["te_username"]."' AND class = '".$_SESSION["class"]."' AND sub_code = '".$_SESSION["sub_code"]."'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    if($row["overall"] == NULL)
+      $overall = "0";
+    else
+      $overall = $row["overall"];
+    $this->Cell(0,10,"Teaching Effectiveness Index of the Teacher: ".$overall,0,1);
+    // Position at 1.5 cm from bottom
+    $this->SetY(-8);
+	  $this->SetX(210);
+    // Arial italic 8
+    $this->SetFont('Arial','B',12);
+    // Signature
+    $this->Cell(0,0,'Head of Department',0,1);
     // Arial italic 8
     $this->SetFont('Arial','I',8);
     // Page number
-    $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+    //$this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
 }
 
 }
@@ -88,7 +98,7 @@ $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage('L','A4',0);
 // Line break
-$pdf->Ln(9);
+$pdf->Ln(4);
 
 $width_cell=array(12,156,88,20);
 $pdf->SetFont('Arial','B',10);
@@ -104,7 +114,7 @@ $pdf->Cell($width_cell[1],10,'Question',1,0,'C',true);
 //Third header column//
 $pdf->Cell($width_cell[2],10,'Rating',1,0,'C',true); 
 //Fourth header column//
-$pdf->Cell($width_cell[3],10,'Overall',1,0,'C',true);
+$pdf->Cell($width_cell[3],10,'Total',1,0,'C',true);
 // Line break
 $pdf->Ln();
 //// header ends ///////

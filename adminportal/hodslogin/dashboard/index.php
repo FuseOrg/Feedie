@@ -54,7 +54,7 @@
 		<main class="mdl-layout__content">
 			<div class="mdl-layout__tab-panel is-active" id="overview">
 				<section class="section--center mdl-card mdl-grid mdl-grid--no-spacing">
-					<h4 class="mdl-cell mdl-cell--12-col">Department faculties</h4>
+					<h4 class="mdl-cell mdl-cell--12-col">Department Faculties</h4>
 					<?php
 						include('../../../db_config.php');
 						$sql = "SELECT te_username FROM teachers WHERE dept = '".$_SESSION["dept"]."'";
@@ -62,7 +62,7 @@
 						if($result->num_rows > 0) {
 							while($row = $result->fetch_assoc()){
 					?>
-					<div onclick="location.href='teachersmenu/?te_username=<?php echo $row["te_username"]; ?>&te_dept=CSE'" class="mdl-cell mdl-cell--12-col mdl-grid subjects">
+					<div onclick="location.href='teachersmenu/?te_username=<?php echo $row["te_username"]; ?>&te_dept=<?php echo $_SESSION["dept"]; ?>'" class="mdl-cell mdl-cell--12-col mdl-grid subjects">
 						<div class="flex-center mdl-cell mdl-cell--1-col">
 							<span class="mdl-color-text--green-a400">
 								<i class="material-icons">person</i>
@@ -78,10 +78,11 @@
 							}
 						}
 					?>
-					<h4 class="mdl-cell mdl-cell--12-col">Other Department's Collabrating Teachers</h4>
+					<h4 class="mdl-cell mdl-cell--12-col">Other Department's Collabrating Faculties</h4>
 					<?php
 						include('../../../db_config.php');
-						$sql = "SELECT te_username, dept FROM teachers WHERE dept NOT LIKE '".$_SESSION["dept"]."' AND te_username = ANY (SELECT te_username FROM teachersinfo WHERE class_dept LIKE '".$_SESSION["dept"]."')";
+						$sql = "SELECT teachers.te_username, teachers.dept FROM teachers LEFT JOIN teachersinfo ON teachers.te_username = teachersinfo.te_username WHERE teachers.dept NOT LIKE '".$_SESSION["dept"]."' AND teachersinfo.class_dept LIKE '".$_SESSION["dept"]."'";
+						//$sql = "SELECT te_username, dept FROM teachers WHERE dept NOT LIKE '".$_SESSION["dept"]."' AND te_username = ANY (SELECT te_username FROM teachersinfo WHERE class_dept LIKE '".$_SESSION["dept"]."')";
 						$result = $conn->query($sql);
 						if($result->num_rows > 0) {
 							while($row = $result->fetch_assoc()){
@@ -94,7 +95,7 @@
 						</div>
 						<div class="section__text mdl-cell mdl-cell--11-col-desktop mdl-cell--7-col-tablet mdl-cell--3-col-phone">
 							<h5>
-								<?php echo $row["te_username"]; ?>
+								<?php echo $row["te_username"].", ".$row["dept"]; ?>
 							</h5>
 						</div>
 					</div>
