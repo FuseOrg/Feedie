@@ -3,7 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 	<script src="../../../scripts/material.min.js"></script>
-	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Product+Sans:500,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="../../../styles/material.min.css">
 	<link rel="stylesheet" href="../../../styles/main.css">
