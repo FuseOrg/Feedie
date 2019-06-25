@@ -3,7 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 	<script src="scripts/material.min.js"></script>
-	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Product+Sans:500,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="styles/material.min.css">
 	<link rel="stylesheet" href="styles/main.css">
@@ -12,10 +12,11 @@
 </head>
 
 <body class="mdl-demo mdl-color-text--grey-900 mdl-base">
-	<div class="mdl-grid mdl-grid--no-spacing mdl-layout mdl-js-layout">
-		<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone section--center mdl-grid mdl-grid--no-spacing">
-			<div class="mdl-cell mdl-cell--12-col">
-			</div>
+	<div class="mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-layout mdl-js-layout">
+		<section class="horizontal-banner mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+			Horizontal banner
+		</section>
+		<section class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone section--center mdl-grid mdl-grid--no-spacing">
 			<form action="" method="post">
 				<div class="mdl-grid mdl-grid--no-spacing">
 					<h4 class="mdl-cell mdl-cell--12-col questions">Student sign in</h4>
@@ -77,16 +78,16 @@
 									// output data of each row
 									$row = $result->fetch_assoc();
 									if( $_POST["password"] == $row["password"] ){
-										echo "Logging you in..";    
+										echo "Logging you in..";
 										session_start();
 										$_SESSION["rollno"] = $_POST["rollno"];
 										$_SESSION["st_username"] = $row["st_username"];
 										$_SESSION["class"] = $row["class"];
-										header("Location: dashboard/");  // lines
+										header("Location: dashboard/"); // lines
 									}
 									else
 										echo "Password incorrect!";
-									} 
+									}
 								else {
 										echo "Unknown Register number!";
 								}
@@ -96,9 +97,7 @@
 					</div>
 				</div>
 			</form>
-		</div>
-		<div class="mdl-layout--large-screen-only mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-phone banner" style="background-image: url('images/studentbanner.svg');">
-		</div>
+		</section>
 	</div>
 </body>
 
