@@ -4,6 +4,7 @@ body {
 	padding: 0;
 	font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
 	font-size: 18px;
+	font-weight: 500;
 	line-height: 1.5;
 	--primary-color: #fff;
 	--accent-color: rgb(68, 138, 255);
@@ -22,6 +23,7 @@ h4,
 h5 {
 	margin: 0;
 	font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
+	font-weight: 700;
 }
 
 .mdl-layout-title {
@@ -75,6 +77,7 @@ h5 {
 .mdl-layout__tab {
 	font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
 	font-size: 18px;
+	font-weight: 700;
 	text-transform: none;
 	padding: 0 16px;
 }
@@ -98,13 +101,7 @@ h5 {
 	background-color: transparent;
 }
 
-.mdl-demo .mdl-layout__content section:not(:last-of-type) {
-	position: relative;
-	margin-bottom: 48px;
-}
-
 .mdl-demo section.section--center {
-	width: 60%;
 	border-radius: 8px;
 }
 
@@ -166,10 +163,6 @@ h5 {
 
 .mdl-demo .mdl-layout__tab-panel:not(#overview) {
 	background-color: white;
-}
-
-.mdl-demo section {
-	margin-bottom: 32px;
 }
 
 .mdl-demo .mdl-menu__container {
@@ -243,6 +236,24 @@ form,
 	visibility: visible;
 	display: block;
 	animation: fadein .5s;
+}
+
+.vertical-banner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #eee;
+	padding: 16px;
+	border-radius: 8px;
+}
+
+.horizontal-banner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #eee;
+	padding: 16px;
+	border-radius: 8px;
 }
 
 @keyframes fadein {
