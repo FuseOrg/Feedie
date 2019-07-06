@@ -23,6 +23,7 @@
 <div align="center">
   <br>
   <img src="images/screely.png" alt="Feedie" width="100%">
+  <img src="images/screely2.png" alt="Feedie" width="100%">
   <br>
 </div>
 
