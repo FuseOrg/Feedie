@@ -53,7 +53,7 @@
 		<main class="mdl-layout__content">
 			<div class="mdl-layout__tab-panel is-active" id="overview">
 				<div class="mdl-grid">
-					<section class="vertical-banner mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--2-col">
+					<section class="vertical-banner mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--2-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
 						Vertical banner
 					</section>
 					<section class="section--center mdl-card mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--8-col">
@@ -97,14 +97,14 @@
 						}
 					?>
 					</section>
-					<section class="vertical-banner mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--2-col">
+					<section class="vertical-banner mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--2-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
 						Vertical banner
 					</section>
 				</div>
 			</div>
 			<div class="mdl-layout__tab-panel" id="account">
 				<div class="mdl-grid">
-					<section class="vertical-banner mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--2-col">
+					<section class="vertical-banner mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--2-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
 						Vertical banner
 					</section>
 					<section class="section--center mdl-card mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--8-col">
@@ -273,7 +273,7 @@
 							</div>
 						</form>
 					</section>
-					<section class="vertical-banner mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--2-col">
+					<section class="vertical-banner mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--2-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
 						Vertical banner
 					</section>
 				</div>
