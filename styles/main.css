@@ -258,7 +258,6 @@ form,
 	justify-content: center;
 	background-color: #eee;
 	padding: 16px;
-	border-radius: 8px;
 	min-height: 160px;
 }
 
@@ -268,7 +267,6 @@ form,
 	justify-content: center;
 	background-color: #eee;
 	padding: 16px;
-	border-radius: 8px;
 }
 
 @keyframes fadein {
