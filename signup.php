@@ -8,18 +8,22 @@
 	<link rel="stylesheet" href="styles/material.min.css">
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="icon" type="image/png" href="images/logo.png">
-	<title>Student Login | Feedie</title>
+	<title>Student Sign up | Feedie</title>
 </head>
 
 <body class="mdl-demo mdl-color-text--grey-900 mdl-base mdl-grid mdl-grid--no-spacing mdl-layout mdl-js-layout">
-	<section class="horizontal-banner mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+	<section class="horizontal-banner mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
 		Horizontal banner
 	</section>
 	<section class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone section--center mdl-grid mdl-grid--no-spacing">
 		<form action="" method="post">
 			<div class="mdl-grid mdl-grid--no-spacing">
-				<h4 class="mdl-cell mdl-cell--12-col questions">Student sign in</h4>
+				<h4 class="mdl-cell mdl-cell--12-col questions">Student sign up</h4>
 				<div class="mdl-cell mdl-cell--12-col questions" style="flex-direction: column;">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" name="name" id="name">
+						<label class="mdl-textfield__label">Name</label>
+					</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input class="mdl-textfield__input" type="text" name="rollno" id="rollno">
 						<label class="mdl-textfield__label">Register number</label>
@@ -31,10 +35,26 @@
 							<i id="sp" class="material-icons">visibility_off</i>
 						</span>
 					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="password" name="repassword" id="repassword">
+						<label class="mdl-textfield__label">Retype password</label>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" name="college" id="college">
+						<label class="mdl-textfield__label">College ID</label>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" name="semester" id="semester">
+						<label class="mdl-textfield__label">Semester</label>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" name="department" id="department">
+						<label class="mdl-textfield__label">Department</label>
+					</div>
 				</div>
 				<div class="mdl-cell mdl-cell--12-col questions">
 					<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-						Log in
+						Sign up
 					</button>
 				</div>
 				<script>
