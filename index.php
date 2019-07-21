@@ -59,17 +59,14 @@
 								}
 							}
 							session_start();
+							include('db_config.php');
 							if (isset($_SESSION["st_username"])){
 								//Add sleep here
 								header('Location: dashboard/');
 							}
-							$servername = "127.0.0.1";
-							$username = "root";
-							$password = "";
-							$dbname = "feedie_base";
 							if (isset($_POST["rollno"]) AND isset($_POST["password"])){
-							// Create connection
-								$conn = new mysqli($servername, $username, $password, $dbname);
+							    // Create connection
+								//$conn = new mysqli($servername, $username, $password, $dbname);
 								$rollno = $_POST["rollno"];
 								$sql = "SELECT st_username, password, class FROM students WHERE rollno = '".$rollno."'";
 								$result = $conn->query($sql);
