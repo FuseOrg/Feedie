@@ -26,11 +26,35 @@
 					</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input class="mdl-textfield__input" type="text" name="rollno" id="rollno">
-						<label class="mdl-textfield__label">Register Number</label>
+						<label class="mdl-textfield__label">University Register Number</label>
 					</div>
+					<!--
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input class="mdl-textfield__input" type="text" name="class" id="class">
 						<label class="mdl-textfield__label">Class</label>
+					</div>
+					-->
+				    <select name="class">
+				      <?php
+
+				        session_start();
+				        include('../db_config.php');
+				        $sql1 = "SELECT class_name FROM classes";
+				        $result1 = $conn->query($sql1);
+				        if ( $result1->num_rows > 0 ) {
+						  while( $row = $result1->fetch_assoc() ) {
+					  ?>
+						    <option value="<?php echo $row["class_name"]; ?>"><?php echo $row["class_name"]; ?></option>
+					  <?php
+						  }	
+				        }
+                  
+                      ?>
+                    </select>
+
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="date" name="dob" id="dob">
+						<label class="mdl-textfield__label">Date of Birth</label>
 					</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input class="mdl-textfield__input" type="number" name="phoneno" id="phoneno">
@@ -67,16 +91,16 @@
 				</script>
 				<div class="mdl-cell mdl-cell--12-col mdl-color-text--red-a400 questions">
 					<?php
-							session_start();
+							
 							include('../db_config.php');
 							if (isset($_SESSION["st_username"])){
 								//Add sleep here
 								header('Location: ../dashboard/');
 							}
-							if (isset($_POST["fullname"]) AND isset($_POST["rollno"]) AND isset($_POST["class"]) AND isset($_POST["phoneno"]) AND isset($_POST["email"]) AND isset($_POST["password"])){
+							if (isset($_POST["fullname"]) AND isset($_POST["rollno"]) AND isset($_POST["class"]) AND isset($_POST["dob"]) AND isset($_POST["phoneno"]) AND isset($_POST["email"]) AND isset($_POST["password"])){
 							    // Create connection
 								//$conn = new mysqli($servername, $username, $password, $dbname);
-								$sql = "INSERT INTO registrations (st_username, rollno, class, phoneno, email, password) VALUES('".$_POST["fullname"]."','".$_POST["rollno"]."','".$_POST["class"]."','".$_POST["phoneno"]."','".$_POST["email"]."','".$_POST["password"]."')";
+								$sql = "INSERT INTO registrations (st_username, rollno, class, dob, phoneno, email, password) VALUES('".$_POST["fullname"]."','".$_POST["rollno"]."','".$_POST["class"]."','".$_POST["dob"]."','".$_POST["phoneno"]."','".$_POST["email"]."','".$_POST["password"]."')";
 							    $result = $conn->query($sql);
 							    if($result){
 							    	//echo "Successful. ";
