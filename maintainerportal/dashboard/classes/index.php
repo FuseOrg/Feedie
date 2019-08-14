@@ -6,6 +6,23 @@
 	<link href="https://fonts.googleapis.com/css?family=Product+Sans:500,700&display=swap" rel="stylesheet">
 	<link rel="icon" type="image/png" href="../../../images/logo.png">
 	<title>Feedie | Add Classes</title>
+	<style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
 </head>
 
 <body>
@@ -29,25 +46,25 @@
 			<div class="container">
 				<form class="myform" action="" method="post">
 					<div class="heading">Add New Classes</div>
-          <input type="text" class="inputvalue" name="class" placeholder="Enter New Class Name" />
+                    <input type="text" class="inputvalue" name="class" placeholder="Enter New Class Name" />
 					<div class="phpr" style="color:red">
-						<label>
-            <?php   
-
-              include('../../../db_config.php');
-              if ( isset($_POST["class"]) ) {
-                $sql = "INSERT INTO classes (class_name) VALUES ('".$_POST["class"]."')";
-                $result = $conn->query($sql);
-                if ($result) {
-                  echo $_POST["class"]." inserted!";
-                }
-                else {
-                  echo "Sorry try again! Something went wrong!";
-                }
-              }
-
-            ?>
-            </label>
+					  <label>
+                      <?php   
+          
+                        include('../../../db_config.php');
+                        if ( isset($_POST["class"]) ) {
+                          $sql = "INSERT INTO classes (class_name) VALUES ('".$_POST["class"]."')";
+                          $result = $conn->query($sql);
+                          if ($result) {
+                            echo $_POST["class"]." inserted!";
+                          }
+                          else {
+                            echo "Sorry try again! Something went wrong!";
+                          }
+                        }
+          
+                      ?>
+                      </label>
 					</div>
 					<button class="button">Submit</button>
 				</form>
